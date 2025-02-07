@@ -81,6 +81,7 @@ Index
   BG
   RobWrist
   RobBack
+  deviceBox
   Gripper
   DigIO
   AnalogIO
