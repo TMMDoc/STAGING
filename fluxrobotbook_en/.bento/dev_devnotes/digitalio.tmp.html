@@ -1,0 +1,126 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_to_access_via_code">To access via code</a></li>
+<li><a href="#_accessing_digital_ios_in_robot_program">Accessing Digital IO’s in Robot Program:</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>(For elaborate details refer <strong>FANUC ROBOT Bending Cell - Electrical components document in g drive)</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The DI/DO’s can be accessed either manually from TP or used directly
+in robot program</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_access_via_code">To access via code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>access manually –Press IO button on the tp&gt;[type]&gt;DIGITAL&gt;press IN\OUT
+to toggle</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accessing_digital_ios_in_robot_program">Accessing Digital IO’s in Robot Program:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><span class="image"><img src="img/image3.jpeg" alt="image3" width="247" height="250"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To
+access the Digital IO’s in the Robot Program Open Program editor .</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="image"><img src="img/image4.jpeg" alt="image4" width="300" height="243"></span><span class="image"><img src="img/image5.jpeg" alt="image5" width="293" height="244"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Insert lines where you want the digital IO’s to be positioned. And enter number
+of lines.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="image"><img src="img/image6.jpeg" alt="image6" width="293" height="272"></span><span class="image"><img src="img/image7.jpeg" alt="image7" width="274" height="279"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now place curser in blank space, and select [INST], to open up the menu.
+* Select I/O to open the IO selection menu.
+* From the IO menu select <strong>DO[]=…</strong> to access the Digital Outputs.
+* <span class="image"><img src="img/image8.jpeg" alt="image8" width="245" height="264"></span><span class="image"><img src="img/image9.jpeg" alt="image9" width="245" height="257"></span></p>
+</div>
+<div class="paragraph">
+<p>Type
+In the assigned number at the blank spot in side the brackets ex:
+D0[<strong>500</strong>]=…</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="image"><img src="img/image10.jpeg" alt="image10" width="219" height="246"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Move the curser to the blank after the ‘=’ sign, select [CHOICE] option to
+open the choice menu.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image11.png" alt="A white paper with black text Description automatically generated" width="680" height="212"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The options can be selected to manipulate the DO called.</p>
+</li>
+<li>
+<p>The digital Output for the above mentioned wiring details are assigned
+from DO[497]-DO[512], i.e,</p>
+<div class="literalblock">
+<div class="content">
+<pre>DO0 = DO[497]*
+DO1 = DO[498]*</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image12.jpeg" alt="image12" width="233" height="290"></span></p>
+</div>
+<div class="paragraph">
+<p>Digital Outputs connected from Digital Output connector of the robot,
+are assigned from D0[ 497 - 512]</p>
+</div>
+<div class="paragraph">
+<p>Now the Digital Inputs can be accessed the same way. The inputs are
+also configured the same way.
+The digital Input for the above mentioned wiring details are assigned
+from DI[497]-DI[512], i.e,</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image13.png" alt="A white background with black text Description automatically generated" width="617" height="159"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image14.png" alt="A close-up of a word Description automatically generated" width="680" height="84"></span></p>
+</div>
+</div>
+</div>

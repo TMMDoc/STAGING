@@ -1,0 +1,197 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_wiring_schematics_nov2024_naming">wiring schematics Nov2024 + naming</a>
+<ul class="sectlevel2">
+<li><a href="#_ios_on_the_robot_arm">IO&#8217;s  on the robot arm</a></li>
+</ul>
+</li>
+<li><a href="#_access_via_teach_pendant">Access via teach pendant</a></li>
+<li><a href="#_accessing_digital_ios_in_robot_program">Accessing Digital IO’s in Robot Program:</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_wiring_schematics_nov2024_naming">wiring schematics Nov2024 + naming</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
+<div class="sect2">
+<h3 id="_ios_on_the_robot_arm">IO&#8217;s  on the robot arm</h3>
+<div class="paragraph">
+<p><span class="image"><img src="img/w3.png" alt="w3"></span></p>
+</div>
+<div class="paragraph">
+<p>IO1 : on DO[4xx] &#8594; ejector signal 1</p>
+</div>
+<div class="paragraph">
+<p>IO2 : on DO[4xx] &#8594; ejector signal 2</p>
+</div>
+<div class="paragraph">
+<p>IO3 : input of part sensor &#8594; via IO3 (cabinet) &#8594; DI[4xx]</p>
+</div>
+<div class="paragraph">
+<p>IO4 : &#8230;&#8203; &#8594; &#8230;&#8203; &#8594; DI[4xx]</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+A toggle signal in Fanuc is done like this:
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_via_teach_pendant">Access via teach pendant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ACCESSING DIGITAL IOS in robot: (For elaborate details refer FANUC ROBOT Bending Cell - Electrical components document in g drive)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The DI/DO’s can be accessed either manually from TP or used directly in robot program</p>
+</li>
+<li>
+<p>To access manually –Press IO button on the tp&gt;[type]&gt;DIGITAL&gt;press IN\OUT to toggle</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO1.png" alt="IO1"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accessing_digital_ios_in_robot_program">Accessing Digital IO’s in Robot Program:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Accessing Digital IO’s in Robot Program:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To access the Digital IO’s in the Robot Program Open Program editor .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO2.jpg" alt="IO2"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Insert lines where you want the digital IO’s to be positioned. And enter number of lines.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO3.png" alt="IO3"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now place curser in blank space, and select [INST], to open up the menu.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO4.png" alt="IO4"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select I/O to open the IO selection menu.</p>
+</li>
+<li>
+<p>From the IO menu select DO[]=… to access the Digital Outputs.</p>
+</li>
+<li>
+<p>Type In the assigned number at the blank spot in side the brackets ex: D0[500]=…</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO5.png" alt="IO5"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Move the curser to the blank after the ‘=’ sign, select [CHOICE] option to open the choice menu.</p>
+</li>
+<li>
+<p>The options can be selected to manipulate the DO called.</p>
+</li>
+<li>
+<p>The digital Output for the above mentioned wiring details are assigned from</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>DO[497]-DO[512], i.e,</p>
+</div>
+<div class="paragraph">
+<p>DO0 = DO[497]</p>
+</div>
+<div class="paragraph">
+<p>DO1 = DO[498]</p>
+</div>
+<div class="paragraph">
+<p>..</p>
+</div>
+<div class="paragraph">
+<p>…</p>
+</div>
+<div class="paragraph">
+<p>DO11= DO[507]</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO6.png" alt="IO6"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Now the Digital Inputs can be accessed the same way. The inputs are also configured the same way.</p>
+</li>
+<li>
+<p>The digital Input for the above mentioned wiring details are assigned from DI[497]-DI[512], i.e,</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>DI0 = DI[497]</p>
+</div>
+<div class="paragraph">
+<p>DI1 = DI[498]</p>
+</div>
+<div class="paragraph">
+<p>..</p>
+</div>
+<div class="paragraph">
+<p>…</p>
+</div>
+<div class="paragraph">
+<p>DI11 = DI[512]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List of IO’s already configured.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/IO7.png" alt="IO7"></span></p>
+</div>
+</div>
+</div>

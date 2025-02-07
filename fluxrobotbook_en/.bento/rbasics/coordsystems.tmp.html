@@ -1,0 +1,113 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_pitch_roll_yaw">pitch roll yaw</a></li>
+<li><a href="#_manual_motion_coordinate_systems">Manual motion coordinate systems</a></li>
+<li><a href="#_zero_points_of_components">Zero points of components</a></li>
+<li><a href="#_old_coordinate_systems">old coordinate systems</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zero of the machine coordinate system is in the center of the machine.</p>
+</div>
+<div class="paragraph">
+<p>The robot world coordinate system is turned. In UserFrame1 we turn the frame into the machine frame</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/Coord_sys.png" alt="Coord sys">
+</div>
+</div>
+<div class="paragraph">
+<p>In Flux the position is defined in "C:\ProgramData\Metamation\Flux\Machine\120315\cellconfig.curl".</p>
+</div>
+<div class="paragraph">
+<p>Current setup is 1051 0 492 0 0.185 -90.165. Run "\RobotHW\04_components\adjust_to_TMMCell.bat" to adjust all parameters</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pitch_roll_yaw">pitch roll yaw</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For corrections within the bending process the "pitch roll yaw" orientation should be kept</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/Pitch.png" alt="pitch" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>For vacuum and pinch gripper the orientation is different:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PRY_1.png" alt="PRY 1"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PRY_2.png" alt="PRY 2"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manual_motion_coordinate_systems">Manual motion coordinate systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like the robot the motion should be aligned either with the machine coord or the tool.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/CS_Machine_tool.png" alt="CS Machine tool"></span></p>
+</div>
+<div class="paragraph">
+<p>The tool coordinate system is usually tilted with the angle of the component, see <a href="..\Setup_Flux\dispenser">Dispenser</a> and <a href="..\Setup_Flux\Centertable">Centertable</a> for specifics</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zero_points_of_components">Zero points of components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zero of the Backgauge: Gauge1: left side, gauge2: right side towards the center of the machine</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/BG.png" alt="BG">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/BG2.png" alt="BG2">
+</div>
+</div>
+<div class="paragraph">
+<p>The TCP-positon of a pinch gripper is the center front face of the moving finger</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pinch.png" alt="pinch">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_old_coordinate_systems">old coordinate systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The traditional is not used anymore</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>R was in ram direction (Z)</p>
+</li>
+<li>
+<p>X points towards the machine (Y)</p>
+</li>
+<li>
+<p>Z is along the machine (x)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>

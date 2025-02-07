@@ -1,0 +1,160 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_folder_cprogramdatametamationfluxmachine">Folder C:\ProgramData\Metamation\Flux\Machine</a>
+<ul class="sectlevel2">
+<li><a href="#_options_ini">options.ini</a></li>
+<li><a href="#_setings_curl">setings.curl</a></li>
+<li><a href="#_cellconfig_curl">Cellconfig .curl</a></li>
+</ul>
+</li>
+<li><a href="#_folder_cprogram_filesmetamationfluxbin">Folder C:\Program Files\Metamation\Flux\Bin</a>
+<ul class="sectlevel2">
+<li><a href="#_robots_wadfanuc25">Robots.wad\Fanuc25\</a></li>
+<li><a href="#_cellitems_wad_2501bdispenserdispenser_1_pal">CellItems.wad : 2501,BDispenser,Dispenser (1-Pal)</a></li>
+<li><a href="#_cellitems_wad_4501bfingergripb20_h30_l40">CellItems.wad : 4501,BFingerGrip,B20 H30 L40</a></li>
+</ul>
+</li>
+<li><a href="#_cellitems_wad_4501bfingergripb20_h30_l40_pinch_gripper">CellItems.wad : 4501,BFingerGrip,B20 H30 L40 → Pinch gripper</a></li>
+<li><a href="#_cellitems_wad_2002bpalletbasket_1200_800_600">CellItems.wad : 2002,BPallet,Basket 1200.800.600</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>D:\GIT\RobotHW\04_components\Components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pinch gripper with distance</p>
+</li>
+<li>
+<p>simplified dispenser</p>
+</li>
+<li>
+<p>pallet simple</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A robotic cell is structured by:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_folder_cprogramdatametamationfluxmachine">Folder C:\ProgramData\Metamation\Flux\Machine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>C:\ProgramData\Metamation\Flux\Machine\120315</p>
+</div>
+<div class="sect2">
+<h3 id="_options_ini">options.ini</h3>
+<div class="paragraph">
+<p>Robot position</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Version=3
+RobotAxis1=-900:5150
+...
+RobotAxis7=300:3362
+*RobotPosY=-1000*
+*RobotPosZ=-1100*
+AxisAPosZ=0
+RegripSwivelSide=1
+TrackSpanX=0:0
+RobotPosX=0</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setings_curl">setings.curl</h3>
+<div class="paragraph">
+<p>the Position of the robot is en options.ini, the orientation in settings.curl</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Cell:{
+  *RobotXRot:0  RobotYRot:45  RobotZRot:60*  EBCell:FanucX  EBCFanucType:Fanuc25  TrackMinX:-900  TrackMaxX:5150
+  RobotPosX:0  RobotPosY:-1000  RobotPosZ:-800  AxisAPosZ:0  RegripSwivelSide:Right</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cellconfig_curl">Cellconfig .curl</h3>
+<div class="paragraph">
+<p>(Flux.BCellTech+ConfigData){
+  Items:[
+    { Id:2002  Name:"Basket 1200.800"  Xfm:{ Org:219,-1900,-1100  VecX:1,0,0  VecY:0,1,0 } Deposit:True }
+    { Id:2501  Name:"Dispenser (1-Pal)"  Xfm:{
+        Org:-1331,-900,-1265.5999755859375  VecX:-1,0,1.2246467991473532E-16  VecY:-1.4997597826618576E-32,-1,-1.2246467991473532E-16
+      }
+      Pickup:True
+    }
+    { Id:9501  Name:centertable  Xfm:{
+        Org:-1578.089599609375,-900,-1100  VecX:6.123233995736766E-17,1,0  VecY:-1,6.123233995736766E-17,0
+      }
+    }
+  ]
+}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_folder_cprogram_filesmetamationfluxbin">Folder C:\Program Files\Metamation\Flux\Bin</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_robots_wadfanuc25">Robots.wad\Fanuc25\</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_cellitems_wad_2501bdispenserdispenser_1_pal">CellItems.wad : 2501,BDispenser,Dispenser (1-Pal)</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_cellitems_wad_4501bfingergripb20_h30_l40">CellItems.wad : 4501,BFingerGrip,B20 H30 L40</h3>
+<div class="paragraph">
+<p>Standard:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(Mechanism){
+Name:BFINGERGRIP4501  Color:White
+Geometry:(FileGeometry){ File:Base.mesh2  Shift:0,0,-29 }
+Sockets:&lt; Fixed=-18,0,153.8  Moving=18,0,172 &gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With our clutch</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(Mechanism){
+Name:BFINGERGRIP4501  Color:White
+Geometry:(FileGeometry){ File:Base.mesh2  Shift:0,0,16.3 }
+Sockets:&lt; Fixed=-19.3,0,199.1  Moving=19.3,0,217.3 &gt;
+Children:[</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cellitems_wad_4501bfingergripb20_h30_l40_pinch_gripper">CellItems.wad : 4501,BFingerGrip,B20 H30 L40 → Pinch gripper</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>Geometry:(FileGeometry){ File:MultigripperS2-Compound.stl  Shift:0,0,110 }
+Sockets:&lt; Fixed=-18,0,10053.8  Moving=18,0,10072 &gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cellitems_wad_2002bpalletbasket_1200_800_600">CellItems.wad : 2002,BPallet,Basket 1200.800.600</h2>
+<div class="sectionbody">
+
+</div>
+</div>

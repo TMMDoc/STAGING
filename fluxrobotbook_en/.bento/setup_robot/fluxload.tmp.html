@@ -1,0 +1,150 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_programming_in_flux_and_download">Programming in Flux and download</a></li>
+<li><a href="#_preparing_ra_for_the_bend">Preparing RA for the bend:</a></li>
+<li><a href="#_preparing_ra_for_the_bend_2">Preparing RA for the bend:</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create the workcell in flux with 1100WILA machine which should load the 25 kg FANUC robot</p>
+</div>
+<div class="paragraph">
+<p>Check for the dispenser position to match it with marked position of the pickup table.</p>
+</div>
+<div class="paragraph">
+<p>RA control loads the FX program and stores all files on the various places (RamPoint.txt, Robot_main.LS and Robot_sub.LS). The files are transferred via ftp to the robot control and started as a subroutine.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programming_in_flux_and_download">Programming in Flux and download</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create the workcell in flux with 1100WILA machine which should load the 25 kg FANUC robot. Check for the dispenser position to match it with marked position of the pickup table.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/load1.png" alt="load1">
+</div>
+</div>
+<div class="paragraph">
+<p>Check for the selection of correct gripper, you can load the shared Cellitems.wad file to "C:\Program Files\Metamation\Flux\Bin" to get the same setup like real time robot.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create your bending program, from a dxf file or cerate your own.</p>
+</li>
+<li>
+<p>Check the simulation for the loaded part, you can add waypoints if needed and can be simulated again to check the motion.</p>
+</li>
+<li>
+<p>Click on NC Code to generate the NC program for the current bend.</p>
+</li>
+<li>
+<p>Now this program should be converted to FANUC ROBOT PROGRAM FORMAT i.e, .LS file, which can be loaded to the robot. To convert it we have a postprocessor in matlab.</p>
+</li>
+<li>
+<p>Now first 50 points  generated as the input to be given to RA, should be copied to RA HMI – c:\programdata\metamation\RA\Rdata\RamPoints.txt</p>
+</li>
+<li>
+<p>For generating entire sequence- run matlab code named – fanucprog5.m</p>
+</li>
+<li>
+<p>These codes can be loaded to controller via FTP – for this, connect laptop to robot controller - OPEN cmd</p>
+</li>
+<li>
+<p>Type in – FTP -i 192.168.1.175  and press Enter</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ftp.png" alt="ftp">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If connected you would get the above response. Now press ENTER again to login</p>
+</li>
+<li>
+<p>Type cd md: to access the robot controller directory</p>
+</li>
+<li>
+<p>To retrieve a program from controller use mget &lt;program name&gt;.ls</p>
+</li>
+<li>
+<p>To send a program from laptop to controller use mput &lt;program name&gt;.ls</p>
+</li>
+<li>
+<p>This process of FTP is  automated in Matlab postprocessor – Fanucprog5</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preparing_ra_for_the_bend">Preparing RA for the bend:</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a program with same parameters as used in flux or use the flux program file to load program in RA.</p>
+</li>
+<li>
+<p>To Run the Press Brake in Robot Mode Refer DOC – Robot Interface Implementation.PDF ( available in shared drive).</p>
+</li>
+<li>
+<p>To achieve the synchronisation the Ram speed during bend should be set to 50% i.e, 5mm/sec. This can be modified in the EDIT CYCLE option.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preparing_ra_for_the_bend_2">Preparing RA for the bend:</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To Run the program, currently we are running only in MANUAL Mode. This manual mode has 2 options T1 mode and T2 mode.</p>
+</li>
+<li>
+<p>T1 mode : Robot speed is set to 250mm/sec as its max limit.</p>
+</li>
+<li>
+<p>T2 mode : Robot speed is set to 2000mm/sec which is the top speed of this robot.</p>
+</li>
+<li>
+<p>While testing the robot with synchro Bend, T2 mode should be used to achieve the syncro motion during the bend.</p>
+</li>
+<li>
+<p>Now open the AROBO program from the program menu in the robot teach pendent.</p>
+</li>
+<li>
+<p>If the robot is in T2 mode you can observe that speed is automatically set to 3%, Before start change it to 100%. Speed for individual motion is controlled inside the logic.</p>
+</li>
+<li>
+<p>Once the deadman switch is released this toggles the speed back to 3%, only in T2 mode.</p>
+</li>
+<li>
+<p>Now you can press shift+fwd in teach pendent to start the program.</p>
+</li>
+<li>
+<p>During fastclosing foot pedel down by operator is required.</p>
+</li>
+<li>
+<p>If error occurs in robot this will cause the program to abort, so you have to reset the Press brake by pressing up pedal and reset the progra</p>
+</li>
+</ol>
+</div>
+</div>
+</div>

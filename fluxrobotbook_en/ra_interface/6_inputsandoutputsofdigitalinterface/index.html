@@ -1,0 +1,1317 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Inputs and outputs </title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>FluxRobot Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to FluxRobot</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../rbasics/index.html">Basics</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../rbasics/coordsystems.html">Basic coordinate systems</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanuccoords.html">Robot coordinates</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanucframes.html">Frame concept</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanuccordmove.html">Motion commands </a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../setup_robot/index.html">Setup and run the robot</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../setup_robot/pointer.html">Measure Pointer length</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/pinchgripper.html">Calibrate Pinch Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/vacuumgripper.html">Calibrate Vacuum Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/setuprobot.html">Setup Robot to Machine</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/pallet.html">Setup Pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/dispenser.html">Setup Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/partseparator.html">Setup PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/doublesheet.html">Setup DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/centering.html">Setup CenteringTable</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/deposit.html">Setup Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/fluxload.html">Program Flux and load robot</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/advanced.html">Run the fanuc in auto mode</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../motionsequences/index.html">Motion sequences</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_pinch.html">Pickup from dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_vac.html">Pickup from pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/partseparator.html">PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/doublesheet.html">DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/centering.html">Centering table motion</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/deposit.html">Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/bend.html">Bend</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../setup_flux/index.html">Setup Flux</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../setup_flux/robot.html">Robot</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/dispenser.html">Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/pickuppallet.html">PickupPallet</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/centertable.html">Centering table</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/regrip.html">regrip station </a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/dropoff.html">Drop off pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/toolchanger.html">Tool changer</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../gripper/index.html">Customized grippers</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../gripper/cups.html">Trumpf standard vacuum cups</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../lsprogramming/index.html">NC-Coode and postprocessor</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../lsprogramming/rnc.html">Flux .RNC output</a></li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/post_matlab.html">Postprocessor Matlab</a></li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/post_c.html">Postprocessor C#</a></li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/ls.html">LS output</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../fanuchw/index.html">Fanuc functions & macros</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../fanuchw/operation.html">General operation procedure</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_bgallign.html">FR_BgAllign</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_stacksearch.html">FR_StackSearch</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_scale.html">FFR_Scale</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_gripclose.html">FR_GRipClose</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/communication.html">Communication</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../hmi/index.html">Cell HMI</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../hmi/load_pgrm.html">Load program on robot</a></li>
+        <li><button class="tree blank"></button><a href="../../hmi/fetch_backup.html">fetch config from Robot</a></li>
+        <li><button class="tree blank"></button><a href="../../hmi/partcounter.html">Part counter</a></li>
+        <li><button class="tree blank"></button><a href="../../hmi/frametool.html">Frame tool</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">RA interface</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../1_generalinformation/index.html">General information</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../1_generalinformation/typesofcuppling.html">Types of robot couplings</a></li>
+            <li><button class="tree blank"></button><a href="../1_generalinformation/digitaliocoupling/index.html">Digital coupling</a></li>
+            <li><button class="tree blank"></button><a href="../1_generalinformation/loosesyncronizedcoupling/index.html">Loose syncronized coupling</a></li>
+            <li><button class="tree blank"></button><a href="../1_generalinformation/thightsyncronized/index.html">Thight syncronized coupling with FluxRobot</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../2_descriptionofhardware/index.html">Description of the hardware</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../2_descriptionofhardware/digitalingerface.html">Digital interface</a></li>
+            <li><button class="tree blank"></button><a href="../2_descriptionofhardware/ethercat.html">Ethercat</a></li>
+            <li><button class="tree blank"></button><a href="../2_descriptionofhardware/rainterface.html">RA interface</a></li>
+            <li><button class="tree blank"></button><a href="../2_descriptionofhardware/security_network.html">Network security</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../3_machineconfiguration/index.html">Machine configuration</a></li>
+        <li><button class="tree blank"></button><a href="../4_bendingprogram/index.html">How to create a Bending program</a></li>
+        <li><button class="tree blank"></button><a href="../5_bendingsteps/index.html">bending steps in detail</a></li>
+        <li><button class="tree blank"></button><a class="active" href="index.html">Inputs and outputs </a></li>
+        <li><button class="tree blank"></button><a href="../7_teachandautomaticmode/index.html">Teach and automatic mode</a></li>
+        <li><button class="tree blank"></button><a href="../8_windowssystemcontrol/index.html">Windows system </a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../electricalwiring/index.html">Electrical wiring</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../electricalwiring/wiring.html">Wiring of the Fanuc cabinet</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/bg.html">Wiring the back gauge sensors</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/robwrist.html">Connectors on the robot wrist</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/robback.html">Connectors on the robot back hub</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/gripper.html">Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/digio.html">Digital IO</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/analogio.html">Analog IO's</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/manifold.html">Manifold</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/userio.html">UserIO</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/safety.html">Safety</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/iooutput.html">Use the IO outputs</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../dev_components/index.html">Flux: Tweeak Components</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../dev_components/cellcomponents.html">Flux: Cell components</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_components/pinch.html">Adjust Pinch gripper offset</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_components/gripper.html">Tweak a gripper CAD geometry</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_components/dispenser.html">Change dispenser geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../dev_devnotes/index.html">DEV: Developer notes</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/basicop.html">Basics on the Robot</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/fanucframes.html">Frame concept (RACell)</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/dh.html">Denavit–Hartenberg parameters</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/defofrotation.html">Definition of rotations</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/pickup_comp.html">Pickup comparison</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/check.html">Check frames</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/digitalio.html">Aacessing Digital IO' in robot: </a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">RA interface</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Inputs and outputs </a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Inputs and outputs </h1>
+<div class="paragraph">
+<p>tbd</p>
+</div>
+<div class="paragraph">
+<p><strong>6. Inputs and outputs of digital interface</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Release condition for press beam downward</p>
+</div>
+<div class="paragraph">
+<p>movements</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>To release a downward movement of the press beam, the safety signal
+XS7:17-18 should also be bridged by the robot. The signal XS8:3 however
+can be reset individually by the robot to functionally stop the press
+beam.</p>
+</div>
+<div class="paragraph">
+<p>Releasing robot axes and no error active</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>To be able to carry out a bending step, the signal XS8:4 "Robot OK" must
+be set on the robot and remain set for the duration of the bend.
+Otherwise the downward movement of the press beam stops immediately.
+This input should be used to stop the downward movement of the press
+beam immediately in the case of a robot error, especially when the robot
+is supporting the workpiece during the bending operation.</p>
+</div>
+<div class="paragraph">
+<p>XS8:5</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Positioning backgauge</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image14.jpg" alt="img/media/image14" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>On a positive edge of the signal, backgauge, lower tool movement and
+crowning are positioned. The exact point in time at which these axes are
+positioned depends on how the change of the bending steps has been
+programmed on the Human Machine Interface.</p>
+</div>
+<div class="paragraph">
+<p>XS8:6</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Release from robot to approach mute point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The signal must remain set during the complete movement to the mute
+point, otherwise the press beam will stop immediately. The robot should
+only reset the signal once the press beam is located at the MP (XS7:3
+TRUE).</p>
+</div>
+<div class="paragraph">
+<p>XS8:7</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Release from robot to approach clamping point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The signal must remain set during the complete movement to the clamping
+point, otherwise the press beam will stop immediately. The robot should
+only reset the signal once the press beam is located at the CP (XS7:4
+TRUE).</p>
+</div>
+<div class="paragraph">
+<p>XS8:8</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Release from robot to approach lower dead point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The signal must remain set during the complete movement to the lower
+dead point, otherwise the press beam will stop immediately. The robot
+should only reset the signal once the press beam is located at the lower
+dead point (XS7:5  TRUE).</p>
+</div>
+<div class="paragraph">
+<p>XS8:9</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Release from robot to approach upper dead point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The robot should only reset the signal once the press beam is located at
+the upper dead point (XS7:1  TRUE).</p>
+</div>
+<div class="paragraph">
+<p><strong>Pin on plug</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Evaluation</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Level</strong>
+<span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Edge</strong> <span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Details</strong></p>
+</div>
+<div class="paragraph">
+<p>XS8:10</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Error acknowledgement, starting bending program, selecting first bending
+step and starting</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>On a positive edge of the signal, the bending program is restarted from
+the first bending step, the output XS7:12 "First bend active" is set. If
+necessary, the hydraulics are switched on fully automatically before
+this, and the tools are clamped. If an error is present on the machine,
+the edge of the signal first carries out an error acknowledgement, the
+bending program is then restarted. The robot can reset the signal once
+the machine has started. If the safety fence is closed (for
+safety-related and functional reasons) and the machine is not yet
+referenced, referencing is started with the edge of the signal (XS7:12
+TRUE).</p>
+</div>
+<div class="paragraph">
+<p>XS8:11</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Stopping bending program and hydraulics off</p>
+</div>
+<div class="paragraph">
+<p>Robot → Press</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>On a positive edge of the signal, the bending program is stopped, and
+the hydraulics are switched off. The signal should be reset by the
+robot, since otherwise no automatic program start is possible anymore
+(set for 2 seconds).</p>
+</div>
+<div class="paragraph">
+<p>XS8:12</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Bending program selection input_0</p>
+</div>
+<div class="paragraph">
+<p>Not used</p>
+</div>
+<div class="paragraph">
+<p>XS8:13</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Bending program selection input_1</p>
+</div>
+<div class="paragraph">
+<p>Not used</p>
+</div>
+<div class="paragraph">
+<p>XS8:14</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Bending program selection input_2</p>
+</div>
+<div class="paragraph">
+<p>Not used</p>
+</div>
+<div class="paragraph">
+<p>XS8:15 - XS7:23</p>
+</div>
+<div class="paragraph">
+<p>XS8:16 -</p>
+</div>
+<div class="paragraph">
+<p>XS7:24</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>2-channel safety EMER-</p>
+</div>
+<div class="paragraph">
+<p>GENCY SHUTDOWN</p>
+</div>
+<div class="paragraph">
+<p>contact circuit on the machine</p>
+</div>
+<div class="paragraph">
+<p>XS8:15 - XS7:23</p>
+</div>
+<div class="paragraph">
+<p>Contact circuit 1</p>
+</div>
+<div class="paragraph">
+<p>XS8:16 - XS7:24</p>
+</div>
+<div class="paragraph">
+<p>Contact circuit 2</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Both contacts are bridged by the safety controller of the machine, if no
+EMERGENCY SHUTDOWN is triggered.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pin on plug</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Evaluation</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Level</strong>
+<span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Edge</strong> <span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Details</strong></p>
+</div>
+<div class="paragraph">
+<p>XS8:17-18</p>
+</div>
+<div class="paragraph">
+<p>XS8:19-20</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>2-channel safety EMER-</p>
+</div>
+<div class="paragraph">
+<p>GENCY SHUTDOWN</p>
+</div>
+<div class="paragraph">
+<p>contact circuit on the robot</p>
+</div>
+<div class="paragraph">
+<p>XS8:17-18</p>
+</div>
+<div class="paragraph">
+<p>Contact circuit 1</p>
+</div>
+<div class="paragraph">
+<p>XS8:19-20</p>
+</div>
+<div class="paragraph">
+<p>Contact circuit 2</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>A pulse signal from the safety controller of the machine is used on the
+pins 17 and 19. Both contacts are bridged by the robot if no EMERGENCY
+SHUTDOWN is triggered on the robot. Pins 18 and 20 are connected back to
+the machine&#8217;s safety control.</p>
+</div>
+<div class="paragraph">
+<p>XS8:21-22</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>External drive on</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The contact is bridged by the safety controller of the machine if the
+operating mode selector switch is on automatic.</p>
+</div>
+<div class="paragraph">
+<p>XS8:25</p>
+</div>
+<div class="paragraph">
+<p>XS8:26</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Lower tool holder</p>
+</div>
+<div class="paragraph">
+<p>Open XS8:25</p>
+</div>
+<div class="paragraph">
+<p>Close XS8:26</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The 2 inputs are provided to open the tool clamp (release of the tools)
+or to close it (lock tools).</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:25  True signals that the tools are free.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:26  True signals that the tools are locked.</p>
+</div>
+<div class="paragraph">
+<p>XS8:27</p>
+</div>
+<div class="paragraph">
+<p>XS8:28</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Upper tool holder</p>
+</div>
+<div class="paragraph">
+<p>Open XS8:27</p>
+</div>
+<div class="paragraph">
+<p>Close XS8:28</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The 2 inputs are provided to open the tool clamp (release of the tools)
+or to close it (lock tools).</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:27  True signals that the tools are free.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:28  True signals that the tools are locked.</p>
+</div>
+<div class="paragraph">
+<p>XS8:29</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Tool change</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>On a positive edge of the signal, the machine readies itself for the
+tool change (see "Robot as tool changer", pg. 10‐33). If ready, the
+machine sets the signal XS7:29  TRUE. The robot should reset the signal
+to start the bending program.</p>
+</div>
+<div class="paragraph">
+<p>XS7:1</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Press beam at the upper dead point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine once the press beam is located at the
+upper dead point, and is reset on leaving this point.</p>
+</div>
+<div class="paragraph">
+<p>XS7:2</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Machine ready - all axes positioned</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine once the press beam is ready for
+downward movement, and is reset on leaving the mute point.</p>
+</div>
+<div class="paragraph">
+<p>At that point, the robot can drive in the sheet.</p>
+</div>
+<div class="paragraph">
+<p>XS7:3</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Press beam at mute point 1 during air bending</p>
+</div>
+<div class="paragraph">
+<p>Press beam at mute</p>
+</div>
+<div class="paragraph">
+<p>point 2 during folding/ hemming</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine once the press beam is located at the
+mute point, and is reset on leaving this point.</p>
+</div>
+<div class="paragraph">
+<p>At that point, the robot can drive in the sheet</p>
+</div>
+<div class="paragraph">
+<p>XS7:4</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Press beam at the clamping point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine once the press beam is located at the
+clamping point, and is reset on leaving this point.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pin on plug</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Evaluation</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Level</strong>
+<span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Edge</strong> <span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Details</strong></p>
+</div>
+<div class="paragraph">
+<p>XS7:5</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Press beam at the lower dead point</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine once the press beam is located at the
+lower dead point, and is reset on leaving this point.</p>
+</div>
+<div class="paragraph">
+<p>XS7:6</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>ACB programmed and in use</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine at the lower dead point if
+Automatically Controlled Bending (ACB) with identification during
+bending step was programmed. The output is reset at the decompression
+point after the post bend.</p>
+</div>
+<div class="paragraph">
+<p>XS7:7</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>ACB identification bend active</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine at the lower dead point if ACB with
+identification during bending step was programmed.</p>
+</div>
+<div class="paragraph">
+<p>After the identification bend, the press beam moves to the decompression
+point to release the sheet.</p>
+</div>
+<div class="paragraph">
+<p>The output is reset on reaching the lower dead point during post
+bending.</p>
+</div>
+<div class="paragraph">
+<p>XS7:8</p>
+</div>
+<div class="paragraph">
+<p>XS7:9</p>
+</div>
+<div class="paragraph">
+<p>Tilting</p>
+</div>
+<div class="paragraph">
+<p>XS7:8 Positive tilting</p>
+</div>
+<div class="paragraph">
+<p>XS7:9 Negative tilting</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is only set by the machine if the press beam is located at
+the decompression point, in case the robot must compensate for the
+tilting of the sheet.</p>
+</div>
+<div class="paragraph">
+<p>XS7:10</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Bend finished</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set by the machine only once the sheet has been bent. If
+ACB with identification is programmed, the output is set at the end of
+the second bend.</p>
+</div>
+<div class="paragraph">
+<p>XS7:11</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Machine without error and robot activated</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is always set when no errors are present on the machine. If
+the bending program is interrupted due to an error on the machine, then
+this output is reset. This signal can be used to stop the robot
+movement.</p>
+</div>
+<div class="paragraph">
+<p>XS7:12</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>First bend active</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is set if the bending program is in the first bend. If the
+bending step is advanced or the program is stopped, then this output is
+reset. With a manual program this signal is always set, since by
+definition the manual program is always in the first bend.</p>
+</div>
+<div class="paragraph">
+<p>XS7:13</p>
+</div>
+<div class="paragraph">
+<p>XS7:14</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Signals for left gauge fingers</p>
+</div>
+<div class="paragraph">
+<p>XS7:13 → X direction</p>
+</div>
+<div class="paragraph">
+<p>XS7:14 → Z direction</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>These signals come directly from the sensors. Sensors are mounted on the
+machine by the integrator.</p>
+</div>
+<div class="paragraph">
+<p>XS7:15</p>
+</div>
+<div class="paragraph">
+<p>XS7:16</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Signals for right gauge fingers</p>
+</div>
+<div class="paragraph">
+<p>XS7: 15 → X direction</p>
+</div>
+<div class="paragraph">
+<p>XS7: 16 → Z direction</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>These signals come directly from the sensors. Sensors are mounted on the
+machine by the integrator.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pin on plug</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Evaluation</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Level</strong>
+<span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Edge</strong> <span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Details</strong></p>
+</div>
+<div class="paragraph">
+<p>XS7:17-18</p>
+</div>
+<div class="paragraph">
+<p>XS7:19-20</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>2-channel safety release of the press beam. The 2 channels must be
+bridged or opened at the same time.</p>
+</div>
+<div class="paragraph">
+<p>XS7:17-18</p>
+</div>
+<div class="paragraph">
+<p>Contact circuit 1</p>
+</div>
+<div class="paragraph">
+<p>XS7:19-20</p>
+</div>
+<div class="paragraph">
+<p>Contact circuit 2</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>A pulse signal from the safety controller of the machine is used on the
+pins 17 and 19. Both contacts are bridged by the robot if the press beam
+may be released. Pins 18 and 20 are connected back to the machine&#8217;s
+safety control.</p>
+</div>
+<div class="paragraph">
+<p>To release a downward movement of the press beam, the functional signal
+XS8:3 is set by the robot.</p>
+</div>
+<div class="paragraph">
+<p>XS7:21-22</p>
+</div>
+<div class="paragraph">
+<p>Robot to machine</p>
+</div>
+<div class="paragraph">
+<p>Robot operating mode selection for rapid downward movement (K)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Rapid downward movement of the press beam without optical protective
+device. The functional signal XS8:2 should also be set by the robot.</p>
+</div>
+<div class="paragraph">
+<p>XS8:2 and XS7:21-22 must always be set or reset at the same time by the
+robot, otherwise an error will occur on the machine.</p>
+</div>
+<div class="paragraph">
+<p>XS7:25</p>
+</div>
+<div class="paragraph">
+<p>XS7:26</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Lower tool holder</p>
+</div>
+<div class="paragraph">
+<p>XS7:25 open</p>
+</div>
+<div class="paragraph">
+<p>XS7:26 closed</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The 2 outputs correspond to the status of the tool clamp.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:25  True signals that the tools are free.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:26  True signals that the tools are locked.</p>
+</div>
+<div class="paragraph">
+<p>XS7:27</p>
+</div>
+<div class="paragraph">
+<p>XS7:28</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Upper tool holder</p>
+</div>
+<div class="paragraph">
+<p>XS7:27 open</p>
+</div>
+<div class="paragraph">
+<p>XS7:28 closed</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The 2 outputs correspond to the status of the tool clamp.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:27  True signals that the tools are free.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:28  True signals that the tools are locked.</p>
+</div>
+<div class="paragraph">
+<p>XS7:29</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Machine ready for tool change</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>The output is only set by the machine once the press beam and all
+auxiliary axes are in position for a tool change.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pin on plug</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Evaluation</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Level</strong>
+<span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Edge</strong> <span class="image"><img src="img/img/media/image13.jpg" alt="img/media/image13" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Details</strong></p>
+</div>
+<div class="paragraph">
+<p>XS7:30</p>
+</div>
+<div class="paragraph">
+<p>Machine to robot</p>
+</div>
+<div class="paragraph">
+<p>Required angle reached.</p>
+</div>
+<div class="paragraph">
+<p>The output is set at the decompression point.</p>
+</div>
+<div class="paragraph">
+<p>The combination with the output XS7:11 "Machine OK" defines the result
+of the bend.</p>
+</div>
+<div class="paragraph">
+<p>The signal XS7:10 "Bend finished" is used as the strobe for the signal.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>There are 2 parameters on MMI:</p>
+</div>
+<div class="paragraph">
+<p>Tolerance 1: SensorSystem - ACB - AngleVerificationLimitWarning  0.3°</p>
+</div>
+<div class="paragraph">
+<p>Tolerance 2: SensorSystem - ACB - AngleVerificationLimitWarning  0.5°</p>
+</div>
+<div class="paragraph">
+<p>The outputs are set according to the description in the table:</p>
+</div>
+<div class="paragraph">
+<p><strong>Earnings</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>XS7:30</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>XS7:11</strong></p>
+</div>
+<div class="paragraph">
+<p>Bend without ACB</p>
+</div>
+<div class="paragraph">
+<p>True</p>
+</div>
+<div class="paragraph">
+<p>True</p>
+</div>
+<div class="paragraph">
+<p>Bend with ACB within the Tolerance1:</p>
+</div>
+<div class="paragraph">
+<p>Error ≤ 0.3°</p>
+</div>
+<div class="paragraph">
+<p>True</p>
+</div>
+<div class="paragraph">
+<p>True</p>
+</div>
+<div class="paragraph">
+<p>Bend with ACB outside the Tolerance1:</p>
+</div>
+<div class="paragraph">
+<p>0.3° &lt; Error ≤ 0.5°</p>
+</div>
+<div class="paragraph">
+<p>Bending program remains active.</p>
+</div>
+<div class="paragraph">
+<p>False</p>
+</div>
+<div class="paragraph">
+<p>True</p>
+</div>
+<div class="paragraph">
+<p>Bend with ACB outside the Tolerance2:</p>
+</div>
+<div class="paragraph">
+<p>Risk of collision</p>
+</div>
+<div class="paragraph">
+<p>The press beam is moved to TDC and the bending program is then stopped.</p>
+</div>
+<div class="paragraph">
+<p>False</p>
+</div>
+<div class="paragraph">
+<p>False</p>
+</div>
+<div class="paragraph">
+<p>XS7:31</p>
+</div>
+<div class="paragraph">
+<p>Sheet is attached X1</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Output is switched on when the contact force is reached (database
+parameter).</p>
+</div>
+<div class="paragraph">
+<p>XS7:32</p>
+</div>
+<div class="paragraph">
+<p>Simulation of test status</p>
+</div>
+<div class="paragraph">
+<p>For TRUMPF internal application.</p>
+</div>
+<div class="paragraph">
+<p>XS7:33</p>
+</div>
+<div class="paragraph">
+<p>Simulation of test status</p>
+</div>
+<div class="paragraph">
+<p>For TRUMPF internal application.</p>
+</div>
+<div class="paragraph">
+<p>XS7:34</p>
+</div>
+<div class="paragraph">
+<p>Sheet is attached X2</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Output is switched on when the contact force is reached (database
+parameter).</p>
+</div>
+<div class="paragraph">
+<p>XS7:35</p>
+</div>
+<div class="paragraph">
+<p>Backgauge is in tolerance</p>
+</div>
+<div class="paragraph">
+<p>X1</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Output is switched on as soon as the X axis reaches the position
+tolerance (database parameter).</p>
+</div>
+<div class="paragraph">
+<p>XS7:36</p>
+</div>
+<div class="paragraph">
+<p>Backgauge is in tolerance</p>
+</div>
+<div class="paragraph">
+<p>X2</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width24" height="height14"></span></p>
+</div>
+<div class="paragraph">
+<p>Output is switched on as soon as the X axis reaches the position
+tolerance (database parameter).</p>
+</div>
+<div class="paragraph">
+<p>Inputs and outputs of digital interface
+Tab. 10-5</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="paragraph">
+<p>The backgauge detection is activated as soon as all auxiliary axes are
+in position. The backgauge detection is deactivated again as soon as the
+press beam reaches the clamping point.</p>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="../5_bendingsteps/index.html">bending steps in detail</a></span>
+  <span class="next"><a href="../7_teachandautomaticmode/index.html">Teach and automatic mode</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

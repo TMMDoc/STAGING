@@ -1,0 +1,122 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_joint_motion_in_joint_coordinates">Joint motion in Joint coordinates</a></li>
+<li><a href="#_joint_motion_in_cartesian_coordinates">Joint motion in Cartesian coordinates</a></li>
+<li><a href="#_linear_motion_in_cartesian_coordinates">Linear motion in Cartesian coordinates</a></li>
+<li><a href="#_linear_motion_in_joint_coordinates">Linear  motion in Joint coordinates</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use the following combinations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Joint motion in Joint coordinates</p>
+</li>
+<li>
+<p>Joint motion in Cartesian coordinates</p>
+</li>
+<li>
+<p>Linear motion in Cartesian coordinates</p>
+</li>
+<li>
+<p>Linear  motion in Joint coordinates</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All motions could be <strong>fine</strong> (= exact motion) or <strong>CNT100</strong> (=smoothend contour)</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_joint_motion_in_joint_coordinates">Joint motion in Joint coordinates</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/m1.png" alt="m1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Works always</p>
+</li>
+<li>
+<p>Collision risk since it goes not in straight lines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The cartesian coordinates consider the fine adjustment of UserFrames on the machine</p>
+</div>
+<div class="paragraph">
+<p>LS-Command  <strong>J</strong> P[1] 100% FINE    ; &#8594; defined in percent of maximum speed</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_joint_motion_in_cartesian_coordinates">Joint motion in Cartesian coordinates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cartesian coordinates could be reached by several axis configurations and therefore always need to have the additional attributes F/N, U/D, T/B   . The addribute L/R is not neeed with our robot</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/m2.png" alt="m2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_linear_motion_in_cartesian_coordinates">Linear motion in Cartesian coordinates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All linear motion bear the risk that the Fanuc control gets into a error state because</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The axis winds up and goes in a limit error</p>
+</li>
+<li>
+<p>The robot comes to close to a singularity</p>
+</li>
+<li>
+<p>The motion is changing the configuration (NUT&#8594;FUT).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/m3.png" alt="m3">
+</div>
+</div>
+<div class="paragraph">
+<p>The cartesian coordinates consider the fine adjustment of UserFrames on the machine</p>
+</div>
+<div class="paragraph">
+<p>LS-Command:    <strong>L</strong> P[4:JawApproach] 2000mm/sec FINE    ;&#8594; defined in mm/sec</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_linear_motion_in_joint_coordinates">Linear  motion in Joint coordinates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Is possible, reduces a the swings of the robot but has the risk of singularities and limit errors</p>
+</div>
+<div class="paragraph">
+<p>Summary:
+&gt; Singularitys are unforseeable for small changes: use joint motion with joint coordinates as much as possible</p>
+</div>
+</div>
+</div>

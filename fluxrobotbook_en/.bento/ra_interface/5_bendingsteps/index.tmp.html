@@ -1,0 +1,170 @@
+<div class="paragraph">
+<p><strong>Bending cycle sequence without ACB</strong></p>
+</div>
+<div class="paragraph">
+<p>First the machine is ready. The press beam speed is zero. The machine
+sets the signal XS7:11 "Machine OK". To start the robot sets the signal
+XS8:10 "Load bending program". The machine positions the press beam at
+the upper dead point.</p>
+</div>
+<div class="paragraph">
+<p>The robot sets the signal "Position backgauge" to move the backgauge,
+the lower tool displacement and the crowning. Once all auxiliary axes
+are positioned, the press brake sets the output XS7:2 "Machine ready".
+Now the robot can contact the sheet onto the finger sensors of the
+backgauge.</p>
+</div>
+<div class="paragraph">
+<p>The robot now sets the signal XS8:6 "Approach mute point", so that the
+press beam moves to the mute point (2) at rapid speed. The signal
+"Approach mute point" must always remain set during this movement, since
+otherwise the press beam will stop immediately. If it is necessary to
+stop and wait at the mute point, then the signal "Approach clamping
+point" must also be reset. The machine sets the signal XS7:3 "Mute
+point" in the mute point.</p>
+</div>
+<div class="paragraph">
+<p>If the robot sets the signal XS8:7 "Approach clamping point" in the mute
+point (3) of the machine, then the press beam moves to the clamping
+point (4) in press operation. The signal "Approach clamping point" must
+always remain set during this movement, since otherwise the press beam
+will stop immediately. The machine sets the signal XS7:4 "Clamping
+point" in the clamping point. The press beam maintains its position
+exactly here so that the sheet cannot slip out and the robot cannot
+release the sheet. The backgauges also pull back in positive X
+direction.</p>
+</div>
+<div class="paragraph">
+<p>If the robot sets the signal XS8:8 "Approach lower dead point" in the
+clamping point of the machine, then the press beam moves to the lower
+dead point (6) with the bending speed. The input signal "Approach lower
+dead point" must always remain set during this movement, since otherwise
+the press beam will stop immediately. There the machine then sets the
+output signal XS7:5 "lower dead point".</p>
+</div>
+<div class="paragraph">
+<p>So that the press beam unloads the sheet from the lower dead point (6)
+with the decompression speed and the decompression path and then moves
+rapidly UP to the fully upwards position, the robot must set the signal
+XS8:9 "Approach upper dead point". Once the press beam has reached the
+end of the unloading or decompression at point (8), then the machine
+sets the output signal XS7:10 "Bend finished". There is no option to
+stop via the robot. The press beam immediately moves to the upper dead
+point with maximum retraction speed. Then the machine is in status 0
+again and waits for a new signal sequence from the robot.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bending cycle sequence</strong> Before work can start with the angle sensors
+ACB in robot <strong>with ACB and identification</strong> mode, as well as the ACB
+explanation, the chapter "Bending</p>
+</div>
+<div class="paragraph">
+<p>cycle sequence without ACB" must also be read and understood. Since the
+comments regarding the signal flags also apply here, the explanation
+mainly concentrates on the difference to the previous chapter. At the
+lower dead point (7) of the prebend the output ACB bending operation
+must be queried, so that the robot knows that the next correction
+bending will take place using the angle measurement ACB. In this case,
+the bending cycle is only finished once the signal "required angle
+reached" is set, and not when the lower dead point is reached. This is
+the case because after bending the press beam moves up slightly and the
+angle is then measured.</p>
+</div>
+<div class="paragraph">
+<p>During the complete ACB correction bending with identification, which is
+shown schematically in Fig. 102647, the tilting of the bent sheet must
+be compensated by the robot. For this the output signals "ACB tilting +"
+and "ACB tilting -" are available. If the angle sensor ACB is not
+installed rotated, then with a negative ACB tilting the robot needs to
+press the sheet towards the press beam and with positive ACB tilting
+push away from the press beam, until both signals are reset by the
+machine.</p>
+</div>
+<div class="paragraph">
+<p>The equalization of the tilting should start after the reset of the
+output signal "lower dead point" at position (7) and be continued by the
+machine until setting the output signal "Bend finished" at position
+(10). The machine only carries out the ACB correction bending once the
+tilting of the workpiece has been corrected and the signal XS8:9
+"approach upper dead point" has been set again by the robot.</p>
+</div>
+<div class="paragraph">
+<p>The tilting angle tolerance can be changed on the HMI.</p>
+</div>
+<div class="paragraph">
+<p>To change the parameter contact Technical Service.</p>
+</div>
+<div class="paragraph">
+<p>The angle tolerance can be changed on the HMI.</p>
+</div>
+<div class="paragraph">
+<p>To change the parameter contact Technical Service.</p>
+</div>
+<div class="paragraph">
+<p><strong>Embossing</strong> The signal sequence here is exactly the same as air bending.
+<strong>Hemming and folding</strong> The signal sequence here is exactly the same as
+air bending.</p>
+</div>
+<div class="paragraph">
+<p>Here the sheet is only inserted once the press beam is at the mute
+point and therefore the upper tool has already entered the lower tool.
+This allows the sheet to be pushed directly into the upper tool by the
+robot.</p>
+</div>
+<div class="paragraph">
+<p>■ The point at which the bending step change takes place is programmed
+under <em>Bending steps</em>. All backgauges, the lower tool displacement and
+the crowning however are only moved once the "position backgauge" (pin
+XS8:5) signal is set by the robot.</p>
+</div>
+<div class="paragraph">
+<p><strong>Error</strong> If an error occurs on the press brake, the robot is informed via
+a digital signal. The robot stops the current movement. Conversely, an
+error on the robot stops the axes movement on the machine. Once the
+robot is error-free and ready once more, it notifies the machine. The
+error must still be acknowledged on the press brake as shown in this
+flow chart (see "Fig. 113754", pg. 10‐29).</p>
+</div>
+<div class="paragraph">
+<p>If an error cannot be acknowledged either with the &lt;START&gt; button or via
+a start signal, then it is acknowledged using the "PRESS BEAM UP" foot
+switch, which is located within the fenced area.</p>
+</div>
+<div class="paragraph">
+<p>See XS8:4 (see "Tab. 10-2", pg. 10‐10).</p>
+</div>
+<div class="paragraph">
+<p>The robot only resets its output "Robot OK" (XS8:4) if errors occur on
+the robot axes, but not if the press brake resets its output "Machine
+OK" (XS7:11).</p>
+</div>
+<div class="paragraph">
+<p>Conversely an error on the robot (XS8:4 = FALSE) triggers an error on
+the press brake. It is only possible to leave the "Error</p>
+</div>
+<div class="paragraph">
+<p>State" status once the robot has set its output XS8:4 once more.</p>
+</div>
+<div class="paragraph">
+<p>|If the robot has fewer digital outputs and inputs for synchronization
+with the press brake, inputs of the press brake can also be combined by
+"bridging".</p>
+</div>
+<div class="paragraph">
+<p>To synchronize the downward movement of the press brake, the following
+inputs can be bridged:</p>
+</div>
+<div class="paragraph">
+<p>■ XS8:6 approach mute point, ■ XS8:7 approach clamping point, ■ XS8:8
+approach lower dead point. "Bridged" means that the machine interprets
+these signals as follows:</p>
+</div>
+<div class="paragraph">
+<p>■ XS8:7 and XS8:8 also as a release to the mute point, ■ XS8:8 as
+release to the clamping point.</p>
+</div>
+<div class="paragraph">
+<p>If the inputs on the press brake are bridged and the outputs are not
+queried in the robot program, of course the flexibility and safety of
+the interface are reduced.</p>
+</div>

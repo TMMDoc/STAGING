@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>RA interface</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>FluxRobot Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to FluxRobot</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../rbasics/index.html">Basics</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../rbasics/coordsystems.html">Basic coordinate systems</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanuccoords.html">Robot coordinates</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanucframes.html">Frame concept</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanuccordmove.html">Motion commands </a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../setup_robot/index.html">Setup and run the robot</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../setup_robot/pointer.html">Measure Pointer length</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/pinchgripper.html">Calibrate Pinch Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/vacuumgripper.html">Calibrate Vacuum Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/setuprobot.html">Setup Robot to Machine</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/pallet.html">Setup Pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/dispenser.html">Setup Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/partseparator.html">Setup PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/doublesheet.html">Setup DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/centering.html">Setup CenteringTable</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/deposit.html">Setup Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/fluxload.html">Program Flux and load robot</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/advanced.html">Run the fanuc in auto mode</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../motionsequences/index.html">Motion sequences</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_pinch.html">Pickup from dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_vac.html">Pickup from pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/partseparator.html">PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/doublesheet.html">DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/centering.html">Centering table motion</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/deposit.html">Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/bend.html">Bend</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../setup_flux/index.html">Setup Flux</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../setup_flux/robot.html">Robot</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/dispenser.html">Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/pickuppallet.html">PickupPallet</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/centertable.html">Centering table</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/regrip.html">regrip station </a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/dropoff.html">Drop off pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_flux/toolchanger.html">Tool changer</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../gripper/index.html">Customized grippers</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../gripper/cups.html">Trumpf standard vacuum cups</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../lsprogramming/index.html">NC-Coode and postprocessor</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../lsprogramming/rnc.html">Flux .RNC output</a></li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/post_matlab.html">Postprocessor Matlab</a></li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/post_c.html">Postprocessor C#</a></li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/ls.html">LS output</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../fanuchw/index.html">Fanuc functions & macros</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../fanuchw/operation.html">General operation procedure</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_bgallign.html">FR_BgAllign</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_stacksearch.html">FR_StackSearch</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_scale.html">FFR_Scale</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/fr_gripclose.html">FR_GRipClose</a></li>
+        <li><button class="tree blank"></button><a href="../../fanuchw/communication.html">Communication</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../hmi/index.html">Cell HMI</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../hmi/load_pgrm.html">Load program on robot</a></li>
+        <li><button class="tree blank"></button><a href="../../hmi/fetch_backup.html">fetch config from Robot</a></li>
+        <li><button class="tree blank"></button><a href="../../hmi/partcounter.html">Part counter</a></li>
+        <li><button class="tree blank"></button><a href="../../hmi/frametool.html">Frame tool</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">RA interface</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../1_generalinformation/index.html">General information</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../1_generalinformation/typesofcuppling.html">Types of robot couplings</a></li>
+            <li><button class="tree blank"></button><a href="../1_generalinformation/digitaliocoupling/index.html">Digital coupling</a></li>
+            <li><button class="tree blank"></button><a href="../1_generalinformation/loosesyncronizedcoupling/index.html">Loose syncronized coupling</a></li>
+            <li><button class="tree blank"></button><a href="../1_generalinformation/thightsyncronized/index.html">Thight syncronized coupling with FluxRobot</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">Description of the hardware</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="digitalingerface.html">Digital interface</a></li>
+            <li><button class="tree blank"></button><a href="ethercat.html">Ethercat</a></li>
+            <li><button class="tree blank"></button><a class="active" href="rainterface.html">RA interface</a></li>
+            <li><button class="tree blank"></button><a href="security_network.html">Network security</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../3_machineconfiguration/index.html">Machine configuration</a></li>
+        <li><button class="tree blank"></button><a href="../4_bendingprogram/index.html">How to create a Bending program</a></li>
+        <li><button class="tree blank"></button><a href="../5_bendingsteps/index.html">bending steps in detail</a></li>
+        <li><button class="tree blank"></button><a href="../6_inputsandoutputsofdigitalinterface/index.html">Inputs and outputs </a></li>
+        <li><button class="tree blank"></button><a href="../7_teachandautomaticmode/index.html">Teach and automatic mode</a></li>
+        <li><button class="tree blank"></button><a href="../8_windowssystemcontrol/index.html">Windows system </a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../electricalwiring/index.html">Electrical wiring</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../electricalwiring/wiring.html">Wiring of the Fanuc cabinet</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/bg.html">Wiring the back gauge sensors</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/robwrist.html">Connectors on the robot wrist</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/robback.html">Connectors on the robot back hub</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/gripper.html">Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/digio.html">Digital IO</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/analogio.html">Analog IO's</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/manifold.html">Manifold</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/userio.html">UserIO</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/safety.html">Safety</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/iooutput.html">Use the IO outputs</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../dev_components/index.html">Flux: Tweeak Components</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../dev_components/cellcomponents.html">Flux: Cell components</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_components/pinch.html">Adjust Pinch gripper offset</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_components/gripper.html">Tweak a gripper CAD geometry</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_components/dispenser.html">Change dispenser geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../dev_devnotes/index.html">DEV: Developer notes</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/basicop.html">Basics on the Robot</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/fanucframes.html">Frame concept (RACell)</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/dh.html">Denavit–Hartenberg parameters</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/defofrotation.html">Definition of rotations</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/pickup_comp.html">Pickup comparison</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/check.html">Check frames</a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/digitalio.html">Aacessing Digital IO' in robot: </a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">RA interface</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Description of the hardware</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="rainterface.html">RA interface</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>RA interface</h1>
+<div class="sect1">
+<h2 id="_input_output_configurations">Input / Output Configurations:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The above-mentioned Robot Interface signals are mapped in PLC Digital
+In/Out as shown below:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img1.png" alt="img1"></span></p>
+</div>
+<div class="paragraph">
+<p><strong><em>It may be noted that the NO/NC configuration of Inputs are selected in
+Parameter page of Robot Interface.</em></strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img2.png" alt="img2"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Figure 2 Digital Output Configuration</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_robot_logic">robot logic</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The complete Robot Logic will be active, if the license for <strong>“Robot
+Interface”</strong> is activated and then the parameter <strong>“Robot Option”</strong> is ON
+in the PLC options page.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img3.png" alt="img3"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the “<strong>Robot Option</strong>” is selected in the PLC, then the input
+“<strong>Robot Auto Mode</strong>” will activate the robot functions. If Laser Safe is
+connected, then the Bend Guard mute is also activated.</p>
+</li>
+<li>
+<p>If all the axes are homed and “<strong>Robot Auto Mode</strong>” input is active, a
+message <strong>“Robot mode key is active”</strong> will be displayed, then the
+controller goes to <strong>“Stop Mode”</strong> and <strong>“Start Button”</strong> control in the
+machine is transferred to Robot control of <strong>“Program Start”</strong> input.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img4.png" alt="img4"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The input <strong>“UDP_MoveEnable”</strong> from the Robot will be used as <strong>“Foot
+Pedal Open”</strong> signal in order to reset the errors, move the RAM to UDP
+under error condition etc., except during <strong>“Opening Phase”</strong>.</p>
+</li>
+<li>
+<p>The “<strong>Press OK</strong>” output signal from the NC will be ON, if Homing of
+all the axes are completed, no errors, Program in Auto mode and <strong>“Robot
+Auto Mode”</strong> is active.</p>
+</li>
+<li>
+<p>The “<strong>NC Start</strong>” output signal from the NC will be ON, if “<strong>Program
+Start”</strong> input from Robot controller is ON and the controller goes to
+<strong>“Start Mode”</strong> (Green Colour LED is ON in the Panel).</p>
+</li>
+<li>
+<p>During this step, if “<strong>Program Start”</strong> input from Robot controller is
+ON, there are 3 possibilities of errors as follows:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If program in Semi mode, then there is error message <strong>“Machine not in
+Auto Mode</strong>”:</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img7a.png" alt="img7a"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If below the UDP position, then there is error message “<strong>Move RAM to
+UDP position”</strong>:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img7b.png" alt="img7b"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If start axes is not selected as <strong>“TDC External”</strong>, then there is
+error message <strong>“Step Change External not selected”</strong>:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img7c.png" alt="img7c"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Once all the above conditions are met and the machine is in start
+mode, the Foot pedal “Close &amp; Open” signals are not valid hereafter and
+the machine waits for the Robot move signals.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>Foot pedal Close Deactive =</em> “<strong>NC Start</strong>” <em>is active;</em></p>
+</div>
+<div class="paragraph">
+<p><em>Foot pedal Open Deactive =</em> “<strong>NC Start</strong>” <em>is active;</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="9">
+<li>
+<p>Now the program will be waiting for “<strong>Step change</strong>” signal from the
+Robot controller to initiate the Backguage movements.</p>
+</li>
+<li>
+<p>If this bend cycle is the first bend, then “<strong>First Bend Active</strong>”
+signal is high, else if last bend then “<strong>Last Bend Active</strong>” signal is
+high, else both the signals will be low. If the program consist only one
+bend, then both the signals are active.</p>
+</li>
+<li>
+<p>When the “<strong>Step change</strong>” signal is ON, then the Backguage axes are
+positioned and the “<strong>Backguage InPos</strong>” signal is set to High, now the
+machine will be waiting for the “<strong>Fast Down Enable</strong>” or “<strong>Clamp Move
+Enable</strong>” signal from the robot controller. In this step, the “<strong>RAM
+Moving</strong>” signal will be always low.</p>
+</li>
+<li>
+<p>When the “<strong>Fast Down Enable</strong>” signal is ON, the RAM moves to mute
+point and the “<strong>Below Mute point</strong>” signal is set to High, now the
+machine will be waiting for the “<strong>Clamp Move Enable</strong>” signal from the
+robot controller.</p>
+</li>
+<li>
+<p>When the “<strong>Clamp Move Enable</strong>” signal is ON, the RAM moves to pinch
+point and the “<strong>Clamping point”</strong> signal is set to High, now the machine
+will be waiting for the “<strong>LDP Move Enable</strong>” signal from the robot
+controller.</p>
+</li>
+<li>
+<p>When the “<strong>LDP Move Enable</strong>” signal is ON, the RAM moves to LDP point
+and the “<strong>LDP reached”</strong> signal is set to High, now the machine will go
+to dwell state and waits here until the completion of Dwell time set in
+the current bend cycle.</p>
+</li>
+<li>
+<p>When the dwell time is completed and “<strong>LDP Move Enable</strong>” signal is
+again ON, the RAM is moved up to the decompression point and the
+“<strong>EoD_Point</strong>” signal is set to High, , now the machine will be waiting
+for the “<strong>UDP Move Enable</strong>” signal from the robot controller.</p>
+</li>
+<li>
+<p>When the “<strong>UDP Move Enable”</strong> signal is ON, the RAM moves to UDP point
+and the “<strong>UDP reached”</strong> signal is set to High, now the machine will be
+waiting for “<strong>Step change</strong>” signal from the Robot controller to initiate
+the Backguage movements for next bend cycle and continuous from step 6
+to step 11.</p>
+</li>
+<li>
+<p>From step 7 to step 11, the “<strong>RAM Moving</strong>” signal will be high during
+Ram movement and low at the end of each step, to enable the Robot
+controller to issue the different steps of move command to machine.</p>
+</li>
+<li>
+<p>During any of the above bend step, if the “<strong>Program Abort</strong>” signal
+from Robot controller is set High, then all the moving axes (including
+RAM) are quick stopped and the “<strong>Press OK</strong>” &amp; “<strong>NC Start</strong>” signal is
+deactivated, with the following message display:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img18.png" alt="img18"></span></p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_input_output_configurations">Input / Output Configurations:</a>
+    </li>
+    <li level="1">
+      <a href="#_robot_logic">robot logic</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="ethercat.html">Ethercat</a></span>
+  <span class="next"><a href="security_network.html">Network security</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

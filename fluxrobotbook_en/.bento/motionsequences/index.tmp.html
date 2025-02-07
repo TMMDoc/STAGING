@@ -1,0 +1,65 @@
+<div class="paragraph">
+<p>The motion sequence starts and ends with the home position
+All motion steps have a unique name that the customer could modify / teach points</p>
+</div>
+<div class="paragraph">
+<p>The home position is the 90 0 -20 0 20 0 Position for the start of each cycle</p>
+</div>
+<div class="paragraph">
+<p>When you load a new component with the "add" menu then you could select the usage of the component in the "advanced" section</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/Configuration.png" alt="Configuration">
+</div>
+</div>
+<div class="paragraph">
+<p>The transition swing separates two motion blocks (e.t. Pickup-Bending). it contains</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a safe travel to the next motion block</p>
+</li>
+<li>
+<p>switching of frames</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The overall sequence is broken down in sub sequences:
+<span class="image"><img src="img/Motion_overview.png" alt="Motion overview"></span></p>
+</div>
+<div class="paragraph">
+<p>Motions</p>
+</div>
+<div class="paragraph">
+<p>It is most safe to do motions in 50mm steps in Joint motions with Joint coordinates (no singularities) but we want to give the operator on the machine the chance to fine adjust pickups etc. Therefore we do the final motion before we close the gripper in a adjusted user / tool coordinate system to adjust.</p>
+</div>
+<div class="paragraph">
+<p>Refer to  <a href="..\basics\fanucframes.html">frames</a> for more information for frames</p>
+</div>
+<div class="paragraph">
+<p>The nomenclature on the next pages are:</p>
+</div>
+<div class="paragraph">
+<p>JJ = Joint motion in Joint coordinates</p>
+</div>
+<div class="paragraph">
+<p>LJ Linear motion in Joint coordinates</p>
+</div>
+<div class="paragraph">
+<p>JC = Joint motion in Cartesian coordinates in</p>
+</div>
+<div class="paragraph">
+<p>LC = Linear motion in Cartesian coordinates</p>
+</div>
+<div class="paragraph">
+<p>UF = UserFrame</p>
+</div>
+<div class="paragraph">
+<p>TF = ToolFrame</p>
+</div>
+<div class="paragraph">
+<p>e.g. Pickup from dispenser</p>
+</div>

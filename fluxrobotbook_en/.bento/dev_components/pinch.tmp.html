@@ -1,0 +1,32 @@
+<div class="paragraph">
+<p>The TCP-positon of a pinch gripper is the center front face of the moving finger</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pinch.png" alt="pinch">
+</div>
+</div>
+<div class="paragraph">
+<p>The TCP-Positon of a pinch gipper could be modified:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Unzip CellItems.wad in C:\Program Files\Metamation\Flux\Bin folder.</p>
+</li>
+<li>
+<p>Change Z position of GripPt of item.curl in 4501 folder (4501-4508 corresponds to Finger gripper). Default is -18,0,234. If you want offset of 50mm, it should be changed to -18,0,284</p>
+</li>
+<li>
+<p>Change the offset in mechanism.curl. We have to include Shift for all the geometry and if a shift is already defined, increase the z coordinate by 50mm. Also, we have to change the z position of sockets, Fixed and Moving.</p>
+</li>
+<li>
+<p>Zip the folders back to cellitems.wad. When opening CellItems.wad in 7-zip, we should find various folders at the root.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pinch2.png" alt="pinch2">
+</div>
+</div>

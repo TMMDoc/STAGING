@@ -1,0 +1,76 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_valves">Valves:</a></li>
+<li><a href="#_vacuum_ejector_connections">Vacuum Ejector connections</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_valves">Valves:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/w1.png" alt="w1"></span></p>
+</div>
+<div class="paragraph">
+<p>The valves have 3 states</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>no light: no signal</p>
+</li>
+<li>
+<p>green: singal1: upper air output ?</p>
+</li>
+<li>
+<p>orange: signal2: lower air output ?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vacuum_ejector_connections">Vacuum Ejector connections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vacuum Gripper on ROBOT:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image18.jpeg" alt="A screen with numbers and text Description automatically generated" width="235" height="180"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1:</strong> We have to enable
+the inlet air to the vacuum ejector mounted at the J3 of robot, do it
+navigate to <strong>IO&gt;&gt;[TYPE]&gt;&gt;Digital&gt;&gt;OUT and turn ON DO[501]-GRIP_ENB and
+turn OFF DO[502]-PDISP_ENB</strong></p>
+</div>
+<div class="paragraph">
+<p>DO 501 and 502</p>
+</div>
+<div class="paragraph">
+<p><strong>STEP 2:</strong> The vacuum ejector has a always ON configuration for suction
+i.e, the suction is turned ON when the Digital signal goes OFF .
+*DO[505] VAC_GRIP_ON is the DO for controlling vacuum suction at the
+robot EOAT. When DO[505] is OFF then suction is turned ON and vice versa</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image19.jpeg" alt="A screen with numbers and text Description automatically generated" width="286" height="218"></span></p>
+</div>
+<div class="paragraph">
+<p>DO[505]- is tuned OFF to turn suction ON at EOAT</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image20.jpeg" alt="image20" width="365" height="396"></span></p>
+</div>
+<div class="paragraph">
+<p>When DO[501]- is tuned ON Red LED is on indicating inlet air to vacuum
+ejector for ROBOT EOAT is ON,</p>
+</div>
+<div class="paragraph">
+<p>When DO[501]-is disabled RED lED truns off</p>
+</div>
+<div class="paragraph">
+<p>and if you turn ON DO[502] – then Green LED turns ON indicating inlet air to vacuum ejector for partDispenser unit is ON</p>
+</div>
+</div>
+</div>

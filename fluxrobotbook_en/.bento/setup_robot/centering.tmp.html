@@ -1,0 +1,38 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_calibration_of_the_centering_table">Calibration of the centering table</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_calibration_of_the_centering_table">Calibration of the centering table</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A calibration plate is used with markings in 50mm distance. The markings are nubered 1,1 .. 6,6. The calibration routine in 03_Matlab_Ccode\ML_Calibrationprogs generates a fanuc program which needs to be executed</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/finecalib1.png" alt="finecalib1"></span></p>
+</div>
+<div class="paragraph">
+<p>The calibrated probe tool is used.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+all frames should be set to the values of FRAME 1 (machine - robot frame)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The in the ideal case the tip of the probe is centered on the cross and the gauge shows exactly 5mm. If the component is not correctly the exact position of the cross needs to be touched up and the matlab calibration program calculates the new offset for Flux</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/finecalib2.png" alt="finecalib2"></span></p>
+</div>
+</div>
+</div>

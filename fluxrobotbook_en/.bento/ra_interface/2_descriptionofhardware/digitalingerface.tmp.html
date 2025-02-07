@@ -1,0 +1,373 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_connection_with_the_safety_wiring">connection with the safety wiring</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 7%;">
+<col style="width: 24%;">
+<col style="width: 13%;">
+<col style="width: 8%;">
+<col style="width: 38%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">S.No.</th>
+<th class="tableblock halign-left valign-top">Signal Name</th>
+<th class="tableblock halign-left valign-top">Signal flow</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Remarks</th>
+<th class="tableblock halign-center valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NC – Start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Press Brake (PB) machine is ready for bending operation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backguage In Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">All the Backguage axes are in “In-Position” &amp; Standstill</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First Bend Active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">First Bend is active in series of Bend steps</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last Bend Active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">First Bend is active in series of Bend steps</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Movement of the Press beam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">RAM is in “Discrete Motion” (Not Standstill)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clamping Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">RAM reaches the Clamping (Pinch) position</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lower Dead Point (LDP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">RAM reaches the LDP position</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decompression End (EoD)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">RAM retracts up and End of Decompression</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper Dead Point (UDP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">RAM reaches the UDP position</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 9</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Below Mute Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">RAM position is below the mute point</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">11.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Press OK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Robot is selected and control is in Run Mode (no error)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Output 11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">12.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot Automatic Operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Robot in Auto mode – Switch Bend guard to Mute</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start of Program</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Robot program is started – Start button in Panel</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Program Abort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Robot program is aborted – Stop button in Panel</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enable Press Beam Movement Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">To enable the RAM  Fast Down movement in SC</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move to Clamping Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">To enable the RAM movement to Clamping point in SC</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">17.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move to Lower Dead Point (LDP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">To enable the RAM movement to LDP in SC</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">18.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move to Upper Dead Point (UDP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">To enable the RAM movement to UDP in SC</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step Change</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robot control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">To enable the next step in the bend program</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dig Input 8</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>check similaities with B23 manual</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_connection_with_the_safety_wiring">connection with the safety wiring</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre> Pins 1 to 16 are digital outputs, the remaining pins 17-18, 19-20
+and 21-22 are contact pairs, which are bridged with potential
+free normally opened contacts. For both of the pins 23 and 24
+for the EMERGENCY STOP circuits of the TruBend, the match
+ing mating contacts pin 15 and pin 16 are located on the plug
+XS8. This means that two in-line normally opened contacts are
+available in the EMERGENCY STOP circuit</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> If pins are given the same name, then these are potential-free
+normally opened contacts (S) or contact pairs (K). The contact
+pairs are bridged potential-free, the normally opened contacts
+switch a signal potential-free.
+ The EMERGENCY STOP circuits of the robot XS8:17-18 and
+XS8:19-20 must be bridged potential-free from the robot. For
+both pins 15 and 16 for the EMERGENCY STOP circuits of the
+machine, the matching mating contacts pin 23 and pin 24 are
+located on plug XS7. The pins XS8:21 and XS8:22 are bridged
+by the machine if the robot has been activated using the key
+switch. This normally opened contact can be used to switch off
+the robot drives when the machine is operated manually. The
+pins XS8:1 to XS8:14 listed above are digital inputs.
+ The pins XS8:23 and XS8:24 make a power supply available
+form the machine. With pin XS8:23 all digital inputs of the
+machine are set to logical true with 24 V, while consumers
+which are controlled using the digital outputs of the machine
+have their zero potential on pin XS8:24.
+ There is no potential separation with the inputs and outputs of
+the machine. Therefore potential separation must be applied on
+the robot side. Due to the low current required, this can also be
+done with an optocoupler or also with small signal relays.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>EMERGENCY STOP circuits</strong> The press brake uses two independent EMERGENCY
+STOP circuits. The robots therefore also make their EMERGENCY STOP
+signals available in two ways. These signals are potential-free normally
+closed contacts. The robot is connected to the EMERGENCY STOP circuit of
+the machine via the plug XS8 pin 17/18</p>
+</div>
+<div class="paragraph">
+<p><strong>Check of the zero position of the valves Key switch</strong></p>
+</div>
+<div class="paragraph">
+<p>and pin 19/20. For the robot, two potential-free normally closed
+contacts are also provided from the machine via the pins XS8:15- XS7:23
+and XS8:16-XS7:24 for connection into the EMERGENCY STOP circuits of the
+robot.</p>
+</div>
+<div class="paragraph">
+<p><strong>Notes</strong></p>
+</div>
+<div class="paragraph">
+<p>■ The robot is always connected into the EMERGENCY STOP circuit of the
+machine.</p>
+</div>
+<div class="paragraph">
+<p>■ If an EMERGENCY STOP has been triggered, all "EMERGENCY STOP"
+push-buttons must be unlocked. The robot first needs to withdraw its
+EMERGENCY STOP, so that this can be acknowledged on the machine.</p>
+</div>
+<div class="paragraph">
+<p>■ Attention: The following applies regardless of the operating mode the
+press brake and the connected option are in.</p>
+</div>
+<div class="paragraph">
+<p>If an Emergency STOP is sent to the press brake by the connected option
+(robot), any movement is prevented. This also means that freeing a
+trapped person, e.g. via the "Press beam UP"button is no longer
+possible.</p>
+</div>
+<div class="paragraph">
+<p>The Integrator must enter this point in its operator&#8217;s manual and
+provide the user with a description of the freeing of a trapped person.</p>
+</div>
+<div class="paragraph">
+<p>■ Attention: The following applies regardless of the operating mode the
+press brake and the connected option are in.</p>
+</div>
+<div class="paragraph">
+<p>If the press brake is in an Emergency STOP (e.g. because an "Emergency
+STOP" push-button was pressed), this status is passed on without delay
+to the connected option (robot) via the Emergency STOP signals described
+in Table 10.2(see "Tab. 10-2", pg. 10‐10).</p>
+</div>
+<div class="paragraph">
+<p>The connected option must NOT return the Emergency STOP to the origin
+(press brake), unless an Emergency STOP is in place at the same time for
+the option.</p>
+</div>
+<div class="paragraph">
+<p>The press brake behaves as soon as an Emergency STOP of the connected
+option is active.</p>
+</div>
+<div class="paragraph">
+<p>The press brake stops all movements, but does NOT send the Emergency
+STOP back to the connected option.</p>
+</div>
+<div class="paragraph">
+<p>The zero position of the valves of the TruBend Series 5000 (B23) is
+checked at the upper dead point. If this zero position is not reached in
+the required time, then the safety control detects a valve error.</p>
+</div>
+<div class="paragraph">
+<p>This can be acknowledged using the "PRESS BEAM UP" foot switch and
+operation can then continue on the TruBend. Error acknowledgement from
+the bending application takes place in all operating modes by pressing
+the &lt;START&gt; button once more.</p>
+</div>
+<div class="paragraph">
+<p>A key switch with two switch positions is fitted on the rear of the
+electrical cabinet. This can be used to select whether work takes place
+with or without the robot.</p>
+</div>
+<div class="paragraph">
+<p><strong>Stop sensor system</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Inserting sheet using the robot</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Side doors</strong></p>
+</div>
+<div class="paragraph">
+<p>When using the robot, the operating panel is also required. When working
+without the robot and without BendGuard, when the foot switch is
+pressed, the TruBend only travels rapidly with the bending speed and
+passes the mute point when doing so.</p>
+</div>
+<div class="paragraph">
+<p>With B23 the sensors are direct-wired. The machine control has no
+influence on this contact.</p>
+</div>
+<div class="paragraph">
+<p>On the B28, the backgauge detection takes place via the motor currents
+and is then output.</p>
+</div>
+<div class="paragraph">
+<p>During air bending and during folding/hemming the robot can place the
+sheet both at the upper dead point and at the mute point.</p>
+</div>
+<div class="paragraph">
+<p>When inserting/contacting the backgauge with the workpiece using the
+robot the maximum speed must only be 20 mm/s and the maximum contact
+force must not exceed 150 N. This avoids potential damage to the
+backgauge and the workpiece.</p>
+</div>
+<div class="paragraph">
+<p>The side door contacts of the press brake are always connected within
+the EMERGENCY SHUTDOWN circuit of the machine, both with the cell closed
+and in teach-in mode.</p>
+</div>
+<div class="paragraph">
+<p><strong>Activating robot interface</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Checking safety CPU setting</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>WARNING</strong></th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p><strong>Activating the robot</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Robot with bending aid</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Ethernet interface</strong></p>
+</div>
+</div>
+</div>

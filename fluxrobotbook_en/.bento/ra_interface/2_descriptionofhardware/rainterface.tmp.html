@@ -1,0 +1,201 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_input_output_configurations">Input / Output Configurations:</a></li>
+<li><a href="#_robot_logic">robot logic</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_input_output_configurations">Input / Output Configurations:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The above-mentioned Robot Interface signals are mapped in PLC Digital
+In/Out as shown below:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img1.png" alt="img1"></span></p>
+</div>
+<div class="paragraph">
+<p><strong><em>It may be noted that the NO/NC configuration of Inputs are selected in
+Parameter page of Robot Interface.</em></strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img2.png" alt="img2"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Figure 2 Digital Output Configuration</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_robot_logic">robot logic</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The complete Robot Logic will be active, if the license for <strong>“Robot
+Interface”</strong> is activated and then the parameter <strong>“Robot Option”</strong> is ON
+in the PLC options page.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img3.png" alt="img3"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the “<strong>Robot Option</strong>” is selected in the PLC, then the input
+“<strong>Robot Auto Mode</strong>” will activate the robot functions. If Laser Safe is
+connected, then the Bend Guard mute is also activated.</p>
+</li>
+<li>
+<p>If all the axes are homed and “<strong>Robot Auto Mode</strong>” input is active, a
+message <strong>“Robot mode key is active”</strong> will be displayed, then the
+controller goes to <strong>“Stop Mode”</strong> and <strong>“Start Button”</strong> control in the
+machine is transferred to Robot control of <strong>“Program Start”</strong> input.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img4.png" alt="img4"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The input <strong>“UDP_MoveEnable”</strong> from the Robot will be used as <strong>“Foot
+Pedal Open”</strong> signal in order to reset the errors, move the RAM to UDP
+under error condition etc., except during <strong>“Opening Phase”</strong>.</p>
+</li>
+<li>
+<p>The “<strong>Press OK</strong>” output signal from the NC will be ON, if Homing of
+all the axes are completed, no errors, Program in Auto mode and <strong>“Robot
+Auto Mode”</strong> is active.</p>
+</li>
+<li>
+<p>The “<strong>NC Start</strong>” output signal from the NC will be ON, if “<strong>Program
+Start”</strong> input from Robot controller is ON and the controller goes to
+<strong>“Start Mode”</strong> (Green Colour LED is ON in the Panel).</p>
+</li>
+<li>
+<p>During this step, if “<strong>Program Start”</strong> input from Robot controller is
+ON, there are 3 possibilities of errors as follows:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If program in Semi mode, then there is error message <strong>“Machine not in
+Auto Mode</strong>”:</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img7a.png" alt="img7a"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If below the UDP position, then there is error message “<strong>Move RAM to
+UDP position”</strong>:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img7b.png" alt="img7b"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If start axes is not selected as <strong>“TDC External”</strong>, then there is
+error message <strong>“Step Change External not selected”</strong>:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img7c.png" alt="img7c"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Once all the above conditions are met and the machine is in start
+mode, the Foot pedal “Close &amp; Open” signals are not valid hereafter and
+the machine waits for the Robot move signals.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>Foot pedal Close Deactive =</em> “<strong>NC Start</strong>” <em>is active;</em></p>
+</div>
+<div class="paragraph">
+<p><em>Foot pedal Open Deactive =</em> “<strong>NC Start</strong>” <em>is active;</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="9">
+<li>
+<p>Now the program will be waiting for “<strong>Step change</strong>” signal from the
+Robot controller to initiate the Backguage movements.</p>
+</li>
+<li>
+<p>If this bend cycle is the first bend, then “<strong>First Bend Active</strong>”
+signal is high, else if last bend then “<strong>Last Bend Active</strong>” signal is
+high, else both the signals will be low. If the program consist only one
+bend, then both the signals are active.</p>
+</li>
+<li>
+<p>When the “<strong>Step change</strong>” signal is ON, then the Backguage axes are
+positioned and the “<strong>Backguage InPos</strong>” signal is set to High, now the
+machine will be waiting for the “<strong>Fast Down Enable</strong>” or “<strong>Clamp Move
+Enable</strong>” signal from the robot controller. In this step, the “<strong>RAM
+Moving</strong>” signal will be always low.</p>
+</li>
+<li>
+<p>When the “<strong>Fast Down Enable</strong>” signal is ON, the RAM moves to mute
+point and the “<strong>Below Mute point</strong>” signal is set to High, now the
+machine will be waiting for the “<strong>Clamp Move Enable</strong>” signal from the
+robot controller.</p>
+</li>
+<li>
+<p>When the “<strong>Clamp Move Enable</strong>” signal is ON, the RAM moves to pinch
+point and the “<strong>Clamping point”</strong> signal is set to High, now the machine
+will be waiting for the “<strong>LDP Move Enable</strong>” signal from the robot
+controller.</p>
+</li>
+<li>
+<p>When the “<strong>LDP Move Enable</strong>” signal is ON, the RAM moves to LDP point
+and the “<strong>LDP reached”</strong> signal is set to High, now the machine will go
+to dwell state and waits here until the completion of Dwell time set in
+the current bend cycle.</p>
+</li>
+<li>
+<p>When the dwell time is completed and “<strong>LDP Move Enable</strong>” signal is
+again ON, the RAM is moved up to the decompression point and the
+“<strong>EoD_Point</strong>” signal is set to High, , now the machine will be waiting
+for the “<strong>UDP Move Enable</strong>” signal from the robot controller.</p>
+</li>
+<li>
+<p>When the “<strong>UDP Move Enable”</strong> signal is ON, the RAM moves to UDP point
+and the “<strong>UDP reached”</strong> signal is set to High, now the machine will be
+waiting for “<strong>Step change</strong>” signal from the Robot controller to initiate
+the Backguage movements for next bend cycle and continuous from step 6
+to step 11.</p>
+</li>
+<li>
+<p>From step 7 to step 11, the “<strong>RAM Moving</strong>” signal will be high during
+Ram movement and low at the end of each step, to enable the Robot
+controller to issue the different steps of move command to machine.</p>
+</li>
+<li>
+<p>During any of the above bend step, if the “<strong>Program Abort</strong>” signal
+from Robot controller is set High, then all the moving axes (including
+RAM) are quick stopped and the “<strong>Press OK</strong>” &amp; “<strong>NC Start</strong>” signal is
+deactivated, with the following message display:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img18.png" alt="img18"></span></p>
+</div>
+</div>
+</div>

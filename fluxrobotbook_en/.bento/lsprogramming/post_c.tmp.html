@@ -1,0 +1,70 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_installation_and_usage">installation and usage</a>
+<ul class="sectlevel2">
+<li><a href="#_functionality">Functionality</a></li>
+</ul>
+</li>
+<li><a href="#_c_implementation">C# implementation</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_installation_and_usage">installation and usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The files could be found in \03_Matlab_Ccode\C_Postporcessor\executalbe</p>
+</div>
+<div class="sect2">
+<h3 id="_functionality">Functionality</h3>
+<div class="paragraph">
+<p>The Postprocessor reads the .rnc file and interprets it. It works with the step naming of the chapter Motion sequences of this book.</p>
+</div>
+<div class="paragraph">
+<p>For each step there is a step_pre.txt and a step_post.txt in the pp sub folder /plc. This containt the actual code</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_c_implementation">C# implementation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Changes to Matlab:</p>
+</div>
+<div class="paragraph">
+<p>The seq is not hard coded with point numbers but a file "sequence.txt" will be in the PLC folder containing the sequence of motion sequence names and</p>
+</div>
+<div class="paragraph">
+<p>JM = Joint motion</p>
+</div>
+<div class="paragraph">
+<p>LM = Linear motion</p>
+</div>
+<div class="paragraph">
+<p>JC = Point in Joint coordinates</p>
+</div>
+<div class="paragraph">
+<p>CC = Point in cartesian coordinates</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>sequence.txt:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pick Safe JM JC</p>
+<p class="tableblock">Height LM CC</p>
+<p class="tableblock">Jaw Open LM CC</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
+</div>
+</div>

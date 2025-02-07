@@ -1,0 +1,822 @@
+<div class="literalblock">
+<div class="content">
+<pre>Setting up your EtherCAT system</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> Log in with configuration grant
+ For configuration in I/O Engineering, the user grant Modify configuration is
+ required. See Operating manual- RobotStudio, section Managing user rights and
+ write access on a controller.
+ Start I/O Engineering
+ 1 Start RobotStudio and connect to the robot system to configure.
+ 2 Inthe ribbon of the Controller tab, select I/O Engineering.
+ See Application manual- I/O Engineering for more information.
+ Configure the network properties
+ 1 Inthe Controller tab in RobotStudio, select I/O Engineering. The I/O
+ Engineering tab is displayed.
+ 2 Inthe Configuration browser, select EtherCAT (under I/O system).
+ 3 Inthe Properties browser, you can configure the following:
+ xx2400000666
+ Parameter
+ Description
+ Allowedvalues
+ Identification
+ Label
+ This parameter is an optional way to provide a la
+bel that will help the operator to identify the internal
+ device.
+ Astring with
+ maximum 80
+ characters.
+ Simulated
+ Select Yes or No, indicating if the industrial net
+work and all its connected I/O devices should be
+ treated as simulated.
+ The default
+ value is No</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Configuring the EtherCAT system</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 5.1 Configuring the internal device properties
+ Prerequisites
+ Before configuring the internal device, make sure to set up your system according
+ to Setting up your EtherCAT system on page23.
+ Configure the internal device properties
+ 1 Inthe Controller tab in RobotStudio, select I/O Engineering. The I/O
+ Engineering tab is displayed.
+ 2 Inthe Configuration browser, select the internal device.
+ 3 Inthe Properties browser, you can configure the following:
+ xx2400000667
+ Parameter
+ Description
+ Allowedvalues
+ Name
+ Enter the name to be used for the device.
+ Astring with
+ maximum 32
+ characters.
+ Identification
+ Label
+ This parameter is an optional way to provide a la
+bel that will help the operator to identify the device.
+ Astring with
+ maximum 80
+ characters</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>3 Software overview</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3.2 Software for configuring a device</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>3.2 Software for configuring a device</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The EtherCAT internal device needs to be configured in I/O Engineering
+before it can be connected to a PLC/controller. Furthermore, the
+connecting PLC/controller might need a PC software tool to configure all
+connection parameters used to connect to the OmniCore system.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ESI file for configuring the internal device for an EtherCAT controller</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The provided ESI file for the OmniCore EtherCAT device is used to inform
+the connecting PLC /controller of supported connection parameters.</p>
+</div>
+<div class="paragraph">
+<p>The ESI file, <em>esi.xml</em>, for the internal device can be obtained from
+the RobotStudio or the OmniCore controller.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>In the RobotWare installation folder in RobotStudio</strong>:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>&#8230;&#8203;\DistributionPackages\ABB.RobotWare-x.x.x-xxx\RobotPackages</em></p>
+</div>
+<div class="paragraph">
+<p><em>\RobotControl_x.x.xxx\utility\service\ESI\</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>On the OmniCore Controller</strong>:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>&#8230;&#8203;\products\RobotControl_x.x.x\utility\service\ESI\</em></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Note</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Navigate to the RobotWare installation folder from the RobotStudio
+<strong>Add-Ins</strong> tab, by right-clicking on the installed RobotWare version in
+the <strong>Add-Ins</strong> browser and selecting <strong>Open Package Folder</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This page is intentionally left blank</p>
+</div>
+<div class="paragraph">
+<p><strong>4 Setting up your EtherCAT system</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>4 Setting up your EtherCAT system</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Log in with configuration grant</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For configuration in I/O Engineering, the user grant <strong>Modify
+configuration</strong> is required. See <em>Operating manual - RobotStudio</em>,
+section <em>Managing user rights and write access on a controller</em>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Start I/O Engineering</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start RobotStudio and connect to the robot system to configure.</p>
+</li>
+<li>
+<p>In the ribbon of the <strong>Controller</strong> tab, select <strong>I/O Engineering</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <em>Application manual - I/O Engineering</em> for more information.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Configure the network properties</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Controller</strong> tab in RobotStudio, select <strong>I/O Engineering</strong>. The
+<strong>I/O Engineering</strong> tab is displayed.</p>
+</li>
+<li>
+<p>In the <strong>Configuration</strong> browser, select <strong>EtherCAT</strong> (under I/O system).</p>
+</li>
+<li>
+<p>In the <strong>Properties</strong> browser, you can configure the following:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>xx2400000666</p>
+</div>
+<div class="paragraph">
+<p><strong>Allowed values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p>A string with</p>
+</div>
+<div class="paragraph">
+<p>maximum 80</p>
+</div>
+<div class="paragraph">
+<p>characters.</p>
+</div>
+<div class="paragraph">
+<p>This parameter is an optional way to provide a la-</p>
+</div>
+<div class="paragraph">
+<p>bel that will help the operator to identify the internal</p>
+</div>
+<div class="paragraph">
+<p>device.</p>
+</div>
+<div class="paragraph">
+<p><strong>Identification</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Label</strong></p>
+</div>
+<div class="paragraph">
+<p>The default</p>
+</div>
+<div class="paragraph">
+<p>value is No.</p>
+</div>
+<div class="paragraph">
+<p>Select</p>
+</div>
+<div class="paragraph">
+<p><strong>Yes</strong></p>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="paragraph">
+<p><strong>No</strong></p>
+</div>
+<div class="paragraph">
+<p>, indicating if the industrial net-</p>
+</div>
+<div class="paragraph">
+<p>work and all its connected I/O devices should be</p>
+</div>
+<div class="paragraph">
+<p>treated as simulated.</p>
+</div>
+<div class="paragraph">
+<p><strong>Simulated</strong></p>
+</div>
+<div class="paragraph">
+<p>This page is intentionally left blank</p>
+</div>
+<div class="paragraph">
+<p>5.1 Configuring the internal device properties</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>5 Configuring the EtherCAT system</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>5.1 Configuring the internal device properties</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Prerequisites</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Before configuring the internal device, make sure to set up your system
+according to <em>Setting up your EtherCAT system on page 23</em>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Configure the internal device properties</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Controller</strong> tab in RobotStudio, select <strong>I/O Engineering</strong>. The
+<strong>I/O Engineering</strong> tab is displayed.</p>
+</li>
+<li>
+<p>In the <strong>Configuration</strong> browser, select the internal device.</p>
+</li>
+<li>
+<p>In the <strong>Properties</strong> browser, you can configure the following:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>xx2400000667</p>
+</div>
+<div class="paragraph">
+<p><strong>Allowed values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p>A string with</p>
+</div>
+<div class="paragraph">
+<p>maximum 32</p>
+</div>
+<div class="paragraph">
+<p>characters.</p>
+</div>
+<div class="paragraph">
+<p>Enter the name to be used for the device.</p>
+</div>
+<div class="paragraph">
+<p><strong>Name</strong></p>
+</div>
+<div class="paragraph">
+<p>A string with</p>
+</div>
+<div class="paragraph">
+<p>maximum 80</p>
+</div>
+<div class="paragraph">
+<p>characters.</p>
+</div>
+<div class="paragraph">
+<p>This parameter is an optional way to provide a la-</p>
+</div>
+<div class="paragraph">
+<p>bel that will help the operator to identify the device.</p>
+</div>
+<div class="paragraph">
+<p><strong>Identification</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Label</strong></p>
+</div>
+<div class="paragraph">
+<p>5.2 Adding I/O modules to the internal device</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>5.2 Adding I/O modules to the internal device</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Add I/O modules to internal device</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Configuration</strong> browser, expand <strong>EtherCAT</strong> and select the
+internal device for which I/O modules should be added.</p>
+</li>
+<li>
+<p>Select <strong>Device Catalogue</strong> to view a list of available I/O modules.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image9.jpg" alt="img/media/image9" width="width229" height="height139"></span></p>
+</div>
+<div class="paragraph">
+<p>xx2400000976</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Double-click the I/O module in the list to be added to the internal
+device.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>I/O modules with the size 8, 16, 32 and 64 can be selected.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the configuration is finished, save the I/O project and write the
+configuration to the robot controller.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more information about working with I/O projects, see <em>Application
+manual - I/O Engineering</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Add safety I/O modules to internal device (for option 3076-2</strong> <em>Safety
+Over EtherCAT Device</em>*)* 1 In the <strong>Configuration</strong> browser, expand
+<strong>EtherCAT</strong> and select the internal device for which safe I/O modules
+should be added.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select <strong>Device Catalogue</strong> to view a list of available safe I/O
+modules.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image10.jpg" alt="img/media/image10" width="width321" height="height168"></span></p>
+</div>
+<div class="paragraph">
+<p>xx2400000977</p>
+</div>
+<div class="paragraph">
+<p><em>Continues on next page</em></p>
+</div>
+<div class="paragraph">
+<p>5.2 Adding I/O modules to the internal device <em>Continued</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Double-click the safe I/O modules in the list to be added to the
+internal device.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Note</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A yellow marking beside the module symbol indicates a safe I/O module.
+If any safe module is included in the internal device, a yellow marker
+is shown by the internal device as well.</p>
+</div>
+<div class="paragraph">
+<p>4 When the configuration is finished, save the I/O project and write the
+configuration to the robot controller.</p>
+</div>
+<div class="paragraph">
+<p>For more information about working with I/O projects, see <em>Application
+manual - I/O Engineering</em>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Note</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since a safe I/O module has been added to the internal device, the
+PLC/master device configuration must be updated. See <em>Configuring safety
+I/O modules (for option 3076-2 Safety Over EtherCAT Device) on page 28</em>.</p>
+</div>
+<div class="paragraph">
+<p>5.3 Configuring safety I/O modules (for option 3076-2 <em>Safety Over
+EtherCAT Device</em>)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>5.3 Configuring safety I/O modules (for option 3076-2 _Safety Over EtherCAT Device_)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Recommended work process</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to use the safety I/O module in your configuration, the
+following work process is recommended:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add safety I/O modules to the internal device, see <em>Add safety I/O
+modules to internal device (for option 3076-2 Safety Over EtherCAT
+Device) on page 26</em>.</p>
+</li>
+<li>
+<p>Configure the safety I/O modules, see <em>Configuring safety I/O modules
+(for option 3076-2 Safety Over EtherCAT Device) on page 28</em>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Note</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When working with safety I/O modules, the configuration tool will update
+and download a new safety configuration to the controller.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>After the configuration, verify and copy the application parameters in
+the <strong>ABB Safety Configuration Report</strong>, see <em>Configuring safety I/O
+modules (for option 3076-2 Safety Over EtherCAT Device) on page 28</em>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>CAUTION</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The user must confirm that all configuration data of the safe I/O module
+was downloaded correctly by reading out all parameters from the module
+and visually inspect the content.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Validate the configuration of the safety I/O module according to the
+validation process as described in <em>Application manual - Functional
+safety and SafeMove</em>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>WARNING</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All downloaded configurations must be validated by user testing before
+the installation can be regarded as safe. User testing is the means by
+which all downloads are validated.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>WARNING</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The total intended safety functionality applied by the originator must
+be confirmed at commissioning of the safety I/O module.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>CAUTION</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the safety I/O module is configured, the user must check that
+ownership has been assigned to the right originator.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When the set-up and configuration is done, see <em>Application manual -
+Functional safety and SafeMove</em> for instructions on how to work with the
+safety configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Continues on next page</em></p>
+</div>
+<div class="paragraph">
+<p>5.3 Configuring safety I/O modules (for option 3076-2 <em>Safety Over
+EtherCAT Device</em>) <em>Continued</em></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Configuring safety I/O modules</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Configuration</strong> browser, expand <strong>EtherCAT</strong> and select the
+internal device for which safe I/O modules should be configured.</p>
+</li>
+<li>
+<p>Select the safe I/O module in the <strong>Configuration</strong> browser and
+configure the <strong>Properties</strong>:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>xx2400000978</p>
+</div>
+<div class="paragraph">
+<p><strong>Allowed values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p>Valid range is 1 to</p>
+</div>
+<div class="paragraph">
+<p>65534.</p>
+</div>
+<div class="paragraph">
+<p>Select an address that uniquely</p>
+</div>
+<div class="paragraph">
+<p>identifies the module within the</p>
+</div>
+<div class="paragraph">
+<p>network.</p>
+</div>
+<div class="paragraph">
+<p><strong>Safe address</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If there are safety related updates, a new safety configuration is
+generated with new checksums and the prompt <strong>Controller Configuration
+Changed</strong> is displayed. Select <strong>Yes</strong> to load the controller
+configuration.</p>
+</li>
+<li>
+<p>In the <strong>Controller</strong> ribbon, select <strong>Safety &gt; Visual SafeMove</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Visual SafeMove</strong> tab, select <strong>Show report &gt; Controller
+configuration</strong> to open the <strong>ABB Safety Configuration Report</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/img/media/image12.jpg" alt="img/media/image12" width="width321" height="height164"></span></p>
+</div>
+<div class="paragraph">
+<p>xx2400001131</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In section <strong>Networks&gt;Devices&gt;EC_Internal_Device</strong>, copy the two
+checksum values in field <strong>Application Parameters</strong>.</p>
+</li>
+<li>
+<p>Insert the copied <strong>ApplicationParameters</strong> in your master device
+configuration.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>5.4 Working with signals</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>5.4 Working with signals</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Overview</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For internal devices, all signals are preloaded at installation. You
+can, however, edit the signals.</p>
+</div>
+<div class="paragraph">
+<p>For more information about working with signals, see <em>Application manual
+- I/O Engineering</em>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Index</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>|
+a|
+<strong>Index</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>C</strong></p>
+</div>
+<div class="paragraph">
+<p>CC-Link IE data, 12 standardization, 11</p>
+</div>
+<div class="paragraph">
+<p>communication profiles, 11 compatibility, 13</p>
+</div>
+<div class="paragraph">
+<p><strong>E</strong></p>
+</div>
+<div class="paragraph">
+<p>ESI file, 12</p>
+</div>
+<div class="paragraph">
+<p>EtherCAT internal device, 19</p>
+</div>
+<div class="paragraph">
+<p><strong>G</strong></p>
+</div>
+<div class="paragraph">
+<p>GSD file, 21</p>
+</div>
+<div class="paragraph">
+<p>a|
+<strong>I</strong></p>
+</div>
+<div class="paragraph">
+<p>Input Size, 19</p>
+</div>
+<div class="paragraph">
+<p><strong>N</strong></p>
+</div>
+<div class="paragraph">
+<p>network security, 9</p>
+</div>
+<div class="paragraph">
+<p><strong>O</strong></p>
+</div>
+<div class="paragraph">
+<p>Output Size, 19</p>
+</div>
+<div class="paragraph">
+<p><strong>S</strong></p>
+</div>
+<div class="paragraph">
+<p>simulated, 23</p>
+</div>
+<div class="paragraph">
+<p><strong>T</strong></p>
+</div>
+<div class="paragraph">
+<p>topic I/O System predefined internal device, 13 predefined network, 19</p>
+</div>
+<div class="paragraph">
+<p>|</p>
+</div>
+<div class="paragraph">
+<p><strong>ABB AB</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Robotics &amp; Discrete Automation</strong></p>
+</div>
+<div class="paragraph">
+<p>S-721 68 VÄSTERÅS, Sweden Telephone +46 10-732 50 00</p>
+</div>
+<div class="paragraph">
+<p><strong>ABB AS</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Robotics &amp; Discrete Automation</strong></p>
+</div>
+<div class="paragraph">
+<p>Nordlysvegen 7, N-4340 BRYNE, Norway</p>
+</div>
+<div class="paragraph">
+<p>Box 265, N-4349 BRYNE, Norway</p>
+</div>
+<div class="paragraph">
+<p>Telephone: +47 22 87 2000</p>
+</div>
+<div class="paragraph">
+<p><strong>ABB Engineering (Shanghai) Ltd.</strong></p>
+</div>
+<div class="paragraph">
+<p>Robotics &amp; Discrete Automation</p>
+</div>
+<div class="paragraph">
+<p>No. 4528 Kangxin Highway</p>
+</div>
+<div class="paragraph">
+<p>PuDong New District</p>
+</div>
+<div class="paragraph">
+<p>SHANGHAI 201319, China Telephone: +86 21 6105 6666</p>
+</div>
+<div class="paragraph">
+<p><strong>ABB Inc.</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Robotics &amp; Discrete Automation</strong></p>
+</div>
+<div class="paragraph">
+<p>1250 Brown Road</p>
+</div>
+<div class="paragraph">
+<p>3</p>
+</div>
+<div class="paragraph">
+<p>HAC090257-001,RevB,en</p>
+</div>
+<div class="paragraph">
+<p>Auburn Hills, MI 48326</p>
+</div>
+<div class="paragraph">
+<p>USA Telephone: +1 248 391 9000 <strong>abb.com/robotics</strong></p>
+</div>
+<div class="paragraph">
+<p>© Copyright 2024-2024 ABB. All rights reserved.</p>
+</div>
+<div class="paragraph">
+<p>Specifications subject to change without notice.</p>
+</div>

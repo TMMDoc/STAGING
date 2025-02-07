@@ -1,0 +1,143 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_ethercat_inputs">-------------------------------------------------"ETHERCAT INPUTS"-------------------------------------</a></li>
+<li><a href="#_wired_digital_inputs">-----------------------------------------------------------"Wired Digital Inputs"---------------------------------------------</a></li>
+<li><a href="#_ethercat_digital_outputs">-----------------------------------------------------------"ETHERCAT Digital Outputs"---------------------------------------------</a></li>
+<li><a href="#_wired_digital_inputs_2">-----------------------------------------------------------"Wired Digital Inputs"---------------------------------------------</a></li>
+<li><a href="#_wired_analog_inputs">-----------------------------------------------------------"Wired Analog Inputs"---------------------------------------------</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The digital IO configuration could be Read from ioconfig.dg</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>F Number: YH80092
+VERSION : HandlingTool
+$VERSION: V9.40356       3/1/2024
+DATE:     04-FEB-25 16:36
+IO CONFIGURATION::</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ethercat_inputs">-------------------------------------------------"ETHERCAT INPUTS"-------------------------------------</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>DIN[   1]  NC_START
+DIN[   2]  BACKGAUGE_IN_POSITION
+DIN[   3]  FIRST_BEND_ACTIVE
+DIN[   4]  LAST_BEND_ACTIVE
+DIN[   5]  RAM_MOVING
+DIN[   6]  CLAMPING_POINT
+DIN[   7]  LDP_REACHED
+DIN[   8]  EoD_REACHED
+DIN[   9]  UDP_REACHED
+DIN[  10]  BELOW_MUTE_POINT
+DIN[  11]  PRESS_OK
+DIN[  12]  FPDOWN
+DIN[  13]  GRIPPER_OPEN_FB
+DIN[  14]  GRIPPER_CLOSE_FB
+DIN[  15]  POS
+DIN[  16]  WORK_TABLE_ZONE
+DIN[  17]  ONE_FINGER_ALIGN
+DIN[  18]  SUCTION_CMD
+DIN[  19]  PDISP_UP_CMD
+DIN[  20]  PDISP_DWN_CMD
+DIN    1  - 100   RACK: 106   SLOT:   1   PORT:  19 ---------------------"Specifies ethercat configuration"-----------------------------
+DIN  105  - 120   RACK:   1   SLOT:   2   PORT:  17
+DIN  121  - 300   RACK: 106   SLOT:   1   PORT: 145</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wired_digital_inputs">-----------------------------------------------------------"Wired Digital Inputs"---------------------------------------------</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>DIN[ 481]  DI1
+DIN[ 482]  PARTPRES
+DIN[ 483]  STACK_HEIGHT_FB
+DIN  481  - 512   RACK:   1   SLOT:   2   PORT:   1</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ethercat_digital_outputs">-----------------------------------------------------------"ETHERCAT Digital Outputs"---------------------------------------------</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>DOUT[   1]  CLAMPING_POINT_BIT
+DOUT[   2]  MOVE_TO_LDP
+DOUT[   3]  MOVE_TO_UDP
+DOUT[   4]  STEP_CHANGE
+DOUT[   5]  START_PROGRAM
+DOUT[   6]  ENABLE_RAM_DOWN
+DOUT[   8]  ROBOUNSAFE
+DOUT[   9]  DECOMP_ENB
+DOUT[  10]  ROBO_AUTO
+DOUT[  11]  T1_MODE
+DOUT[  13]  PUNCH_CLAMP
+DOUT[  14]  PUNCH_UNCLAMP
+DOUT[  15]  TOOL_CHANGE_ON
+DOUT    1  - 480   RACK: 106   SLOT:   1   PORT:  21</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wired_digital_inputs_2">-----------------------------------------------------------"Wired Digital Inputs"---------------------------------------------</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>DOUT[ 481]  PUSH_BWD NORMAL  COMP.: TRUE     (Push cylinder on pinch gripper move back command)
+DOUT[ 482]  PUSH_FWD NORMAL  COMP.: TRUE     (Push cylinder on pinch gripper move forward command)
+DOUT[ 483]  GRIP_CLOSE                       (Pinch gripper close cmd)
+DOUT[ 484]  GRIP_OPEN						(Pinch gripper Open cmd)
+DOUT[ 485]  GRIP_ENB						(Enable air supply to vacuum gripper)
+DOUT[ 486]  PDISP_ENB						(Enable air supply to part despenser vacuum cups)
+DOUT[ 487]  PDISP_UP                        (Part despenser cylinder up cmd)
+DOUT[ 488]  PDISP_DOWN						(Part despenser cylinder down cmd)
+DOUT[ 489]  VAC_GRIP_ON						(Suction ON command for vacuum gripper)
+DOUT[ 490]  SUCTION_ON						(Suction ON command for vacuum cups in part despenser)
+DOUT[ 491]  RELAY4
+DOUT[ 492]  RELAY5
+DOUT[ 493]  RELAY3
+DOUT[ 494]  RELAY1
+DOUT[ 495]  RELAY2
+DOUT  481  - 512   RACK:   1   SLOT:   3   PORT:   1</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wired_analog_inputs">-----------------------------------------------------------"Wired Analog Inputs"---------------------------------------------</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>AIN    1   RACK:   1   SLOT:   1   CHANNEL:   1
+AIN    2   RACK:   1   SLOT:   1   CHANNEL:   2
+AIN    3   RACK:   1   SLOT:   1   CHANNEL:   3
+AIN    4   RACK:   1   SLOT:   1   CHANNEL:   4
+GIN[   1] Z1_ANGLE
+GIN    1   RACK: 106   SLOT:   1   PORT:  97   #NUM:  16
+GIN[   2] RA_POS_CMD
+GIN    2   RACK: 106   SLOT:   1   PORT: 113   #NUM:  16
+GIN    3   RACK: 106   SLOT:   1   PORT: 129   #NUM:  16
+GOUT[   1] Z1_DIFF
+GOUT    1   RACK: 106   SLOT:   1   PORT:  97   #NUM:  16
+GOUT[   2] Z2_DIFF
+GOUT    2   RACK: 106   SLOT:   1   PORT: 113   #NUM:  16
+GOUT[   3] ROBOT_POS_FB
+GOUT    3   RACK: 106   SLOT:   1   PORT: 129   #NUM:  16</pre>
+</div>
+</div>
+</div>
+</div>

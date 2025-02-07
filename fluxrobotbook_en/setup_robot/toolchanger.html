@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>ToolChanger</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.png" width="123" height="50" /></div>
+        <div><p>FluxRobot Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../index.html">Welcome to FluxRobot</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../rbasics/index.html">Basics</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../rbasics/coordsystems.html">Basic coordinate systems</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanuccoords.html">Robot coordinates</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanucframes.html">Frame concept</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanuccordmove.html">Motion commands </a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="index.html">Setup and run the robot</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="pointer.html">Measure Pointer length</a></li>
+        <li><button class="tree blank"></button><a href="pinchgripper.html">Calibrate Pinch Gripper</a></li>
+        <li><button class="tree blank"></button><a href="vacuumgripper.html">Calibrate Vacuum Gripper</a></li>
+        <li><button class="tree blank"></button><a href="setuprobot.html">Setup Robot to Machine</a></li>
+        <li><button class="tree blank"></button><a href="pallet.html">Setup Pallet</a></li>
+        <li><button class="tree blank"></button><a href="dispenser.html">Setup Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="partseparator.html">Setup PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="doublesheet.html">Setup DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="centering.html">Setup CenteringTable</a></li>
+        <li><button class="tree blank"></button><a href="deposit.html">Setup Deposit</a></li>
+        <li><button class="tree blank"></button><a class="active" href="toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="fluxload.html">Program Flux and load robot</a></li>
+        <li><button class="tree blank"></button><a href="advanced.html">Run the fanuc in auto mode</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../motionsequences/index.html">Motion sequences</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../motionsequences/pickup_pinch.html">Pickup from dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/pickup_vac.html">Pickup from pallet</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/partseparator.html">PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/doublesheet.html">DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/centering.html">Centering table motion</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/deposit.html">Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/bend.html">Bend</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../setup_flux/index.html">Setup Flux</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../setup_flux/robot.html">Robot</a></li>
+        <li><button class="tree blank"></button><a href="../setup_flux/dispenser.html">Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../setup_flux/pickuppallet.html">PickupPallet</a></li>
+        <li><button class="tree blank"></button><a href="../setup_flux/centertable.html">Centering table</a></li>
+        <li><button class="tree blank"></button><a href="../setup_flux/regrip.html">regrip station </a></li>
+        <li><button class="tree blank"></button><a href="../setup_flux/dropoff.html">Drop off pallet</a></li>
+        <li><button class="tree blank"></button><a href="../setup_flux/toolchanger.html">Tool changer</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../gripper/index.html">Customized grippers</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../gripper/cups.html">Trumpf standard vacuum cups</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../lsprogramming/index.html">NC-Coode and postprocessor</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../lsprogramming/rnc.html">Flux .RNC output</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/post_matlab.html">Postprocessor Matlab</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/post_c.html">Postprocessor C#</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/ls.html">LS output</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../fanuchw/index.html">Fanuc functions & macros</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../fanuchw/operation.html">General operation procedure</a></li>
+        <li><button class="tree blank"></button><a href="../fanuchw/fr_bgallign.html">FR_BgAllign</a></li>
+        <li><button class="tree blank"></button><a href="../fanuchw/fr_stacksearch.html">FR_StackSearch</a></li>
+        <li><button class="tree blank"></button><a href="../fanuchw/fr_scale.html">FFR_Scale</a></li>
+        <li><button class="tree blank"></button><a href="../fanuchw/fr_gripclose.html">FR_GRipClose</a></li>
+        <li><button class="tree blank"></button><a href="../fanuchw/communication.html">Communication</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../hmi/index.html">Cell HMI</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../hmi/load_pgrm.html">Load program on robot</a></li>
+        <li><button class="tree blank"></button><a href="../hmi/fetch_backup.html">fetch config from Robot</a></li>
+        <li><button class="tree blank"></button><a href="../hmi/partcounter.html">Part counter</a></li>
+        <li><button class="tree blank"></button><a href="../hmi/frametool.html">Frame tool</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../ra_interface/index.html">RA interface</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../ra_interface/1_generalinformation/index.html">General information</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/typesofcuppling.html">Types of robot couplings</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/digitaliocoupling/index.html">Digital coupling</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/loosesyncronizedcoupling/index.html">Loose syncronized coupling</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/thightsyncronized/index.html">Thight syncronized coupling with FluxRobot</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../ra_interface/2_descriptionofhardware/index.html">Description of the hardware</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/digitalingerface.html">Digital interface</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/ethercat.html">Ethercat</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/rainterface.html">RA interface</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/security_network.html">Network security</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../ra_interface/3_machineconfiguration/index.html">Machine configuration</a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/4_bendingprogram/index.html">How to create a Bending program</a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/5_bendingsteps/index.html">bending steps in detail</a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/6_inputsandoutputsofdigitalinterface/index.html">Inputs and outputs </a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/7_teachandautomaticmode/index.html">Teach and automatic mode</a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/8_windowssystemcontrol/index.html">Windows system </a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../electricalwiring/index.html">Electrical wiring</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../electricalwiring/wiring.html">Wiring of the Fanuc cabinet</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/bg.html">Wiring the back gauge sensors</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/robwrist.html">Connectors on the robot wrist</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/robback.html">Connectors on the robot back hub</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/gripper.html">Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/digio.html">Digital IO</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/analogio.html">Analog IO's</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/manifold.html">Manifold</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/userio.html">UserIO</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/safety.html">Safety</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/iooutput.html">Use the IO outputs</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../dev_components/index.html">Flux: Tweeak Components</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../dev_components/cellcomponents.html">Flux: Cell components</a></li>
+        <li><button class="tree blank"></button><a href="../dev_components/pinch.html">Adjust Pinch gripper offset</a></li>
+        <li><button class="tree blank"></button><a href="../dev_components/gripper.html">Tweak a gripper CAD geometry</a></li>
+        <li><button class="tree blank"></button><a href="../dev_components/dispenser.html">Change dispenser geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../dev_devnotes/index.html">DEV: Developer notes</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../dev_devnotes/basicop.html">Basics on the Robot</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/fanucframes.html">Frame concept (RACell)</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/dh.html">Denavit–Hartenberg parameters</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/defofrotation.html">Definition of rotations</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/pickup_comp.html">Pickup comparison</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/check.html">Check frames</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/digitalio.html">Aacessing Digital IO' in robot: </a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="index.html">Setup and run the robot</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="toolchanger.html">ToolChanger</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>ToolChanger</h1>
+<div class="sect1">
+<h2 id="_tool_extract_motion">Tool extract motion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All toolchanger implementation is done as a post processor type in PLC</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18.3333%;">
+<col style="width: 21.6666%;">
+<col style="width: 26.6666%;">
+<col style="width: 5%;">
+<col style="width: 28.3335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Flux output</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">PostProcessor output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PreTExtractsafe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image14.png" alt="image14" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JJ</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lift cylinder down</p>
+</div>
+<div class="paragraph">
+<p>Vacuum on</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ApproachSafe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image15.png" alt="image15" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JJ</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>10mm in front of pickup bracket</p>
+</div>
+<div class="paragraph">
+<p>Gripper open</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Approach</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image16.png" alt="image16" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moves in</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image16.png" alt="image16" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>LC</p>
+</div>
+<div class="paragraph">
+<p>UF1</p>
+</div>
+<div class="paragraph">
+<p>TF2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gripper closes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PushPin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image17.png" alt="image17" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pin Push</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image18.png" alt="image18" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lowers 30mm in a linear movement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExtractSafe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image19.png" alt="image19" width="151" height="98"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linear outside tooling</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ApproachRackSafe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image20.png" alt="image20" width="151" height="73"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turn robot to Rack</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ApproachRack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image21.png" alt="image21" width="151" height="82"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>LC</p>
+</div>
+<div class="paragraph">
+<p>UF5</p>
+</div>
+<div class="paragraph">
+<p>TF2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moves to insert point 5mm above slot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image22.png" alt="image22" width="151" height="82"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move down</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image20.png" alt="image20" width="151" height="73"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open clamp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MoveClear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="imgmc/image23.png" alt="image23" width="151" height="82"></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LJ</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostTExtractsafe</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tool_insert_motion">Tool Insert motion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reversed Motion of above</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_tool_extract_motion">Tool extract motion</a>
+    </li>
+    <li level="1">
+      <a href="#_tool_insert_motion">Tool Insert motion</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="deposit.html">Setup Deposit</a></span>
+  <span class="next"><a href="gripperchanger.html">GripperChanger</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

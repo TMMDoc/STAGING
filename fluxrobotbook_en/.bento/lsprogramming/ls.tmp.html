@@ -1,0 +1,93 @@
+<div class="paragraph">
+<p>This chapter describes the principles of the current postprocessor which creates the Fanuc .LS program. The programming language is described in Robot Operater And Program manual.pdf</p>
+</div>
+<div class="paragraph">
+<p>the rough structure of a program is:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/LS1.png" alt="LS1">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>There are two basic motion commands we use</p>
+</div>
+<div class="paragraph">
+<p>J P[10:J_Aloft] 100% FINE    ;
+"J"= Joint movement
+"10:J_Aloft" = Point 10, the J_ in front of the point name indicates it is in joint coordinates
+"100% FINE" = joint motions have a speed in percent</p>
+</div>
+<div class="paragraph">
+<p>L P[13:C_Mute Point] 2000mm/sec FINE
+"L"= Linear movement
+"13:C_Mute Point" = Point 13, the C_ in front of the point name indicates it is in cartesian coordinates
+"2000mm/sec FINE" = joint motions haare in mm/sec</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/LS2.png" alt="LS2">
+</div>
+</div>
+<div class="paragraph">
+<p>The format of the points is quite intuitive</p>
+</div>
+<div class="paragraph">
+<p>P[1:"J_init"]{</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GP1:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>UF : 1, UT : 2,</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>J1 =     90.00  deg,	J2 =    0.00  deg,	J3 =     -20.00  deg,</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>J4 =     0.00  deg,	J5 =   20.00 deg,	J6 =     0.00 deg</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>P[4:"C_Height"]{</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GP1:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>UF : 1, UT : 2,		CONFIG : 'N U T, 0, 0, 0',</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>X =     -933.00  mm,	Y =    -1061.00  mm,	Z =     -470.00  mm,</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>W =     180.00  deg,	P =   0.00 deg,	R =     -22.50 deg</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>};</pre>
+</div>
+</div>

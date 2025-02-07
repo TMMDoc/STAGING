@@ -1,0 +1,83 @@
+<div class="paragraph">
+<p>For feasibility studies it might be benefical to just overload a gripper. This could be done for the 25kg robot within</p>
+</div>
+<div class="paragraph">
+<p>C:\Program Files\Metamation\Flux\Bin\CellItems.wad\4501\ (&#8594; zip file)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/CADtweak1.png" alt="CADtweak1">
+</div>
+</div>
+<div class="paragraph">
+<p>The new geometry is put as a STL file into the folder</p>
+</div>
+<div class="paragraph">
+<p>mechanism.curl needs to be changed:</p>
+</div>
+<div class="paragraph">
+<p>(Mechanism){</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Name:BFINGERGRIP4501  Color:White</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Geometry:(FileGeometry){ File:MultigripperS2-Compound.stl  Shift:0,0,110 }</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Sockets:&lt; Fixed=-18,0,10053.8  Moving=18,0,10072 &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Children:[</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{ Name:Fixed  Color:Green  ConnectTo:Fixed</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Geometry:(FileGeometry){ File:Fixed.mesh2 }</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{ Name:Moving  Color:Yellow  ConnectTo:Moving</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Joint:Rotate  JVector:0,1,0  JMin:0  JMax:45</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Geometry:(FileGeometry){ File:Moving.mesh2 }</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>}</p>
+</div>

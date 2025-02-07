@@ -1,0 +1,139 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_user_frames">User frames</a></li>
+<li><a href="#_length_of_tools_and_tool_frames">Length of tools and tool frames</a></li>
+<li><a href="#_rotations_of_tool_frames">Rotations of tool frames</a>
+<ul class="sectlevel2">
+<li><a href="#_toolframe1_pointer_without_toolframe_rotation">ToolFrame1: Pointer (Without Toolframe rotation)</a></li>
+<li><a href="#_toolframe2_pinch_gripper">ToolFrame2: Pinch Gripper</a></li>
+<li><a href="#_toolframe3_vacuum_gripper">ToolFrame3: Vacuum Gripper</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_user_frames">User frames</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To position coordinates against each other Frames are used. They could also be used to allow the operator on the machine fine adjustments.</p>
+</div>
+<div class="paragraph">
+<p>The Flux output works with six frames:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Frame 1: Robot (main frame)</p>
+</li>
+<li>
+<p>Frame 2: Pickup Dispenser</p>
+</li>
+<li>
+<p>Frame 3: Pickup Pallet</p>
+</li>
+<li>
+<p>Frame 4: Centering Table</p>
+</li>
+<li>
+<p>Frame 5: Regrip station</p>
+</li>
+<li>
+<p>Frame 6: Tool changer</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/frame1.png" alt="frame1">
+</div>
+</div>
+<div class="paragraph">
+<p>If a operator needs to fine adjust a frame to run a program then he could tweak a frame within some milimeter. Generating the next Flux program this component positons need to be corrected in Flux that the next output could be again done with identical frames</p>
+</div>
+<div class="paragraph">
+<p>If a new program is loaded and one of the frames is different from Frame 1 then the controller should give a warning. There might be a button to set frame 2-7 identical to frame 1 (main frame)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_length_of_tools_and_tool_frames">Length of tools and tool frames</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The robot works with a tool frame (Wrist to TCP) and a User frame (Machine to Robot Zero)</p>
+</div>
+<div class="paragraph">
+<p>The current tool frames are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Frame1: 0 0 138 - Measurement system</p>
+</li>
+<li>
+<p>frame2: -19.3 0 279.3 - Pinch gipper</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/Fanuc_frame_math.png" alt="Fanuc frame math">
+</div>
+</div>
+<div class="paragraph">
+<p>The TCP (front center face) needs to be calibrated vs. the writst point of the robot. Best practicse is to use a USB camera and rotate the robot around it until it rotates perfectly around the TCP point.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rot3.png" alt="rot3">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rot.png" alt="rot">
+</div>
+</div>
+<div class="paragraph">
+<p>Final coordinates of the pinch gripper are [-19 0 279.3]</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rot2.png" alt="rot2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rotations_of_tool_frames">Rotations of tool frames</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_toolframe1_pointer_without_toolframe_rotation">ToolFrame1: Pointer (Without Toolframe rotation)</h3>
+<div class="paragraph">
+<p>The Fanuc comes from a history of lifting so the the Z coordinate is upwards when pointed towards the floor.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/r3.png" alt="r3">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_toolframe2_pinch_gripper">ToolFrame2: Pinch Gripper</h3>
+<div class="paragraph">
+<p>When we work with the pinch gripper we want while bending the machine coordinate system on the gripper. To turn back the Tool coordinate system into the world coordinate system we need a ToolFrame1 = [0 0 166 90 0 90]; The coordinate system of the pinch gripper after rotation</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/rot_gripper.png" alt="rot gripper"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_toolframe3_vacuum_gripper">ToolFrame3: Vacuum Gripper</h3>
+<div class="paragraph">
+<p>When we work with the Vacuum gripper we want while bending the machine coordinate system on the gripper. To turn back the Tool coordinate system into the world coordinate system we need a ToolFrame1 = [0 0 166 180 0 180 ???];  The coordinate system of the  gripper after rotation</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/rot_gripVac.png" alt="rot gripVac"></span></p>
+</div>
+</div>
+</div>
+</div>
