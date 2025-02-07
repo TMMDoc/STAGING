@@ -1,7 +1,7 @@
 :: script
 :: all documents need to be closed  for adding
-c:
-cd c:/Temp/FluxRobotBook_EN
+U:
+cd U:\fluxrobotbook_en
 git add .
 git commit -m "new"
 git push
