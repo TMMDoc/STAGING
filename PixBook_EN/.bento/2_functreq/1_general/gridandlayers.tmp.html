@@ -1,0 +1,103 @@
+<div class="paragraph">
+<p><strong>Snap Grid</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage123.png" alt="image123" width="width22" height="height22"></span> <strong><span class="underline">Snap Grid</span></strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage124.png" alt="image124" width="width314" height="height231"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>provides a snap grid that can be used to align entities to coordinates that are multiples of some round number, during drawing. The Snap Grid command brings up the Grid Properties dialogue, where you can set the grid pitch, and the number of subdivisions in each main division of the grid. For example, the settings alongside (Grid Pitch  10, and Subdivisions  5) will provide one grid point every 2 units.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Snap to grid checkbox enables the grid; with the grid enabled, coordinates you enter using the mouse are rounded to the nearest grid point. The Display grid checkbox, which can be set on or off independently of the Snap to grid checkbox, lets you choose whether the grid is actually displayed in the drawing window or not. If you choose a grid pitch which is too small in relation to the extents of your drawing, the grid might be too dense to be displayed; in this case,  will not display the grid until you zoom closer in, increase the grid pitch, or decrease the number of subdivisions.</p>
+</div>
+<div class="paragraph">
+<p>The Display Coordinate axes button can be turned on to ask  to draw the X and Y axis lines, regardless of whether the snap grid is on or not. If a user coordinate system is now in effect, the rotated, and translated X &amp; Y axes are drawn. (The snap grid itself is never rotated or translated, and is always with reference to the global coordinate system).</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Note</span>. The snap grid affects only points entered by clicking with the mouse. Even with the grid turned on, you can still enter points that don&#8217;t lie on the grid, by typing them into input boxes that prompt for coordinates.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour">Easily create PDF Help documents</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Layer Setup</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage125.png" alt="image125" width="width22" height="height22"></span> <strong><span class="underline">Layer Setup</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This command displays the Layer Control dialogue, that is used to configure the set of <span class="underline">layers</span> in a drawing.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage126.jpg" alt="image126" width="width581" height="height378"></span></p>
+</div>
+<div class="paragraph">
+<p>Each layer has a name, a colour, and a line type. The colour and line type can be set by clicking on the appropriate cell, and choosing a new colour or line type from the graphical menu that pops up. In addition, layers can be turned on or off by setting or resetting the Visible flag. Layers can also be Locked to prevent entities on from being edited, or deleted. Entities that are created new are placed on the active layer, which can be set by clicking on Active button of the layer. The Purge command is used to remove empty layers, with no entities in them. (A few layers like 0, Dimension, Bend and MBend are never removed by the Purge command). The Show nodes switch displays small marker blips at each node of polylines on that layer; these can be used to view nodes that may not otherwise be easily seen, such as nodes that lie collinear on a segment.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>More operations on layers</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clicking on the More options button displays further operations related to layers.</p>
+</div>
+<div class="paragraph">
+<p><strong>Move selected entities to this layer:</strong> All entities that are currently selected in the drawing are moved to the layer you are currently editing.</p>
+</div>
+<div class="paragraph">
+<p><strong>Set as default layer configuration:</strong> The set of layers is saved in the configuration file, and is used as the set of layers for any new drawings that are created.</p>
+</div>
+<div class="paragraph">
+<p><strong>Select all entities in this layer:</strong> All entities in the drawing that belong to the layer being edited are selected.</p>
+</div>
+<div class="paragraph">
+<p><strong>Make invisible colours visible:</strong> If the background colour of the drawing editor window is same as that of the drawing then they will not be visible. Use this setting to invert the drawing colour so that they are visible in the editor window.</p>
+</div>
+<div class="paragraph">
+<p><strong>Save by Name:</strong> Use this option to save the current layer setup.</p>
+</div>
+<div class="paragraph">
+<p><strong>Load by Name:</strong> Use this option to load previously stored layer setups. When loading a layer set, all the existing layers in the drawing will be removed and new layers from the saved layer set will be loaded. Any existing entities will be moved to these freshly loaded layers.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Special layers</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Some layers have special meanings.</p>
+</div>
+<div class="paragraph">
+<p>|
+|0 |Default layer used to draw most entities
+|Dimension |Dimensions created in the drawing pane
+|LaserDimension |Dimensions created in the laser tooling pane
+|PunchDimension |Dimensions created in the punch tooling pane
+|Mark |Entities in this layer are etched.
+|Bend |Mountain bend lines
+|MBend |Valley bend lines
+|BendLimit |Boundary of bend-section area
+|Rib |Rib lines unfolded from a patch
+|Hole |Point marker indicating a part-in-part hole
+|<em>Inner |All entities in this layer are treated as holes, not outer contours.
+|_LaserWireJoint |Wirejoint location markers (circles) for laser tooling.
+|_PunchWireJoint |Wirejoint location markers (circles) for punch tooling.
+|OnlyPunch |Entities in this layer are punched, not laser-cut (for hybrid machines).
+|Other layers starting with _ |Auxiliary geometry; these layers are never tooled up.
+|Layers starting with TAP |Tapping layers for FO-TAP machine, for example TAP111 for M111 tap.
+|Layers starting with CPO</em> |Center etching for some machines, for example CPO_E10R0.5Z1.8
+|</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>During tooling, entities on hidden and locked layers are not tooled. It is also possible to designate laser cutting conditions by creating special layers for them. For example, you can set up  so that all entities in the Marking layer are cut using laser power, frequency, duty cycle and feed rate suitable for marking.</p>
+</li>
+</ul>
+</div>

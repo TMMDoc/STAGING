@@ -1,0 +1,560 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_dimensioning">Dimensioning</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_dimensioning">Dimensioning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter discusses the dimensioning commands available in . Dimensioning commands are available in the drawing pane, the laser tooling pane and the punch tooling pane. In the drawing pane, you can dimension drawing geometry.</p>
+</div>
+<div class="paragraph">
+<p>In the laser tooling pane, you can dimension laser tooling entities such as corner loops, approach and escape geometry etc. In the punch tooling pane, you can dimension punch geometry. When you switch between these panes, only the dimensioning that is created in that pane is displayed; dimensioning created in other panes are not displayed. Like all other commands in , dimensioning commands can be undone using the Undo menu item, or redone using the Redo menu item.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage208.png" alt="image208" width="width630" height="height270"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Pick</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage209.png" alt="image209" width="width26" height="height26"></span> <strong><span class="underline">Pick</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This mode is used to select dimension objects for deleting or for moving. To select a dimension object, click near the bottom of the text. If the text is centred in the dimension line, click near its centre. If the dimension line is to the right of the text, click on the bottom right of the text. If the dimension line is to the left of the text, click near the bottom left corner of the text. The figure illustrates where to click to select the dimension for different types of dimension (the small circle is the click point where you should click).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage210.jpg" alt="image210" width="width241" height="height212"></span></p>
+</div>
+<div class="paragraph">
+<p>A selected dimension can be dragged by clicking on it, holding down the mouse button and moving. The effect of dragging a dimension is different in normal drawing mode, and in dimensioning mode. In drawing mode, the entire dimension moves; this should be used when the dimension has to be moved along with the object is dimensioning.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage211.jpg" alt="image211" width="width629" height="height262"></span></p>
+</div>
+<div class="paragraph">
+<p>Therefore, if a dimension is moved in normal drawing mode, it moves as a unit. If it is moved while in the dimensioning mode, only the text point is shifted.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Selecting multiple dimensions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple dimensions can be selected using the Pick tool by holding down the Shift key while clicking on additional dimension objects.</p>
+</div>
+<div class="paragraph">
+<p>You can also click away from any dimension objects, hold down the mouse and draw a rectangle enclosing the dimensions to be selected.</p>
+</div>
+<div class="paragraph">
+<p>When you are in the dimensioning mode, the Pick tool will allow you to pick only dimensions, and not any other entities.</p>
+</div>
+<div class="paragraph">
+<p><strong>Horizontal</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage212.png" alt="image212" width="width26" height="height26"></span> <strong><span class="underline">Horizontal</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to create horizontal dimensions. The first two clicks indicate the distance to be dimensioned, and the third click (optional) positions the text.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage213.jpg" alt="image213" width="width629" height="height151"></span></p>
+</div>
+<div class="paragraph">
+<p>Holding down the Ctrl key when you click on the second point of the dimension automatically places the dimension without requiring a third click to position the dimension. If the second click is to the right of the first click, the dimension is positioned above the clicked points. If the second click is to the left of the first click, the dimension is placed below the clicked points.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage214.jpg" alt="image214" width="width567" height="height406"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using custom dimension text</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this mode, as well as in all the other dimensioning modes, the input bar has an input box titled "Text". If you type in any text here, it is used instead of the actual measured dimension. If you leave this blank,  measures the actual dimension and inserts it. Note that you can enter any text, not just numbers into the text box.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using tolerance text</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this mode, as well as in all the other dimensioning modes, the input bar has an input box titled "Tolerance". If you type in any text here, it is added to the dimension as the tolerance. If you input a value, a single tolerance text is added with a plus/minus sign. If you input two tolerance values with | character as a divider between two values, the first tolerance is used with plus sign and the second tolerance is used with minus sign. The input bar has another input box titled "Text". The text you type in this box is displayed along with the tolerance text instead of the measurement value.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage215.jpg" alt="image215" width="width629" height="height183"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Aligning dimensions precisely</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The base point of the dimension text acts as a snap point. This can be used to align dimensions precisely. See the example below, which shows how to use snaps to align two horizontal dimensions.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage216.jpg" alt="image216" width="width629" height="height190"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Horizontal Baseline</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage217.png" alt="image217" width="width26" height="height26"></span> <strong><span class="underline">Horizontal Baseline</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This mode is used to create a set of horizontal dimensions that share the same first point. For every additional dimension after the first, you need to supply only the second point and (optionally) the dimension placement point.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage218.png" alt="image218" width="width629" height="height281"></span></p>
+</div>
+<div class="paragraph">
+<p>Any number of such dimensions can be created using the same first point. To set the first point again, click the Horizontal Baseline toolbar button again.</p>
+</div>
+<div class="paragraph">
+<p><strong>Horizontal Continue</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage219.png" alt="image219" width="width26" height="height26"></span> <strong><span class="underline">Horizontal Continue</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This mode is used to create a set of horizontal dimensions, like the Horizontal Baseline mode. The difference is that in this mode, the end point of the previous dimension becomes the start point of the next dimension.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage220.png" alt="image220" width="width623" height="height258"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Horizontal Ordinate</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage221.png" alt="image221" width="width26" height="height26"></span> <strong><span class="underline">Horizontal Ordinate</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This mode is used to create ordinate dimensions. Ordinate dimensions simply list the distance of a point from some other reference point. The first click in this mode sets the reference point, and every subsequent click creates an ordinate dimension at that point, that displays the horizontal distance between the reference point and the second point.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage222.png" alt="image222" width="width630" height="height228"></span></p>
+</div>
+<div class="paragraph">
+<p>For clarity, you should not have more than one ordinate reference in your drawing. That is, if you are using ordinate dimensions in your drawing, use one point as the reference point for all the ordinate dimensions.</p>
+</div>
+<div class="paragraph">
+<p><strong>Vertical, Vertical Baseline, Vertical Continue, Vertical Ordinate</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage223.png" alt="image223" width="width103" height="height26"></span> <strong><span class="underline">Vertical, Vertical Baseline, Vertical Continue, Vertical Ordinate</span></strong></p>
+</div>
+<div class="paragraph">
+<p>These commands work similar to the corresponding horizontal mode tools: <span class="underline">Horizontal</span>, <span class="underline">Horizontal Baseline, Horizontal Continue, Horizontal Ordinate.</span> Here are some dimensions created using these tools.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage224.png" alt="image224" width="width545" height="height257"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Aligned, Aligned Baseline, Aligned Continue</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage225.png" alt="image225" width="width77" height="height26"></span> <strong><span class="underline">Aligned, Aligned Baseline, Aligned Continue</span></strong></p>
+</div>
+<div class="paragraph">
+<p>These commands work similar to the corresponding horizontal mode tools: <span class="underline">Horizontal</span>, <span class="underline">Horizontal Baseline, Horizontal Continue.</span> They allow creation of dimensions at any angle. The length along the angle between the first and second click points is indicated by the dimension.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage226.png" alt="image226" width="width629" height="height183"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Perpendicular, Perpendicular Baseline, Perpendicular Continue</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage227.png" alt="image227" width="width77" height="height26"></span> <strong><span class="underline">Perpendicular, Perpendicular Baseline, Perpendicular Continue</span></strong></p>
+</div>
+<div class="paragraph">
+<p>These modes are similar to the Aligned dimensioning modes, in that they allow dimensions to be created at any angle. The angle in these cases is measured perpendicular from a baseline. The first click in any of these modes selects a baseline (this click must be close to a straight line segment in your drawing), and the subsequent clicks dimension the perpendicular distance between the second point and this reference line.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage228.png" alt="image228" width="width520" height="height284"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Smart Dimension</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage229.png" alt="image229" width="width30" height="height30"></span> <strong><span class="underline">Smart Dimension</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Use this single dimension command to add horizontal, vertical or aligned dimensions. The command first starts in aligned mode. When the command is in use, you can switch between horizontal, vertical or aligned modes by pressing the PageUp or PageDown key.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage230.png" alt="image230" width="width629" height="height160"></span></p>
+</div>
+<div class="paragraph">
+<p>The picture above shows the three dimensions (aligned, horizontal, vertical) that can be placed using this tool. As mentioned earlier, you can switch to these different modes of dimensions using either the PageUp or PageDown key. You can also place horizontal or vertical dimensions using this command. The status bar indicates the type of dimension currently in use.</p>
+</div>
+<div class="paragraph">
+<p><strong>Radius, Center Radius</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage231.png" alt="image231" width="width52" height="height26"></span> <strong><span class="underline">Radius, Center Radius</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Radius and Center Point Radius tools are used to dimension radius&#8217;s of circles and arcs. The Center Point Radius tool draws the dimension line from the centre of the circle, while the Radius tool does not extend the dimension line to the centre of the circle. By clicking just inside or just outside the circumference of the circle or arc, the dimension can be positioned on the inside, or the outside of the circle or arc.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage232.jpg" alt="image232" width="width617" height="height266"></span></p>
+</div>
+<div class="paragraph">
+<p>Like other dimensions, radius dimensions can be repositioned in dimension mode. The dimension leader lines are redrawn to dimension the same circle, with the text at the new position. l Setting the text position to Horizontal in the Dimension Properties dialogue (discussed next) usually leads to better looking radius and diameter dimensions.</p>
+</div>
+<div class="paragraph">
+<p><strong>Diameter, Center Diameter</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage233.png" alt="image233" width="width52" height="height26"></span> <strong><span class="underline">Diameter, Center Diameter</span></strong></p>
+</div>
+<div class="paragraph">
+<p>These modes work similar to the radius dimensioning modes, but display diameters instead of radius&#8217;s. The Center Point Diameter tool draws the dimension line across the centre of the circle to the other end of the diameter, while the Diameter tool does not.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage234.jpg" alt="image234" width="width629" height="height255"></span></p>
+</div>
+<div class="paragraph">
+<p>Like other dimensions, diameter dimensions can be repositioned in dimension mode. The dimension leader lines are redrawn to dimension the same circle, with the text at the new position.</p>
+</div>
+<div class="paragraph">
+<p>Setting the text position to Horizontal in the Dimension Properties dialogue (discussed next) usually leads to better looking radius and diameter dimensions.</p>
+</div>
+<div class="paragraph">
+<p><strong>Angular</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage235.png" alt="image235" width="width26" height="height26"></span> <strong><span class="underline">Angular</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Angular dimension tool is used to dimension the angle between two lines.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage236.png" alt="image236" width="width458" height="height169"></span></p>
+</div>
+<div class="paragraph">
+<p>Hold the shift key for the 3rd click to dimension the obtuse angle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage237.png" alt="image237" width="width381" height="height119"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>3-Point Angular</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage238.png" alt="image238" width="width26" height="height27"></span> <strong><span class="underline">3-Point Angular</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The 3-Point Angular dimension tool is used to dimension the angle formed at a point, between two other points. The first click sets the apex point at which the angle is measured; the angle is measured counter-clockwise between the second and third points you click upon.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage239.jpg" alt="image239" width="width629" height="height225"></span></p>
+</div>
+<div class="paragraph">
+<p>Hold the shift key for the 4th click to dimension the obtuse angle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage240.png" alt="image240" width="width334" height="height105"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Callout</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage241.png" alt="image241" width="width26" height="height26"></span> <strong><span class="underline">Callout</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This mode is used to add notes to the drawing in the form of callouts. To create a callout, type in the text to be displayed, click to indicate where the arrow should point, and click again to indicate where the text should be placed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage242.png" alt="image242" width="width513" height="height201"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Multi-Dimension Feature</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage243.png" alt="image243" width="width30" height="height31"></span> <strong><span class="underline">Multi-Dimension Feature</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Multi Dimension tool is designed to allow you to manually dimension geometry with just using a single tool with a single or double click to generate dimensions.</p>
+</div>
+<div class="paragraph">
+<p>The tool supports 3 modes of dimensioning which can be selected by Right Clicking on your mouse after you have selected the tool.</p>
+</div>
+<div class="paragraph">
+<p>These are:</p>
+</div>
+<div class="paragraph">
+<p><strong>Multi Dimension</strong></p>
+</div>
+<div class="paragraph">
+<p>This will allow you to click on a single entity to get a length or radius, by clicking two entities you can get angular measurements.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage244.png" alt="image244" width="width295" height="height96"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage245.png" alt="image245" width="width295" height="height96"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Baseline</strong></p>
+</div>
+<div class="paragraph">
+<p>When you first click the baseline start point will be set and any subsequent dimensions will be taken from that point.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage246.png" alt="image246" width="width295" height="height96"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Continue</strong></p>
+</div>
+<div class="paragraph">
+<p>When you click to dimension the baseline start point will be taken from the point of the last dimension.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage247.png" alt="image247" width="width295" height="height56"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Create Bend Profile With Dimensioning</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage248.png" alt="image248" width="width33" height="height30"></span> <strong><span class="underline">Create Bend Profile With Dimensioning</span></strong></p>
+</div>
+<div class="paragraph">
+<p>A New feature to extract bend profiles from a part in 2D CAD or 3D CAD (Sketch Mode). The 'Bend Profile' tool will present the user with options for creating a bend profile which is found under the Dimensioning Tab, this will present a selection of views based on the geometry and Bend Lines in the part from which the user can then click to select the view and place it on the part drawing by moving the mouse and clicking to select the position.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage249.png" alt="image249" width="width606" height="height265"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Segment</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage250.png" alt="image250" width="width26" height="height26"></span> <strong><span class="underline">Segment</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to add dimensioning for straight line and curved segments. Click on the segment to be dimensioned, and click again to position the dimension. Or, you can hold down the Ctrl key and click on a segment to position the dimension automatically.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Dimensioning all segments of a polyline</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you hold down the Shift key while you click on a polyline, all segments in the polyline are dimensioned automatically; this is equivalent to clicking on each segment of the polyline with this tool to dimension it.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage251.png" alt="image251" width="width630" height="height276"></span></p>
+</div>
+<div class="paragraph">
+<p>Text</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage252.png" alt="image252" width="width26" height="height27"></span> <strong><span class="underline">Text</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to insert descriptive text (without any dimensioning leader lines or arrows). Click on the point where the text is to be inserted, and type in the text into the Create Text dialogue that appears. The text is created at the point where you clicked; the click point can be aligned to the text using three possible horizontal alignments and three possible vertical alignments.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage253.png" alt="image253" width="width514" height="height251"></span></p>
+</div>
+<div class="paragraph">
+<p><strong><span class="underline">NOTE</span>:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can also create multiple lines of text directly by typing the text accordingly. In the picture shown, the textbox contains two lines. So this text will be displayed as multiline text containing "Line one" in the first line and "Line two" in the second.</p>
+</li>
+<li>
+<p>Text that has been created earlier with this tool can be edited by holding down the Ctrl key and clicking on the existing text.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Edit Text</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage254.png" alt="image254" width="width26" height="height26"></span> <strong><span class="underline">Edit Text</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to edit the text of any dimension entity. To edit text, click on the dimension text that has to be edited. The text is now displayed in the Text box in the input bar. Now type in the new text and press Enter. You can also type in the new text and click anywhere on the drawing pane to update the dimension. Tolerance values can also be changed in the same way.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage255.jpg" alt="image255" width="width563" height="height288"></span></p>
+</div>
+<div class="paragraph">
+<p>If you have to edit many dimensions,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the first dimension text.</p>
+</li>
+<li>
+<p>The dimension text is displayed in the Text box. Type in the new text.</p>
+</li>
+<li>
+<p>Click on the next dimension text to be edited.</p>
+</li>
+<li>
+<p>This updates the first dimension and then loads the second dimension&#8217;s text into the Text box for editing.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Dimension Properties</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage256.png" alt="image256" width="width26" height="height26"></span> <strong><span class="underline">Dimension Properties</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Clicking this button brings up the dimension settings dialogue, which allows you to set the arrow head style and size, the font used for dimensions, and the position of the dimension text with respect to the dimension line.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage257.jpg" alt="image257" width="width372" height="height353"></span></p>
+</div>
+<div class="paragraph">
+<p>The arrowhead style, arrowhead size, and the dimension font and size are common to all the dimensions in the drawing. When you change any of these settings, all existing dimensions are redrawn using the new settings. However, the text position setting is specific to each dimension, and if you change this setting, the new value is used only for dimensions created afterwards. Existing dimensions are not modified.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Turn on the ANSI Standard option to set the height and length of the arrowheads automatically based on the text size.</p>
+</li>
+<li>
+<p>Turn on the Keep trailing zeroes setting to force  to keep trailing zeroes after the decimal point. With this setting off, trailing zeroes after the decimal point are removed.</p>
+</li>
+<li>
+<p>Click on the Save as Default button to save the current dimension settings as defaults for all new parts you create.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage258.jpg" alt="image258" width="width500" height="height198"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For horizontal dimensions, break-in and horizontal settings produce similar results.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Auto Dimension</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage259.png" alt="image259" width="width26" height="height26"></span> <strong><span class="underline">Auto Dimension</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool automatically creates dimensions for the entire part. The dimensions created depend on the options turned on in the AutoDimension Settings dialogue box.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage260.jpg" alt="image260" width="width629" height="height247"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Generate dimensions for:</strong> Use this setting to choose whether dimensions are generated for all entities, for selected entities or for unselected entities.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dimension origin:</strong> Dimensions are generated using the point specified here as the reference point. Using the lower left extent option is recommended, since it usually results in the fewest number of dimensions being created.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dimension style:</strong> Use this to choose a dimensioning style. The baseline style is recommended for most drawings, but the ordinate style can be useful in reducing clutter in very complex drawings.</p>
+</div>
+<div class="paragraph">
+<p><strong>Outside shape:</strong> Turn this setting on to dimension irregular polylines, and outer polylines. If this is off, only regular shaped inner holes are dimensioned.</p>
+</div>
+<div class="paragraph">
+<p><strong>Standard hole positions:</strong> Turn this on to dimension the locations of standard shaped holes. For example, in the picture above you can see that the OB 30x10 hole and the CI 10 standard shaped holes' locations are dimensioned.</p>
+</div>
+<div class="paragraph">
+<p><strong>Standard hole descriptors:</strong> Turn this on to add descriptors (as for the obround and circle hole in the picture above) for standard hole shapes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Standard hole legends:</strong> Turn this on to add legends (A, B, C&#8230;&#8203;) for each kind of regular shaped hole. This can result in less cluttered dimensioning, especially if there are numerous similar holes in the drawing. The <span class="underline">View Legends</span> tool can be then used to view the hole chart for the drawing.</p>
+</div>
+<div class="paragraph">
+<p><strong>Array parameters:</strong> If there are patterns of similarly shaped holes (for example, an LAA, BHC, or GRD pattern), this option displays the pattern information. This includes row and column spacing and count for a GRD pattern, or bolt hole diameter and count for a BHC pattern.</p>
+</div>
+<div class="paragraph">
+<p><strong>Irregular holes:</strong> Turn this option on to add segment by segment dimensioning for irregularly shaped holes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bend line positions:</strong> If you turn this option on, bend line positions are dimensioned (relative to the closest parallel edge of the outer shape).</p>
+</div>
+<div class="paragraph">
+<p><strong>Arc radius dimensions:</strong> Turn this on to annotate the radius of all arc segments.</p>
+</div>
+<div class="paragraph">
+<p><strong>Delete old dimensions:</strong> Turn this option on to delete existing dimensions in the drawing before auto dimensioning. This is recommended, because otherwise the automatically created dimensions could visually interfere with the existing dimensions. You should always run the AutoDimension tool first, and then create any other custom dimensions later.</p>
+</div>
+<div class="paragraph">
+<p><strong>Zoom</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage261.png" alt="image261" width="width26" height="height26"></span> <strong><span class="underline">Zoom</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This button is used to zoom in and out of a drawing. Here are different ways in which the zoom mode can be used.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type in a zoom factor and press Enter. The centre of the drawing remains unchanged, while the drawing itself is scaled by the factor you enter. Factors less than 1 zoom out, while factors greater than 1, zoom in.</p>
+</li>
+<li>
+<p>Click, hold down the mouse button and drag. This displays a rubber band rectangle on the screen that defines the area of interest and when you release the mouse button that area expands to fill the entire window.</p>
+</li>
+<li>
+<p>Hold down Ctrl and click, to zoom back to your previous view.</p>
+</li>
+<li>
+<p>Hold down Shift and click to zoom back to the extents of the entire drawing.</p>
+</li>
+<li>
+<p>Hold down Alt and click to zoom out by a factor of 0.5</p>
+<div class="literalblock">
+<div class="content">
+<pre>Other navigation mechanisms</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to the zoom command on the drawing editor toolbar, there are some other methods in which you can navigate about the drawing:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pressing Ctrl+E at any time (even halfway through a command) will cause  to zoom out so that the entire drawing area is visible.</p>
+</li>
+<li>
+<p>Pressing Ctrl+W at any time (even halfway through a command) will cause  to temporarily suspend that command, and switch into a zoom mode. The prompt bar at this time will read "Click, drag and release to zoom in and resume the previous command". After you have clicked, dragged and released to define an area of interest,  will zoom in and the command will resume.</p>
+</li>
+<li>
+<p>If you have a mouse with a mouse wheel, you can also use the mouse wheel to zoom and pan. To zoom in, roll the wheel forward, and to zoom out, roll the wheel backward. To pan the drawing without changing the zoom level, click the mouse wheel, and drag the mouse while holding the mouse wheel down. These navigation modes can be used at any time, even when you are halfway through a command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Click this button to request for a repaint of the screen. This may be sometimes needed to remove blips, or markers, left behind on the screen by an earlier command. Also, when you delete an entity that coincides with another entity, the second entity may not be seen until you click the redraw button.</p>
+</div>
+<div class="paragraph">
+<p><strong>View Legends</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage262.png" alt="image262" width="width26" height="height26"></span> <strong><span class="underline">View Legends</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to view the legends table (hole chart) for the drawing. The legends are added for standard shape holes by the <span class="underline">AutoDimension</span> tool, if the Standard hole legend option is turned on.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage263.jpg" alt="image263" width="width614" height="height215"></span></p>
+</div>
+</div>
+</div>

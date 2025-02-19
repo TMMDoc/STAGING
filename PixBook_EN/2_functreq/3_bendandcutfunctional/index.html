@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> Sheet metal functionality.</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>Flux</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Developer documentation PIX</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../1_overviewandscope/index.html"> Scope and development steps</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version1.html">Version1: Basic functionality</a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version2.html">Version2: Integration, cleanup </a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version3.html">Version 3: Sheet metal fct / API</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html"> UI Funcitons</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../1_general/index.html">General</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../1_general/ui.html">UI, toolbars and general</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/basic.html">Picking mechanisms</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/additional.html">Zoom, Pan and Origin</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/gridandlayers.html">Grid and Layers</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/ui2.html">Advanced commands</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../2_create/index.html"> Basic functions </a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../2_create/drawingtools.html">Line, Arc, Rect</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/editingtools.html">Editing Tools</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/operations.html">Operations</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/unionintersecti.html">Union, Intersection, Subtraction</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/arrays.html">Arrays</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/offsetedge.html">Offset Edge</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/cornerandgeometrychanges.html">Corner  and geometry changes</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/notches.html">Notches</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../4_modify/index.html"> Advanced functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../4_modify/blockhandling.html">Block handling</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/polylines.html">Edit polylines</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/irregulararray.html">Irregular Array</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/magnifyarea.html">Magnify Area</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/planeextract.html">Plane Extract</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../5_annotate/index.html"> Text and annotations</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../5_annotate/truetypetext.html">Truetype Text</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioning.html">Dimensioning</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioningandannotation.html">Dimensioning and Annotation </a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/info.html">Info</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a class="active" href="index.html"> Sheet metal functionality.</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="sheetmetaltools.html">Notches and Cutouts</a></li>
+            <li><button class="tree blank"></button><a href="bendrelief.html">Bend Relief</a></li>
+            <li><button class="tree blank"></button><a href="cornerrelief.html">Corner Relief</a></li>
+            <li><button class="tree blank"></button><a href="cornerclosing.html">Corner Closing</a></li>
+            <li><button class="tree blank"></button><a href="bendlinetool.html">Bend line tool</a></li>
+            <li><button class="tree blank"></button><a href="flangedesign.html">Flange design</a></li>
+            <li><button class="tree blank"></button><a href="editbendinforma.html">Edit Bend Information</a></li>
+            <li><button class="tree blank"></button><a href="foldtodmodel.html">Fold to 3D Model</a></li>
+            <li><button class="tree blank"></button><a href="shaperec.html"> 2D Shape Recognition</a></li>
+            <li><button class="tree blank"></button><a href="11_slotrecognition/index.html"> Slot Recognition</a></li>
+            <li><button class="tree blank"></button><a href="12_notchoptimization/index.html"> Notch Optimization</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../9_complex/index.html"> Addon functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../9_complex/arraysandshapemaker.html">Arrays and shape maker</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/digitizer.html">Digitizer</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricducts.html">Parametric Ducts</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricscrip.html">Parametric Script</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../4_core/index.html">Core Functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../4_core/importexport.html">Import and Export</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/4_metadataextraction/index.html">Meta Data Extraction</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/5_comparison/index.html"> Comparison</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/exact.html">Exact</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/bendtolerant.html">Bend *tolerant* </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/6_geometricalanalysisa/index.html">Analysis Repairing and Healing</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/cleanup.html">cleanup</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smallelements.html">Small Elements </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smoothing.html">Smoothing </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/opencontours.html">Open Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/duplicatecontours.html">Duplicate Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/splineapproximation.html">Spline Approximation</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../4_core/7_dxfextractionandclea/index.html"> DXF Extraction and Cleanup</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/8_macrorespscriptexecu/index.html"> Script Execution </a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/9_textinsertion/index.html"> Text Insertion</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../8_api/index.html">Structure of API's</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../8_api/pixcore/index.html">PixCore</a></li>
+        <li><button class="tree blank"></button><a href="../../8_api/pixops/index.html">PixOps</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../9_architecture/index.html">Architecture</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../9_architecture/13_integrationwiththeen/index.html"> Integration </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/14_supportforautoproces/index.html"> Support for Auto-Processing </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/15_individualsoftwareco/index.html"> Installation</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/16_apicompatibility/index.html"> API compatibility</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/17_consistency/index.html"> Consistency</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/18_multitenancy/index.html"> Multi-Tenancy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html"> UI Funcitons</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html"> Sheet metal functionality.</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1> Sheet metal functionality.</h1>
+<div class="paragraph">
+<p>This chapter describes the special functions needed in sheet metal fabrication.</p>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="../5_annotate/info.html">Info</a></span>
+  <span class="next"><a href="sheetmetaltools.html">Notches and Cutouts</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

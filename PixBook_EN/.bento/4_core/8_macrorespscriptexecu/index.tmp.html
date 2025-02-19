@@ -1,0 +1,58 @@
+<div class="paragraph">
+<p>The kernel should support execution of macros resp. scripts, most preferable written in a standard script language like Python, TypeScript or Lua (for cloud).
+Execution of such scripts serves the purpose of post- and batch-processing 2D models as well as variant programming. There are some differences between the two intentions. While the approach for post- resp. batch-processing is on executing a known set of operations on an /(flexible) selection of entities, defined by filter criteria, for variants, the set of entities is mainly known (fixed), while the parameters of the operations need to be flexible/configurable.
+The following operations need to be supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create
+Creating various entities and types of 2D geometries</p>
+</li>
+<li>
+<p>Move
+Moving the part or a set of selected entities by a translation vector</p>
+</li>
+<li>
+<p>Rotate
+Rotating the part or a set of selected entities around a given center by an angle.</p>
+</li>
+<li>
+<p>Mirror
+Mirroring the part or a set of selected entities on a mirroring center (coordinate system origin or a specified point) or a mirroring axis (x-axi, y-axis or a specified axis given by two points)</p>
+</li>
+<li>
+<p>Scale
+Scaling the part or a set of selected entities on a scaling center (coordinate system origin or a specified point) by a specified scaling factor</p>
+</li>
+<li>
+<p>Stretch
+Stretching the part or a set of selected entities by a given, in difference to move, stretch also modifies the connected entities to maintain the given connectivity</p>
+</li>
+<li>
+<p>Copy
+Copying the part or a set of selected entities</p>
+</li>
+<li>
+<p>Delete
+Deleting the part or a set of selected entities</p>
+</li>
+<li>
+<p>Modify
+Modifying the part or a set of selected entities like changing the radius of an arc or circle or the start/end point of a line</p>
+</li>
+<li>
+<p>Select
+Selecting a set of entities within a specified box, at a specified location or by a given id or selecting a set of entities based on filter criteria, such as “all red circles with radius smaller 5mm”</p>
+</li>
+<li>
+<p>SetId
+Setting the selection id for a set of entities</p>
+</li>
+<li>
+<p>SetAttribute/Property
+Setting attributes/properties for the part or a set of selected entities
+See also Commands_EN.pdf.</p>
+</li>
+</ul>
+</div>

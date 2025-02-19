@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Flange design</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>Flux</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Developer documentation PIX</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../1_overviewandscope/index.html"> Scope and development steps</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version1.html">Version1: Basic functionality</a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version2.html">Version2: Integration, cleanup </a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version3.html">Version 3: Sheet metal fct / API</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html"> UI Funcitons</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../1_general/index.html">General</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../1_general/ui.html">UI, toolbars and general</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/basic.html">Picking mechanisms</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/additional.html">Zoom, Pan and Origin</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/gridandlayers.html">Grid and Layers</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/ui2.html">Advanced commands</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../2_create/index.html"> Basic functions </a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../2_create/drawingtools.html">Line, Arc, Rect</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/editingtools.html">Editing Tools</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/operations.html">Operations</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/unionintersecti.html">Union, Intersection, Subtraction</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/arrays.html">Arrays</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/offsetedge.html">Offset Edge</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/cornerandgeometrychanges.html">Corner  and geometry changes</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/notches.html">Notches</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../4_modify/index.html"> Advanced functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../4_modify/blockhandling.html">Block handling</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/polylines.html">Edit polylines</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/irregulararray.html">Irregular Array</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/magnifyarea.html">Magnify Area</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/planeextract.html">Plane Extract</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../5_annotate/index.html"> Text and annotations</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../5_annotate/truetypetext.html">Truetype Text</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioning.html">Dimensioning</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioningandannotation.html">Dimensioning and Annotation </a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/info.html">Info</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html"> Sheet metal functionality.</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="sheetmetaltools.html">Notches and Cutouts</a></li>
+            <li><button class="tree blank"></button><a href="bendrelief.html">Bend Relief</a></li>
+            <li><button class="tree blank"></button><a href="cornerrelief.html">Corner Relief</a></li>
+            <li><button class="tree blank"></button><a href="cornerclosing.html">Corner Closing</a></li>
+            <li><button class="tree blank"></button><a href="bendlinetool.html">Bend line tool</a></li>
+            <li><button class="tree blank"></button><a class="active" href="flangedesign.html">Flange design</a></li>
+            <li><button class="tree blank"></button><a href="editbendinforma.html">Edit Bend Information</a></li>
+            <li><button class="tree blank"></button><a href="foldtodmodel.html">Fold to 3D Model</a></li>
+            <li><button class="tree blank"></button><a href="shaperec.html"> 2D Shape Recognition</a></li>
+            <li><button class="tree blank"></button><a href="11_slotrecognition/index.html"> Slot Recognition</a></li>
+            <li><button class="tree blank"></button><a href="12_notchoptimization/index.html"> Notch Optimization</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../9_complex/index.html"> Addon functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../9_complex/arraysandshapemaker.html">Arrays and shape maker</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/digitizer.html">Digitizer</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricducts.html">Parametric Ducts</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricscrip.html">Parametric Script</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../4_core/index.html">Core Functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../4_core/importexport.html">Import and Export</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/4_metadataextraction/index.html">Meta Data Extraction</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/5_comparison/index.html"> Comparison</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/exact.html">Exact</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/bendtolerant.html">Bend *tolerant* </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/6_geometricalanalysisa/index.html">Analysis Repairing and Healing</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/cleanup.html">cleanup</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smallelements.html">Small Elements </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smoothing.html">Smoothing </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/opencontours.html">Open Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/duplicatecontours.html">Duplicate Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/splineapproximation.html">Spline Approximation</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../4_core/7_dxfextractionandclea/index.html"> DXF Extraction and Cleanup</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/8_macrorespscriptexecu/index.html"> Script Execution </a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/9_textinsertion/index.html"> Text Insertion</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../8_api/index.html">Structure of API's</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../8_api/pixcore/index.html">PixCore</a></li>
+        <li><button class="tree blank"></button><a href="../../8_api/pixops/index.html">PixOps</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../9_architecture/index.html">Architecture</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../9_architecture/13_integrationwiththeen/index.html"> Integration </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/14_supportforautoproces/index.html"> Support for Auto-Processing </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/15_individualsoftwareco/index.html"> Installation</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/16_apicompatibility/index.html"> API compatibility</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/17_consistency/index.html"> Consistency</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/18_multitenancy/index.html"> Multi-Tenancy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html"> UI Funcitons</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html"> Sheet metal functionality.</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="flangedesign.html">Flange design</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Flange design</h1>
+<div class="paragraph">
+<p><strong>Centre Line</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage173.png" alt="image173" width="width22" height="height22"></span> <strong><span class="underline">Centre Line</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to create a centre line by specifying the length and angle. Enter the length and angle values in the input box and Click on the required drawing area.  creates a Center Line in the shape of a Cross with each arm having the measure given as input. You can also create a Rotated Center Line by specifying the Angle value and  creates the Rotated Center Line for the particular angle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage174.jpg" alt="image174" width="width542" height="height308"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating Centre Line For Arc/Circle</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Holding the Ctrl Button Click anywhere on the circle or the Arc.  will create a Center Line for the length and angle specified.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage175.png" alt="image175" width="width581" height="height179"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Flange Joining</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage176.png" alt="image176" width="width22" height="height22"></span> <strong><span class="underline">Flange Joining</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Flange Joining tool is a variant of the <span class="underline">Plane Joining</span> tool. When the shape to be joined is a simple rectangular flange, this tool allows it to be created and joined to the base plane in a single operation. This tool uses the length and height parameters that you supply to create a rectangular flange plane first. Then, it joins this rectangular plane to the base plane, using the Offset parameter in a similar manner to the plane joining tool.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Two point mode</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This tool has a special 2-point mode that can be used to input the length and position of the flange using two mouse clicks. To invoke this mode, hold down the Ctrl key as you choose the base segment on which the flange is to be constructed. The next two mouse clicks are projected onto this base segment, and indicate the limits of the flange (thus indicating both its position and length).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage177.jpg" alt="image177" width="width581" height="height241"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Full length flanges</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you specify a length of 0 for the flange, the flange is created to extend to the full length of the edge you click on. Sometimes, the edge you are clicking on can be divided halfway through by a bend line of another flange on an adjacent edge. In this case, the flange is extended only up to the bend line, since this is the behaviour that is usually required. If you want to extend the flange all along the edge (ignoring any previous bend lines), hold down the Alt key while clicking on the edge.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage178.png" alt="image178" width="width581" height="height208"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Plane Joining</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage179.png" alt="image179" width="width22" height="height22"></span> <strong><span class="underline">Plane Joining</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Plane Joining tool is used to create development drawings by composing them plane by plane. Each individual plane shape (called a flange plane) is drawn as a separate polyline, and attached to the base using this tool. When a flange is attached to a base, this tool automatically compensates by adding the bending deduction. It also adds bend line and tags it with bend information that can be edited using the <span class="underline">Edit Bend Information</span> tool, or exported to a BND file.</p>
+</div>
+<div class="paragraph">
+<p>To use this tool, you need to pick the attachment segments on the base polyline and on the flange polyline. Both of these polylines must be closed polylines that are not self-intersecting. The flange polyline is rotated and moved to align up with the base polyline. When you pick a segment on the base polyline, the closest node to the point you click upon becomes the reference node for the plane joining operation. The Offset input box is used to enter the offset distance by which the flange should be displaced from this reference node. Positive or negative values can be entered in this input box to slide the flange forwards or backward along the line of attachment before it is joined. If there are inner holes in the flange plane, they are also moved into position along with the flange, as you can see in the picture below.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage180.jpg" alt="image180" width="width581" height="height251"></span></p>
+</div>
+<div class="paragraph">
+<p>The Plane Joining box that comes up after picking the two segments lets you choose the bend radius from among the bend radii available in the bend database. When you type in the bend angle,  computes the bend deduction and displays it. Alternately, you can check the Custom deduction checkbox, and type in a non-default value for the bend deduction. You can also choose the bend direction (this is required for the BND file), and bend type. The bend type lets  know whether you have drawn the base plane and the flange plane to outer dimensions, or to inner dimensions.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Retaining the original flange plane</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you are adding a flange plane, you can hold down the Ctrl key to retain the original flange plane (along with its inner holes). In this case,  makes a copy of the flange plane along with its holes and leaves the original undisturbed.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Mirroring the flange before joining</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When there are symmetric flanges to be attached to two sides of a base plane, you can use this feature to avoid having to draw two similar, mirror-image flanges. You can draw one, and then attach it to the base plane (hold down Ctrl when you do this, to retain the original flange plane undisturbed). Then, attach it to the other side of the base plane, this time holding down the Alt key to mirror the flange before joining.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Missing bend deduction tables</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there is no bend deduction table for the material and thickness you are using,  will prompt you to add a bend deduction, using a dialogue like the one shown below. You can type in a bend deduction value for a 90 degree bend here, (from which  will compute the bend deductions for other angles) or you can choose to go to the <span class="underline">bend deductions database</span>, where you can specify the bend deductions in more detail.</p>
+</div>
+<div class="paragraph">
+<p><strong>Show Plane Edge</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage181.png" alt="image181" width="width22" height="height22"></span> <strong><span class="underline">Show Plane Edge</span></strong></p>
+</div>
+<div class="paragraph">
+<p>When planes are joined together using the <span class="underline">Plane Joining</span> or <span class="underline">Flange Joining</span> commands, the bend centreline is created and displayed in the Bend layer. However, it is sometimes necessary to view the original outer edge of the base plane (or the flange plane). It might be also useful to view the inner edge of base plane or flange plane (the inner corner of the bend), because it might be necessary to position holes relative to these inner or outer edges.</p>
+</div>
+<div class="paragraph">
+<p>Displaying all the inner and outer lines for all bend edges would clutter up the drawing, so this tool can be used to selectively turn on or off specified inner and outer edges. Select this mode, and click on a plane, near a bend line. This will turn on and display the outer edge of the plane you click upon, at this bend. You can hold down the Ctrl key and click to display the inner edge instead of the outer edge. Normally, displaying one edge will turn off other edges that are displayed, but you can hold down the Shift key while you click to avoid turning off previously displayed edges.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage182.png" alt="image182" width="width581" height="height202"></span></p>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="bendlinetool.html">Bend line tool</a></span>
+  <span class="next"><a href="editbendinforma.html">Edit Bend Information</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

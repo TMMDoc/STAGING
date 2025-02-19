@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>cleanup</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>Flux</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Developer documentation PIX</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../1_overviewandscope/index.html"> Scope and development steps</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version1.html">Version1: Basic functionality</a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version2.html">Version2: Integration, cleanup </a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version3.html">Version 3: Sheet metal fct / API</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../2_functreq/index.html"> UI Funcitons</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../2_functreq/1_general/index.html">General</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../2_functreq/1_general/ui.html">UI, toolbars and general</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/1_general/basic.html">Picking mechanisms</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/1_general/additional.html">Zoom, Pan and Origin</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/1_general/gridandlayers.html">Grid and Layers</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/1_general/ui2.html">Advanced commands</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../2_functreq/2_create/index.html"> Basic functions </a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/drawingtools.html">Line, Arc, Rect</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/editingtools.html">Editing Tools</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/operations.html">Operations</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/unionintersecti.html">Union, Intersection, Subtraction</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/arrays.html">Arrays</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/offsetedge.html">Offset Edge</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/cornerandgeometrychanges.html">Corner  and geometry changes</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/2_create/notches.html">Notches</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../2_functreq/4_modify/index.html"> Advanced functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../2_functreq/4_modify/blockhandling.html">Block handling</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/4_modify/polylines.html">Edit polylines</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/4_modify/irregulararray.html">Irregular Array</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/4_modify/magnifyarea.html">Magnify Area</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/4_modify/planeextract.html">Plane Extract</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../2_functreq/5_annotate/index.html"> Text and annotations</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../2_functreq/5_annotate/truetypetext.html">Truetype Text</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/5_annotate/dimensioning.html">Dimensioning</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/5_annotate/dimensioningandannotation.html">Dimensioning and Annotation </a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/5_annotate/info.html">Info</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../2_functreq/3_bendandcutfunctional/index.html"> Sheet metal functionality.</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/sheetmetaltools.html">Notches and Cutouts</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/bendrelief.html">Bend Relief</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/cornerrelief.html">Corner Relief</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/cornerclosing.html">Corner Closing</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/bendlinetool.html">Bend line tool</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/flangedesign.html">Flange design</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/editbendinforma.html">Edit Bend Information</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/foldtodmodel.html">Fold to 3D Model</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/shaperec.html"> 2D Shape Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/11_slotrecognition/index.html"> Slot Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/3_bendandcutfunctional/12_notchoptimization/index.html"> Notch Optimization</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../2_functreq/9_complex/index.html"> Addon functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../2_functreq/9_complex/arraysandshapemaker.html">Arrays and shape maker</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/9_complex/digitizer.html">Digitizer</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/9_complex/parametricducts.html">Parametric Ducts</a></li>
+            <li><button class="tree blank"></button><a href="../../2_functreq/9_complex/parametricscrip.html">Parametric Script</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">Core Functions</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="../importexport.html">Import and Export</a></li>
+        <li><button class="tree blank"></button><a href="../4_metadataextraction/index.html">Meta Data Extraction</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../5_comparison/index.html"> Comparison</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../5_comparison/exact.html">Exact</a></li>
+            <li><button class="tree blank"></button><a href="../5_comparison/bendtolerant.html">Bend *tolerant* </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">Analysis Repairing and Healing</a>
+          <ul>
+            <li><button class="tree blank"></button><a class="active" href="cleanup.html">cleanup</a></li>
+            <li><button class="tree blank"></button><a href="smallelements.html">Small Elements </a></li>
+            <li><button class="tree blank"></button><a href="smoothing.html">Smoothing </a></li>
+            <li><button class="tree blank"></button><a href="opencontours.html">Open Contours</a></li>
+            <li><button class="tree blank"></button><a href="duplicatecontours.html">Duplicate Contours</a></li>
+            <li><button class="tree blank"></button><a href="splineapproximation.html">Spline Approximation</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../7_dxfextractionandclea/index.html"> DXF Extraction and Cleanup</a></li>
+        <li><button class="tree blank"></button><a href="../8_macrorespscriptexecu/index.html"> Script Execution </a></li>
+        <li><button class="tree blank"></button><a href="../9_textinsertion/index.html"> Text Insertion</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../8_api/index.html">Structure of API's</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../8_api/pixcore/index.html">PixCore</a></li>
+        <li><button class="tree blank"></button><a href="../../8_api/pixops/index.html">PixOps</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../9_architecture/index.html">Architecture</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../9_architecture/13_integrationwiththeen/index.html"> Integration </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/14_supportforautoproces/index.html"> Support for Auto-Processing </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/15_individualsoftwareco/index.html"> Installation</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/16_apicompatibility/index.html"> API compatibility</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/17_consistency/index.html"> Consistency</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/18_multitenancy/index.html"> Multi-Tenancy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">Core Functions</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Analysis Repairing and Healing</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="cleanup.html">cleanup</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>cleanup</h1>
+<div class="paragraph">
+<p><strong>Remove Small Segments</strong></p>
+</div>
+<div class="paragraph">
+<div class="title"><span class="image"><img src="img/mimage103.png" alt="image103" width="width22" height="height22"></span> <strong><span class="underline">Remove Small Segments</span></strong></div>
+<p>Use this tool to remove small segments from drawing. Type in a threshold value into the Min Length input box, and indicate a region of the drawing. All segments inside the region which are smaller than the threshold length are removed. When a segment is removed, gaps can appear in the remnant polyline that is left behind.  cleans up this polyline by extending these adjacent segments to meet, thus removing the gaps.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage104.jpg" alt="image104" width="width561" height="height260"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Suppressing remnant clean-up</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key when you define the area, to suppress the remnant clean-up. In this case, gaps will be left in the original polylines where the small segments are removed, thus splitting the original polyline into many pieces.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com">Full-featured Documentation generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Open Polylines</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage105.png" alt="image105" width="width22" height="height22"></span> <strong><span class="underline">Mark Open Polylines</span></strong></p>
+</div>
+<div class="paragraph">
+<p>When drawings are created in , using proper snaps and other assists, the endpoints of adjacent segments are usually precisely aligned to each other, and  automatically stitches adjacent segments together to form continuous polylines that are more suitable for tooling. However, in some cases, especially when drawings are imported from low-accuracy DXF files or other sources, adjacent segments might not line up precisely enough for 's automatic stitching to work correctly. In this case, it might be difficult to know by visual inspection where a polylines nodes don&#8217;t meet up exactly.</p>
+</div>
+<div class="paragraph">
+<p>The Mark Open Polylines tool helps fix this problem. Click on this button, and  adds highly visible red markers at the open ends of all polylines. Then, it is easy to see where the gaps are and then can be cleaned up using the editing tools. These markers are added into a special system layer called OpenNodes.  knows that all entities on this layer are just markers, and not real entities and will never add laser or punch tooling to them. Also, every time you click this button any old markers are first removed, and new markers are added. So, if you clean up the drawing perfectly to have no open polylines, and then click this button, all open polyline markers will be removed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage106.png" alt="image106" width="width566" height="height200"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com">Easy EPub and documentation editor</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Highlight Duplicate Segments</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage107.png" alt="image107" width="width22" height="height22"></span> <strong><span class="underline">Highlight Duplicate Segments</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Use this command to highlight (select) duplicate segments in the part drawing. When this button is clicked,  analyses the part drawings and out of every pair of duplicate segments, one is selected. This makes it easy to delete the duplicates by just pressing the Delete key after marking the segments. Here is the result after marking duplicate segments.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage108.png" alt="image108" width="width379" height="height274"></span></p>
+</div>
+<div class="paragraph">
+<p>If a part of one segment is overlapping another segment, the segments cannot be highlighted completely. In this case, small circle markers to delimit the portions that overlap.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage109.png" alt="image109" width="width537" height="height261"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Small Segments</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage110.png" alt="image110" width="width22" height="height22"></span> <strong><span class="underline">Mark Small Segments</span></strong></p>
+</div>
+<div class="paragraph">
+<p>In this mode, you can type in a minimum segment length, and press Enter. Markers are added on all the small segments which are shorter than this.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage111.png" alt="image111" width="width480" height="height262"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Non-Tangent Corners</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage112.png" alt="image112" width="width22" height="height21"></span> <strong><span class="underline">Mark Non-Tangent Corners</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Enter the Minimum and Maximum angles in the input bar. As the polyline is traversed, corners whose angles (outside angles) fall within this range are marked. Here is an example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage113.png" alt="image113" width="width390" height="height242"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour">Easily create Help documents</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Large Radius</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage114.png" alt="image114" width="width22" height="height22"></span> <strong><span class="underline">Mark Large Radius</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Use this tool to mark arcs with radius exceeding the threshold. Enter the threshold radius value in the input bar. The arcs exceeding the given value are all marked. In the drawing below, the arc with radius &gt; 35 is highlighted. Notice that the 2 fillets on the opposite edge fall within the threshold and are not marked.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage115.png" alt="image115" width="width394" height="height261"></span></p>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="index.html">Analysis Repairing and Healing</a></span>
+  <span class="next"><a href="smallelements.html">Small Elements </a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

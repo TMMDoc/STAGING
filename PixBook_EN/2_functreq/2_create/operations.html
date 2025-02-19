@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Operations</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>Flux</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Developer documentation PIX</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../1_overviewandscope/index.html"> Scope and development steps</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version1.html">Version1: Basic functionality</a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version2.html">Version2: Integration, cleanup </a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version3.html">Version 3: Sheet metal fct / API</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html"> UI Funcitons</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../1_general/index.html">General</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../1_general/ui.html">UI, toolbars and general</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/basic.html">Picking mechanisms</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/additional.html">Zoom, Pan and Origin</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/gridandlayers.html">Grid and Layers</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/ui2.html">Advanced commands</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html"> Basic functions </a>
+          <ul>
+            <li><button class="tree blank"></button><a href="drawingtools.html">Line, Arc, Rect</a></li>
+            <li><button class="tree blank"></button><a href="editingtools.html">Editing Tools</a></li>
+            <li><button class="tree blank"></button><a class="active" href="operations.html">Operations</a></li>
+            <li><button class="tree blank"></button><a href="unionintersecti.html">Union, Intersection, Subtraction</a></li>
+            <li><button class="tree blank"></button><a href="arrays.html">Arrays</a></li>
+            <li><button class="tree blank"></button><a href="offsetedge.html">Offset Edge</a></li>
+            <li><button class="tree blank"></button><a href="cornerandgeometrychanges.html">Corner  and geometry changes</a></li>
+            <li><button class="tree blank"></button><a href="notches.html">Notches</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../4_modify/index.html"> Advanced functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../4_modify/blockhandling.html">Block handling</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/polylines.html">Edit polylines</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/irregulararray.html">Irregular Array</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/magnifyarea.html">Magnify Area</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/planeextract.html">Plane Extract</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../5_annotate/index.html"> Text and annotations</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../5_annotate/truetypetext.html">Truetype Text</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioning.html">Dimensioning</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioningandannotation.html">Dimensioning and Annotation </a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/info.html">Info</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../3_bendandcutfunctional/index.html"> Sheet metal functionality.</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/sheetmetaltools.html">Notches and Cutouts</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/bendrelief.html">Bend Relief</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/cornerrelief.html">Corner Relief</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/cornerclosing.html">Corner Closing</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/bendlinetool.html">Bend line tool</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/flangedesign.html">Flange design</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/editbendinforma.html">Edit Bend Information</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/foldtodmodel.html">Fold to 3D Model</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/shaperec.html"> 2D Shape Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/11_slotrecognition/index.html"> Slot Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/12_notchoptimization/index.html"> Notch Optimization</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../9_complex/index.html"> Addon functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../9_complex/arraysandshapemaker.html">Arrays and shape maker</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/digitizer.html">Digitizer</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricducts.html">Parametric Ducts</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricscrip.html">Parametric Script</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../4_core/index.html">Core Functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../4_core/importexport.html">Import and Export</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/4_metadataextraction/index.html">Meta Data Extraction</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/5_comparison/index.html"> Comparison</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/exact.html">Exact</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/bendtolerant.html">Bend *tolerant* </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/6_geometricalanalysisa/index.html">Analysis Repairing and Healing</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/cleanup.html">cleanup</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smallelements.html">Small Elements </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smoothing.html">Smoothing </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/opencontours.html">Open Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/duplicatecontours.html">Duplicate Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/splineapproximation.html">Spline Approximation</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../4_core/7_dxfextractionandclea/index.html"> DXF Extraction and Cleanup</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/8_macrorespscriptexecu/index.html"> Script Execution </a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/9_textinsertion/index.html"> Text Insertion</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../8_api/index.html">Structure of API's</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../8_api/pixcore/index.html">PixCore</a></li>
+        <li><button class="tree blank"></button><a href="../../8_api/pixops/index.html">PixOps</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../9_architecture/index.html">Architecture</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../9_architecture/13_integrationwiththeen/index.html"> Integration </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/14_supportforautoproces/index.html"> Support for Auto-Processing </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/15_individualsoftwareco/index.html"> Installation</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/16_apicompatibility/index.html"> API compatibility</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/17_consistency/index.html"> Consistency</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/18_multitenancy/index.html"> Multi-Tenancy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html"> UI Funcitons</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html"> Basic functions </a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="operations.html">Operations</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Operations</h1>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage86.png" alt="image86" width="width22" height="height22"></span> <strong><span class="underline">Join</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to trim and join several separate polylines into one. Select this mode, and click on the pieces of the polyline to be connected and retained. The locations where you click on the polylines determines which section of the polyline is trimmed away and which are kept. Here is an example that shows a closed polyline being constructed from four separate segments.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage87.jpg" alt="image87" width="width540" height="height214"></span></p>
+</div>
+<div class="paragraph">
+<p>Here is another possible Join of the same four segments. In this case, since the four segments don&#8217;t form a closed shape,  does not add this polyline into the drawing yet. To add the polyline into the drawing, and to start afresh, hold down the Ctrl key and click.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage88.jpg" alt="image88" width="width538" height="height218"></span></p>
+</div>
+<div class="paragraph">
+<p>If you click on segments that don&#8217;t touch, they will be extended to touch, and then joined up together, if possible. Here&#8217;s an example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage89.jpg" alt="image89" width="width536" height="height180"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Undo</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you hold down the Shift key while clicking, the most recent segment that was joined will be undone, and you can choose to join a different segment to the polyline instead.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Auto join mode</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Auto join mode is used to automatically join up multiple line or arc segments in the drawing. To use this mode, enter a threshold value, and click while holding down the Alt key.  examines every pair of open end-points, and if they are closer than the specified threshold value, the ends get connected up (by either extending or trimming the segments until they touch).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage90.png" alt="image90" width="width382" height="height158"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Offset</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage91.png" alt="image91" width="width22" height="height22"></span> <strong><span class="underline">Offset</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Offset tool is used to make a copy of an polyline, with each of its segments offset so it lies parallel to the original. You can enter the distance by which each segment should be offset, or specify a point through which the offset polyline should pass, and  will automatically compute the offset distance.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage92.jpg" alt="image92" width="width581" height="height242"></span></p>
+</div>
+<div class="paragraph">
+<p>If the offset is in the wrong direction, undo the operation, enter the negative offset distance and press Enter to offset the polyline the other way.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Retaining the original polyline</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Normally, the original polyline is replaced by the offset polyline. However, if you wish to retain the original polyline, hold down the Ctrl key while clicking to indicate the offset through point (or while clicking Enter).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Offsetting only a single segment</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Holding down the Shift key while clicking on the offset through point (or while pressing Enter) causes only the selected segment to be offset, while the rest of the polyline is unchanged.</p>
+</div>
+<div class="paragraph">
+<p>The <span class="underline">Offset Edge</span> command offers another way of offsetting a single edge, and provides more control over this operation.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/help-authoring-tool">Single source CHM&#44; PDF&#44; DOC and HTML Help creation</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Common Shape</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage93.png" alt="image93" width="width22" height="height22"></span> <strong><span class="underline">Common Shape</span></strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage94.png" alt="image94" width="width451" height="height359"></span></p>
+</div>
+<div class="paragraph">
+<p>This dialogue is used to parametrically create one of several common shapes and insert them into the drawing. When you click on this button, the common shape construction dialogue shown alongside appears. In the top pane of this dialogue, you can choose from the palette of common shapes listed. When you choose a shape, a descriptive picture of the shape is displayed, and you can type in values into the parameter boxes.</p>
+</div>
+<div class="paragraph">
+<p>In addition to creating a single shape, this tool can also create arrays of common shapes, laid out in different patterns such as BHC, LAA, GRD etc. The bottom pane lets you choose one of these patterns and to input its parameters. After choosing a shape and a pattern, and entering parameters for both of them, the common shape can be created by clicking at the desired insertion point in the drawing.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Generate EPub eBooks with ease</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Move</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage95.png" alt="image95" width="width22" height="height22"></span> <strong><span class="underline">Move</span></strong></p>
+</div>
+<div class="paragraph">
+<p>You can use this tool to move selected objects through a precise distance. The distance to move can be typed into the DX and DY input boxes, and when you press Enter, all selected objects move through this distance. If you also hold down Ctrl key when you press Enter, a copy is made, and the objects at the original positions are undisturbed.</p>
+</div>
+<div class="paragraph">
+<p>You can also define the distance to be moved by clicking twice with the mouse. Objects are moved by the vector between the first and second mouse clicks. For example, if you click at the points (20, 10) and (24, 16), selected objects are moved 4 units to the right, and 6 units to the top.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Redefining the selection set</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As the prompt indicates, you can redefine the selection set of objects without getting out of this mode, by holding down the Ctrl key and clicking on an object you want to select. Like in the Pick mode, the Shift key must be held down if you want to select further objects without deselecting the ones you have already selected, and clicking on an empty area of the drawing allows you to select objects by enclosing them in a selection rectangle. After the selection is done, you can continue with the Move/Copy operation by clicking without holding down the Ctrl key. This mechanism of selecting objects without having to revert back to Pick mode works in several other modes, such as Rotate, Scale, Mirror, Rectangular Array, and Circular Array.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Moving part of a polyline</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If any polylines are partially selected, the move command moves only the selected segments. Here&#8217;s an example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage96.jpg" alt="image96" width="width530" height="height241"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Stretching polylines</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If any polylines are partially selected, and you hold down the Shift key while starting the move operation, the partially selected polylines are stretched. The selected nodes move, while the unselected nodes remain in place.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Free iPhone documentation generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Rotate</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage97.png" alt="image97" width="width22" height="height22"></span> <strong><span class="underline">Rotate</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Rotate tool is used to rotate the selected entities. Any point can be used as the centre of rotation by either clicking on it, or typing it into the X and Y input boxes, and you can rotate entities through precise angles by typing in the rotation angle into the Angle input box. If you want to enter the rotation angle using the mouse, you do it by clicking on two points. The angle these two points form at the centre of rotation is used as the rotation angle. Here&#8217;s an example.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage98.jpg" alt="image98" width="width581" height="height213"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Redefining the selection set</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Holding down the Ctrl key during the first click of the Rotate command has the effect of redefining the selection set, while the Ctrl key during the last click acts as a modifier, causing a rotated copy to be made, leaving the original intact. The prompt bar at the top of the drawing window changes to indicate the meaning of the Ctrl key in the current context.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com">Easy EBook and documentation generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Scale</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage99.png" alt="image99" width="width22" height="height22"></span> <strong><span class="underline">Scale</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Using the Scale tool, you can make selected objects larger or smaller. The shape of the object is preserved, since the same scaling is used on both the X and Y axes. As with the rotation tool, you can designate any point as the centre of scaling; the selected entities scale up or down about this point. You can enter the scale factor by typing it into the Factor input box. Scale factors lesser than 1 diminish the entities, while scale factors greater than 1 enlarge it. You can also input the scaling factor using two mouse clicks. Suppose the distance between the centre of scaling and the first mouse click is d1, and the distance between the centre of scaling and second mouse click is d2, the scaling factor is computed as d2 / d1. The example below illustrates how to use a mouse to input scaling factors. In this example, we want to scale the triangle so that its base fits precisely on top of the rectangle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage100.jpg" alt="image100" width="width581" height="height146"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Redefining the selection set</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As with the Move/Copy tool, you can use the Ctrl key during the initial phase to modify the selection set. During the final phase, the Ctrl key is used to indicate that you want to make a scaled copy, leaving the originals intact.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Mirror</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage101.png" alt="image101" width="width22" height="height22"></span> <strong><span class="underline">Mirror</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Mirror tool is used to make mirror images of selected entities, about any arbitrary reflection line. Two mouse clicks define the mirror line, and construction lines assist in setting up horizontal or vertical mirror lines, which are the most frequently used. The example below shows an entity being mirrored about various lines.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage102.jpg" alt="image102" width="width562" height="height213"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Redefining the selection set</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As with the Move/Copy tool, you can use the Ctrl key during the initial phase to modify the selection set. During the final phase, the Ctrl key is used to indicate that you want to make a copy of the reflected entities, leaving the originals intact.</p>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="editingtools.html">Editing Tools</a></span>
+  <span class="next"><a href="unionintersecti.html">Union, Intersection, Subtraction</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

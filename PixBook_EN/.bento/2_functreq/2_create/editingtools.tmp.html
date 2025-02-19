@@ -1,0 +1,216 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_select_tool">Select Tool</a></li>
+<li><a href="#_move_tool">Move Tool</a></li>
+<li><a href="#_rotate_tool">Rotate Tool</a></li>
+<li><a href="#_scale_tool">Scale Tool</a></li>
+<li><a href="#_mirror_tool">Mirror Tool</a></li>
+<li><a href="#_trim_tool">Trim Tool</a></li>
+<li><a href="#_extend_tool">Extend Tool</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tools like Move/Copy, Rotate, and Scale allow for positional adjustments, orientation changes, and resizing of objects, maintaining design integrity. Trim/Extend tools ensure accurate trimming or extension of geometries to specified boundaries.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_select_tool">Select Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To select objects by clicking on them or dragging to create a selection box.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolbar Icon: Icon for selection rectangle.</p>
+</li>
+<li>
+<p>Parameters: offset moved (dx,dy) specified via mouse click or coordinate input.
+Interaction </p>
+</li>
+<li>
+<p>Select the entity or group of entities to be manipulated, moved, copied, rotated, or edited using various tools.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image13.png" alt="image13" width="383" height="261"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_move_tool">Move Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Move selected objects.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Icon for move tool or keyboard shortcut.
+Interaction</p>
+</li>
+<li>
+<p>Movement of selected objects is done by entering offset in DX and DY input boxes, or by clicking two points to define the vector of movement.</p>
+</li>
+<li>
+<p>Holding <strong>Ctrl while pressing Enter</strong> creates a copy at the new position, leaving the originals intact.</p>
+</li>
+<li>
+<p>The tool also supports redefining the selection set without exiting the mode and can move or stretch segments of polylines based on the selection and modifier keys used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image14.png" alt="image14" width="543" height="319"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rotate_tool">Rotate Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rotate selected objects around a specified point.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Icon for Rotate tool or keyboard short cut.</p>
+</li>
+<li>
+<p>Parameters: specific points and angle
+Interaction</p>
+</li>
+<li>
+<p>For <strong>precise angles</strong>, type into the Angle input box;</p>
+</li>
+<li>
+<p>For <strong>mouse-based input</strong>, click two points. Ctrl during the first click redefines selection; Ctrl during last click creates a rotated copy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image15.png" alt="image15" width="513" height="331"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scale_tool">Scale Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scale selected objects by a specified factor.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Icon for scale tool or keyboard short cut.</p>
+</li>
+<li>
+<p>Parameters: specific (x,y) points and scale factor
+Interaction</p>
+</li>
+<li>
+<p>The centre of scaling can be any designated point, and the scale factor is entered in the Factor input box or determined by the ratio of distances from two mouse clicks.</p>
+</li>
+<li>
+<p>Use the Ctrl key during selection to modify the set and during the final phase to create a scaled copy, retaining the original objects.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image16.png" alt="image16" width="538" height="395"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mirror_tool">Mirror Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a mirror image of selected objects.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Icon for mirror tool or keyboard short cut.</p>
+</li>
+<li>
+<p><strong>Parameters:</strong> specific (x,y) points and reference line.
+Interaction</p>
+</li>
+<li>
+<p><strong>Two mouse clicks</strong> define the mirror line, and construction lines assist in setting up horizontal or vertical mirror lines, which are the most frequently used.</p>
+</li>
+<li>
+<p>The example below shows an entity being mirrored about various lines.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image17.png" alt="image17" width="550" height="412"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_trim_tool">Trim Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Trim intersecting lines and curves to a specified boundary.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Icon for the trim tool. Or keyboard shortcut
+Interaction</p>
+</li>
+<li>
+<p>The Trim tool in CAD cuts segments at intersection points or removes entire segments. </p>
+</li>
+<li>
+<p>Press Ctrl while clicking to select boundary entities for trimming.  <br></p>
+</li>
+<li>
+<p>Hold Shift and click to remove entire segments from polylines.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image18.png" alt="image18" width="583" height="321"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extend_tool">Extend Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Extend lines or curves to meet other objects.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Icon for extend tool or keyboard short cut.
+Interaction</p>
+</li>
+<li>
+<p>Use Ctrl to select a boundary for extension or extend to the nearest boundary if none is selected. Hold Shift and click to join two lines.</p>
+</li>
+<li>
+<p>Hold Alt and click to interactively resize a segment.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image19.png" alt="image19" width="664" height="428"></span></p>
+</div>
+</div>
+</div>

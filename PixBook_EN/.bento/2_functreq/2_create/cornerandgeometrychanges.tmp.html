@@ -1,0 +1,205 @@
+<div class="paragraph">
+<p><strong>Chamfer, Fillet, Inside Fillet, Corner Step</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage66.png" alt="image66" width="width85" height="height22"></span> <strong><span class="underline">Chamfer, Fillet, Inside Fillet, Corner Step</span></strong></p>
+</div>
+<div class="paragraph">
+<p>These tools operate on a corner of a polyline, and transform it. After you select the tool, click close to the corner of the polyline. These tools work only if the two segments meeting at the corner are straight-line segments (An exception is the fillet tool, which can fillet the corner between a line and an arc segment). The Chamfer and Corner Step tools take two distances as inputs: Distance1, and Distance2. Distance1 is measured from the corner, along the segment your click is closer to, so clicking closer to one or the other segment meeting at the corner has different results. (Compare B and C, F and G in the example below). Similarly, the AntiFillet tool draws its arc differently depending on whether you click just inside the corner, or just outside. (Compare D and E in the example below).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage67.jpg" alt="image67" width="width605" height="height159"></span></p>
+</div>
+<div class="paragraph">
+<p>|
+|Figure |Corner Operation
+|A |Fillet, Radius  4
+|B |Chamfer, Distance1  4, Distance2  2, click closer to horizontal segment
+|C |As above, but click closer to vertical segment
+|D |AntiFillet, Radius  3, click inside corner
+|E |As above, but click outside corner
+|F |Corner Step, Distance1  4, Distance2  2, click inside and closer to horizontal segment
+|G |As above, but click inside and closer to vertical segment
+|H |As above, but click outside and closer to horizontal segment
+|</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> As the mouse is moved over, the outline of the result that will be created is shown. To transform all the corners in one click, hold down the CTRL key and then click.</p>
+</div>
+<div class="paragraph">
+<p><strong>Edge Recess, Edge U-Cut, Edge V-Cut</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage68.png" alt="image68" width="width63" height="height22"></span> <strong><span class="underline">Edge Recess, Edge U-Cut, Edge V-Cut</span></strong></p>
+</div>
+<div class="paragraph">
+<p>These tools are used to cut different types of notches into straight-line segments. The end of the line segment you click closer to gets notched. The notch lies to the left or the right of the line segment, depending on whether you click to the left of the line, or the right of the line. All these tools use an Offset parameter to decide how far from the corner the notch should start. The Edge Recess tool is used to cut a rectangular notch. The Edge U-Cut tool is used to cut a rectangular notch, with rounded corners. The Edge V-Cut tool is used to cut a triangular notch. If you enter the Depth,  computes the angle at the apex of the triangle. Conversely, you can enter the angle and the depth will be computed. As the mouse is moved over, the outline of the result that will be created is shown. You can then click to create the notch.</p>
+</div>
+<div class="paragraph">
+<p>The figure shown below illustrates how the click point affects the position and orientation of the notch.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage69.jpg" alt="image69" width="width605" height="height123"></span></p>
+</div>
+<div class="paragraph">
+<p>|
+|Figure |Notch Type
+|A |Edge Recess, Offset  3, Width  8, Depth  4
+|B |Edge U-Cut, Offset  3, Width  12, Depth  4, Radius  3
+|C |Edge V-Cut, Offset  3, Width  10, Depth  5
+|D |Edge V-Cut, Offset  3, Width  10, Angle  60
+|</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using a Radius value of 0 with the Edge U-Cut tool automatically sets the radius value to half the width, so the curve at the bottom becomes a full semicircle.</p>
+</li>
+<li>
+<p>In the Edge U-Cut tool, you can type in the offset from the corner to the edge of the U-Cut into the Offset input box, or you can type in the offset to the centre of the U-cut into the Center Offset input box, to position the U-cut.</p>
+</li>
+<li>
+<p>To flip the notch to the opposite direction, hold down the ALT key and then click.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Trim</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage70.png" alt="image70" width="width22" height="height22"></span> <strong><span class="underline">Trim</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Trim tool is used to cut away pieces of an entity. Entities are trimmed against their intersection points to other entities. If the segment of the entity that you click on does not intersect another entity, the entire segment is removed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage71.jpg" alt="image71" width="width605" height="height133"></span></p>
+</div>
+<div class="paragraph">
+<p>As you can see, the trim tool can be used both to trim a line segment to an intersection point, or to remove an entire segment. Sometimes, it is simpler to select one or more boundary entities for performing the trim operation. Boundary entities can be selected by holding down the Ctrl key and clicking on them, after you switch to Trim mode.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage72.jpg" alt="image72" width="width480" height="height229"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Removing a segment</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the trim tool to remove an entire segment from a polyline, regardless of whether it intersects any boundaries or not. Hold down the Shift key and click on the segment to be removed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Extend</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage73.png" alt="image73" width="width22" height="height22"></span> <strong><span class="underline">Extend</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Extend tool is the opposite of the trim tool, and is used to extend line and arc segments. It can be used to extend the first or last segments of an open polyline. Like the Trim tool, the Ctrl key can be used to select a boundary to which the segments are extended. If there is no boundary selected, segments are extended to the nearest boundary available</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage74.jpg" alt="image74" width="width445" height="height232"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Joining two lines</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Extend tool can be used to extend two lines so that they meet. To do this, hold down the Shift key and click on the lines to be extended.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage75.jpg" alt="image75" width="width605" height="height133"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Interactive segment expansion/contraction</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the mouse to interactively expand or contract a segment. To do this, hold down the Alt key and click on a segment. While the mouse button is held down, the segment can be interactively resized.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage76.png" alt="image76" width="width532" height="height195"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Rough Trim</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage77.png" alt="image77" width="width22" height="height22"></span> <strong><span class="underline">Rough Trim</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to trim polylines at arbitrary points (not necessarily intersections with other entities). Select the polyline to trim first, and then click on two points on the polyline. The part of the polyline that lies between the two points you clicked upon, is removed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage78.png" alt="image78" width="width629" height="height170"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Handling closed polylines</strong></p>
+</div>
+<div class="paragraph">
+<p>When trimming a closed polyline, when you click to indicate the two trim points, there are two possible resultant polylines that can be created.  decides which part of the polyline to remove, depending on where you clicked to pick the polyline in the first place.  tries to remove the part of the polyline you clicked upon.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage79.png" alt="image79" width="width565" height="height190"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Handling open polylines</strong></p>
+</div>
+<div class="paragraph">
+<p>When trimming an open polyline, you can hold down the Ctrl key when you pick the second trim point, to indicate the polyline should be trimmed away all the way to the end. In other words, the polyline is broken into two at the first trim point, and the half of the polyline that contains the second trim point is discarded.</p>
+</div>
+<div class="paragraph">
+<p><strong>Divide Segment</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage80.png" alt="image80" width="width22" height="height21"></span> <strong><span class="underline">Divide Segment</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to divide a line or arc segment into a number of pieces, taking four inputs, Segments, Divide Length, Start offset, and End offset. The tool starts at the end of the segment closer to the clicked-at point, and places nodes dividing the segment into pieces. If the Divide Length parameter is zero, the segment is divided into a number of equal sized pieces. If the Segments parameter is zero, the segment is divided into as many pieces as it can be, based on the Divide Length parameter. The Start offset and End offset can be used to exclude the starting and ending portions of the line for the offset operation.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage81.jpg" alt="image81" width="width605" height="height210"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Dividing at an intersection</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key and click on an intersection point between two lines, to divide both the lines at the intersection point, as seen in the image below.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage82.png" alt="image82" width="width604" height="height134"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Fit Arc</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage83.png" alt="image83" width="width22" height="height22"></span> <strong><span class="underline">Fit Arc</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to replace a set of straight-line segments of a polyline with circular arcs. It is often used to smooth a polyline created by the duct-unfolding module (described later in this chapter). To use it, select the polyline to be smoothed, and click this button. As the illustration below shows, the tool can detect which are the corner vertices, and will not smooth them.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage84.jpg" alt="image84" width="width518" height="height214"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Smoothing part of a polyline</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This tool can also be used to smooth some selected vertices without smoothing others. First, select only some of the vertices (by dragging a rubber-band line around the vertices, using the Pick tool). Then, click this button to smooth only the selected nodes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Mimage85.jpg" alt="image85" width="width520" height="height217"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can also select some vertices to be smoothed, by drawing a fence around them; hold down the Ctrl key and click to start a fence-selection mode (similar to the one in the <span class="underline">Pick</span> tool). After the nodes are selected using the fence selection, they can be smoothed.</p>
+</li>
+</ul>
+</div>

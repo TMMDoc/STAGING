@@ -1,0 +1,75 @@
+Index
+Index
+  Version1
+  Version2
+  Version3
+Index
+  Index
+    UI
+    Basic
+    additional
+    GridandLayers
+    UI2
+  Index
+    Drawingtools
+    EditingTools
+    Operations
+    UnionIntersecti
+    Arrays
+    OffsetEdge
+    Cornerandgeometrychanges
+    Notches
+  Index
+    Blockhandling
+    Polylines
+    IrregularArray
+    MagnifyArea
+    PlaneExtract
+  Index
+    TruetypeText
+    Dimensioning
+    DimensioningandAnnotation
+    Info
+  Index
+    Sheetmetaltools
+    BendRelief
+    CornerRelief
+    CornerClosing
+    Bendlinetool
+    Flangedesign
+    EditBendInforma
+    FoldtoDModel
+    shaperec
+    Index
+    Index
+  Index
+    Arraysandshapemaker
+    Digitizer
+    ParametricDucts
+    ParametricScrip
+Index
+  ImportExport
+  Index
+  Index
+    Exact
+    Bendtolerant
+  Index
+    Cleanup
+    SmallElements
+    Smoothing
+    OpenContours
+    DuplicateContours
+    SplineApproximation
+  Index
+  Index
+  Index
+Index
+  Index
+  Index
+Index
+  Index
+  Index
+  Index
+  Index
+  Index
+  Index

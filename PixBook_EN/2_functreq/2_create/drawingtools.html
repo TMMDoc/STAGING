@@ -1,0 +1,1080 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Line, Arc, Rect</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>Flux</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Developer documentation PIX</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../1_overviewandscope/index.html"> Scope and development steps</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version1.html">Version1: Basic functionality</a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version2.html">Version2: Integration, cleanup </a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version3.html">Version 3: Sheet metal fct / API</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html"> UI Funcitons</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../1_general/index.html">General</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../1_general/ui.html">UI, toolbars and general</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/basic.html">Picking mechanisms</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/additional.html">Zoom, Pan and Origin</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/gridandlayers.html">Grid and Layers</a></li>
+            <li><button class="tree blank"></button><a href="../1_general/ui2.html">Advanced commands</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html"> Basic functions </a>
+          <ul>
+            <li><button class="tree blank"></button><a class="active" href="drawingtools.html">Line, Arc, Rect</a></li>
+            <li><button class="tree blank"></button><a href="editingtools.html">Editing Tools</a></li>
+            <li><button class="tree blank"></button><a href="operations.html">Operations</a></li>
+            <li><button class="tree blank"></button><a href="unionintersecti.html">Union, Intersection, Subtraction</a></li>
+            <li><button class="tree blank"></button><a href="arrays.html">Arrays</a></li>
+            <li><button class="tree blank"></button><a href="offsetedge.html">Offset Edge</a></li>
+            <li><button class="tree blank"></button><a href="cornerandgeometrychanges.html">Corner  and geometry changes</a></li>
+            <li><button class="tree blank"></button><a href="notches.html">Notches</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../4_modify/index.html"> Advanced functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../4_modify/blockhandling.html">Block handling</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/polylines.html">Edit polylines</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/irregulararray.html">Irregular Array</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/magnifyarea.html">Magnify Area</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/planeextract.html">Plane Extract</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../5_annotate/index.html"> Text and annotations</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../5_annotate/truetypetext.html">Truetype Text</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioning.html">Dimensioning</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioningandannotation.html">Dimensioning and Annotation </a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/info.html">Info</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../3_bendandcutfunctional/index.html"> Sheet metal functionality.</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/sheetmetaltools.html">Notches and Cutouts</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/bendrelief.html">Bend Relief</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/cornerrelief.html">Corner Relief</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/cornerclosing.html">Corner Closing</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/bendlinetool.html">Bend line tool</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/flangedesign.html">Flange design</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/editbendinforma.html">Edit Bend Information</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/foldtodmodel.html">Fold to 3D Model</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/shaperec.html"> 2D Shape Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/11_slotrecognition/index.html"> Slot Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/12_notchoptimization/index.html"> Notch Optimization</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../9_complex/index.html"> Addon functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../9_complex/arraysandshapemaker.html">Arrays and shape maker</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/digitizer.html">Digitizer</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricducts.html">Parametric Ducts</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricscrip.html">Parametric Script</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../4_core/index.html">Core Functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../4_core/importexport.html">Import and Export</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/4_metadataextraction/index.html">Meta Data Extraction</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/5_comparison/index.html"> Comparison</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/exact.html">Exact</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/bendtolerant.html">Bend *tolerant* </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/6_geometricalanalysisa/index.html">Analysis Repairing and Healing</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/cleanup.html">cleanup</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smallelements.html">Small Elements </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smoothing.html">Smoothing </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/opencontours.html">Open Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/duplicatecontours.html">Duplicate Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/splineapproximation.html">Spline Approximation</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../4_core/7_dxfextractionandclea/index.html"> DXF Extraction and Cleanup</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/8_macrorespscriptexecu/index.html"> Script Execution </a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/9_textinsertion/index.html"> Text Insertion</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../8_api/index.html">Structure of API's</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../8_api/pixcore/index.html">PixCore</a></li>
+        <li><button class="tree blank"></button><a href="../../8_api/pixops/index.html">PixOps</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../9_architecture/index.html">Architecture</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../9_architecture/13_integrationwiththeen/index.html"> Integration </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/14_supportforautoproces/index.html"> Support for Auto-Processing </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/15_individualsoftwareco/index.html"> Installation</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/16_apicompatibility/index.html"> API compatibility</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/17_consistency/index.html"> Consistency</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/18_multitenancy/index.html"> Multi-Tenancy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html"> UI Funcitons</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html"> Basic functions </a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="drawingtools.html">Line, Arc, Rect</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Line, Arc, Rect</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Drawing tools in CAD enable precise creation and manipulation of geometric elements.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image8.png" alt="image8" width="445" height="182"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_line_tool_ex_poly_line_tangent_line_construction_line">Line Tool (EX: Poly line, tangent line, construction line)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a vertical, horizontal or inclined line in graphics window.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Toolbar Icon:</strong> Icon for the line tool.</p>
+</li>
+<li>
+<p><strong>Parameters:</strong> Length, angle, and starting point specified via mouse click or coordinate input.
+Interaction</p>
+</li>
+<li>
+<p>Mouse click to set the starting point.</p>
+</li>
+<li>
+<p>Drag to specify the endpoint or use keyboard input for precise coordinates.</p>
+</li>
+<li>
+<p>Visual feedback during dragging to preview the line.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image9.png" alt="image9" width="302" height="198"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parallel_line">Parallel line</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create line in graphics window, either vertical, horizontal or inclined line.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolbar Icon: Icon for the Parallel line tool.</p>
+</li>
+<li>
+<p>Parameters: Length, Delta 1, Delta 2 and starting point specified via mouse click or coordinate input.
+Interaction</p>
+</li>
+<li>
+<p>Click a line and drag it to create a parallel line.
+To make parallel lines on both sides of the line, press ctrl key and drag  
+Algorithm</p>
+</li>
+<li>
+<p>For each of the point in a line the coordinate is shifted by following the below formulation:</p>
+</li>
+<li>
+<p>Where, d = Distance between parallel lines</p>
+</li>
+<li>
+<p>\(\mathbf{\theta}\) <strong>=</strong> slope angle</p>
+</li>
+<li>
+<p>\(\mathrm{\Delta}\mathbfX\) = shift in X</p>
+</li>
+<li>
+<p>\(\mathrm{\Delta}\mathbfY\) = shift in Y</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_perpendicular_line">Perpendicular line</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create line in graphics window, either vertical, horizontal or inclined line.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolbar Icon: Icon for the perpendicular line tool.</p>
+</li>
+<li>
+<p>Parameters: Length.
+Interaction</p>
+</li>
+<li>
+<p>Mouse click to set the starting point.</p>
+</li>
+<li>
+<p>Drag to specify the endpoint or use keyboard input for precise coordinates.</p>
+</li>
+<li>
+<p>Visual feedback during dragging to preview the line.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_circle_tool">Circle Tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Draw circles by specifying the Center and Radius.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolbar Icon: Icon for the circle tool.</p>
+</li>
+<li>
+<p>Parameters: Radius and centre specified via mouse click or coordinate input.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Interaction</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mouse click to set the centre point.</p>
+</li>
+<li>
+<p>Drag to set the radius or use keyboard input for precise dimension.</p>
+</li>
+<li>
+<p>Visual feedback during dragging to preview the circle.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image10.png" alt="image10" width="600" height="338"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arc_tool_ex_centre_point2_point_3_point_tangent_methods">Arc Tool (ex. centre point,2-point ,3-point, tangent methods)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Draw arcs by specifying the Center and Radius.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolbar Icon: Icon for the centre point arc.</p>
+</li>
+<li>
+<p>Parameters: Radius and centre specified via mouse click or coordinate input.
+Interaction </p>
+</li>
+<li>
+<p>First, click to set the centre point, then the start points (determining the radius), and finally the end point in a counterclockwise manner.</p>
+</li>
+<li>
+<p>Holding Ctrl while clicking sets the centre point for a similar arc to the last one drawn. </p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image11.png" alt="image11" width="600" height="400"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rectangle_tool_ex_centre_point_rectangle">Rectangle Tool (ex. centre point rectangle)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Draw rectangle by specifying the width and height.
+User Interface</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolbar Icon: Icon for the rectangle.</p>
+</li>
+<li>
+<p>Parameters: Position, width and height specified via mouse click or coordinate input.
+Interaction </p>
+</li>
+<li>
+<p>Two clicks to set two opposite corners.</p>
+</li>
+<li>
+<p>Entering negative values for Width and Height will draw the rectangle to the left and below the first corner.</p>
+</li>
+<li>
+<p>Hold Ctrl and click to repeat the last rectangle.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image12.png" alt="image12" width="451" height="369"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_geometric_elements">Geometric elements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage17.png" alt="image17" width="width22" height="height22"></span> <strong><span class="underline">Line</span></strong></p>
+</div>
+<div class="paragraph">
+<p>To draw a line using this tool, click on the two points that should form the endpoints of the line. As with all  tools, all geometric snaps can be used when you click with the mouse. You can also enter the coordinates into the input bar to create the line. If you are using the input bar, you can type the starting point of the line into the X and Y boxes. Then, the other point can be determined in these ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the dX and dY values and  will compute the other endpoint point and draw the line.</p>
+</li>
+<li>
+<p>Enter the Length and Angle (slope) of the line, and  will compute the other endpoint and draw the line.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can use a mixture of mouse input and typing in values into the input bar. For instance, you can click with the mouse to set the first point of the line ( will update the X and Y input boxes with the coordinates you just provided with the mouse), and then enter the dX and dY values into the input boxes to set the other point of the line. You can also use other combinations like entering the dX and Length.  will compute the other two values (dY and Angle) and draw the line.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating a previous line</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the Line mode, you can see the prompt bar indicating that CtrlCopy Previous. If you click with the Ctrl key held down,  creates a new line with the same length and slope as the previous line drawn. The point where you click is used as the start point of the line, and  will not prompt you for the endpoint of the line. This shortcut can be used when you are drawing a lot of similar lines, at different points in your drawing.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Drawing perpendicular lines with the line tool</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using the line tool, you can draw a line perpendicular to a given line or arc, passing through a point on the line or arc. To do this, choose the Line tool, and enter only the Length parameter. (The other parameters can be left as they are). Then, holding down the Shift key, click at the point on the line or arc where you want to construct the perpendicular line.  will construct a perpendicular line at the specified point. The perpendicular line is made towards the side of the line or arc that you click. So you can click slightly to the left or slightly to the right of the line or arc to make the line perpendicular in that direction.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage18.png" alt="image18" width="width466" height="height178"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Drawing a tangent line with the line tool</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the line tool to draw a tangent to an arc or a circle, at a given point. To do this, choose the Line tool and enter only the Length parameter. The other parameters are not used, and does not need to be typed in. Then, holding down the Alt key, click at the point on the arc at which you want to construct the tangent line.  will construct the tangent line at the specified point. If the tangent line is not in the direction that you want, you can make a back-tangent, by holding down the Shift+Alt keys at the same time when you click.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage19.png" alt="image19" width="width552" height="height267"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Drawing a line tangential to two arcs</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Line tool has a special assist mode to help you draw a line that is tangential to two arcs. (In this case, using any of the other modes of drawing this line is difficult, since both the endpoints of the line are not known, and depend on the tangency relationship). To use this mode, switch to the Line tool, and move near the arc until you get an on snap. (If you get an endpoint, midpoint or other snap, move further along the arc until the on snap appears). Click to set the first point of the line. Then, move the mouse in an approximately tangential direction to the arc.  will understand that you want to draw a tangent line, and will start sliding the first point along the arc, always maintaining tangency to the current mouse position. Drag until you get a tangent snap on the other arc or circle, and click again to set the line in position.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage20.png" alt="image20" width="width629" height="height209"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Drawing a line perpendicular to an arc, and tangential to another</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Like a two-arc tangent, this mode also requires some special assistance, since both the endpoints of the line must be floating until the tangency relationship is established. To draw this type of line, move near the arc until you get an on snap indicator. Then, move in an approximately perpendicular direction to the arc.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>will understand that you want to draw a perpendicular line, and will start sliding the first point on the arc maintaining perpendicularity to the current mouse position. Now you can move until you get a tangent snap on the other arc or circle, and click again to create the line.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage21.png" alt="image21" width="width629" height="height210"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Absolute mode</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the Use absolute mode for drawing tools setting is turned on in the [.underline]# Options/2D Editor# dialogue,  prompts with absolute coordinates for both endpoints of the line (X1, Y1, X2, Y2) instead of relative coordinates (X, Y, DX, DY).</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour">Easily create CHM Help documents</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Connected Lines</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage22.png" alt="image22" width="width22" height="height22"></span> <strong><span class="underline">Connected Lines</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to draw a series of connected line or arc segments. Each line or arc is drawn starting from the endpoint of the previous line or arc. Arcs are drawn by holding down the Ctrl key as you drag, and start off at a tangent to the previously drawn segment. (Therefore, at least one line segment must be drawn before you can draw an arc using the Ctrl key). Here&#8217;s an example of one way to draw a rounded rectangle using the Connected Lines tool:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage23.png" alt="image23" width="width629" height="height185"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Typing in coordinates</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can type in coordinates into the X, Y, DX, DY, Length or Angle input boxes (just as with the <span class="underline">Line</span> tool) to create connected lines. Each time you create a line segment, the end point of that segment is automatically entered in as the start coordinate for the next segment.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Starting a new polyline</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>To break off this polyline and start a fresh one, click with the right mouse button.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Parallel Line</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage24.png" alt="image24" width="width22" height="height22"></span> <strong><span class="underline">Parallel Line</span></strong></p>
+</div>
+<div class="paragraph">
+<p>You can use this tool to make a line parallel to an existing line in the drawing. Click on the line, drag and click again to make the copy. Here&#8217;s an example, that shows how to make a line parallel to the horizontal edge of the rectangle, and passing through the corner of the diamond shaped figure.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage25.png" alt="image25" width="width513" height="height169"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating a parallel line at a specified distance from a given line</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also click on the line, type in a value in the Distance input box and press Enter to make a parallel line. The position of the mouse pointer when you press Enter is used to decide which side of the original line the new line is created. If the mouse pointer is to the left of the original line, the new line is also created on the left. You can use the Delta 1 and Delta 2 parameters to alter the length of the parallel line as it is being created. Positive values extend the line, while negative values shrink it.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating arbitrary length lines</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you turn on the Parallel line tool makes arbitrary length lines option in the [.underline]# Options/2D Editor# dialogue, this command work slightly differently. It makes an infinite line parallel to the selected line segment, and you can then use two additional mouse clicks to mark off the part of the line that you want to keep.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Produce Kindle eBooks easily</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Perpendicular Line</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage26.png" alt="image26" width="width22" height="height21"></span> <strong><span class="underline">Perpendicular Line</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Use this tool to create a line perpendicular to an existing line or arc. There are two ways to create the perpendicular line. If you type in a non-zero length for the perpendicular line, you have to use 3 mouse clicks to create the perpendicular line, as shown in the illustration below. With this method, you can hold down the Ctrl key to extend the perpendicular line to both sides of the target segment.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage27.png" alt="image27" width="width629" height="height194"></span></p>
+</div>
+<div class="paragraph">
+<p>If you specify a length of 0, then it takes only two mouse clicks to create the perpendicular line because the second mouse click indicate both the pass-through point, as well as the length of the line.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage28.png" alt="image28" width="width590" height="height266"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Generate EPub eBooks with ease</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Filleted/Chamfered Line</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage29.png" alt="image29" width="width22" height="height22"></span> <strong><span class="underline">Filleted/Chamfered Line</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to create polylines that are automatically filleted or chamfered at every corner. Every time you add a new line to the polyline, the preceding corner is filleted or chamfered. To add a chamfer, enter a positive value in the Chamfer input box, and set the Fillet input box to 0. To add a fillet, enter an positive value in the Fillet input box, and set the Chamfer input box to 0. If you close the polyline by joining back to the starting point, both ends of the last line segment you added will be filleted or chamfered. Here&#8217;s an example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage30.png" alt="image30" width="width585" height="height237"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using absolute mode</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, this tool prompts for inputs similar to the <span class="underline">Line</span> tool. So, you can enter segments by either entering their DX and DY, or by entering their Length and Angle. However, if you turn on the Use absolute mode for drawing tools setting in the [.underline]# Options/2D Editor# dialogue,  prompts for the absolute endpoints of each segment (EX and EY).</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Full-featured Kindle eBooks generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Tangent/Angle Line</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage31.png" alt="image31" width="width22" height="height22"></span> <strong><span class="underline">Tangent/Angle Line</span></strong></p>
+</div>
+<div class="paragraph">
+<p>You can use this tool to create a line that is tangential to given arc or circle, and with a specified angle (slope). First input the length and the angle that the line makes with the X axis. Then, click near the arc or circle to indicate the tangent entity. There are two possible lines that can be drawn tangential to a given circle and with a given angle (slope).  chooses the line to draw based on the point you click on. Here&#8217;s an example.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage32.png" alt="image32" width="width629" height="height209"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/iphone-website-generation">iPhone web sites made easy</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Rectangle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage33.png" alt="image33" width="width22" height="height22"></span> <strong><span class="underline">Rectangle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to create rectangles. Click twice to set the two opposite corners of the rectangle, which is always drawn aligned with the X and Y axes. If you are typing in the Width and Height into the input boxes, remember that typing in negative values will cause the rectangle to be created to the left and below the first corner point.</p>
+</div>
+<div class="paragraph">
+<p><strong>Repeating the last rectangle</strong></p>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key and click to draw another rectangle with the same size as the one last drawn with this tool.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Rotated coordinate systems</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the <span class="underline">Shift Origin</span> tool has been used to set up a rotated coordinate system, the edges of the rectangle are aligned with rotated X and Y axes.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com">Free CHM Help documentation generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Centre-Point Rectangle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage34.png" alt="image34" width="width22" height="height22"></span> <strong><span class="underline">Centre-Point Rectangle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to draw rectangles when it is easier to fix a centre point than a corner point. The first click sets the centre point, and the second click is one of the four corner points. Here&#8217;s an example, where we want to draw a rectangle inscribed within the circle, with the same height as the small rectangle by the side of the circle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage35.png" alt="image35" width="width629" height="height186"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Repeating the last rectangle</strong></p>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key and click to draw another rectangle with the same size as the one last drawn with this tool.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Rotated coordinate systems</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the <span class="underline">Shift Origin</span> tool has been used to set up a rotated coordinate system, the edges of the rectangle are aligned with rotated X and Y axes.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Circle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage36.png" alt="image36" width="width22" height="height22"></span> <strong><span class="underline">Circle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to create circles by specifying their centre point and radius. The first click of the mouse sets the centre point of the circle, and the second click sets the radius. You can also click to set the centre point, and then type in a value in the Radius input box, and press Enter to make the circle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage37.png" alt="image37" width="width534" height="height223"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Repeating the last circle</strong></p>
+</div>
+<div class="paragraph">
+<p>If you hold down the Ctrl key when you click to set the centre point, a circle is created using the same radius as the last circle created with this tool.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using diameter instead of radius</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you have turned on the Use diameter for circle drawing tools setting in the [.underline]# Options/2D Editor# dialogue,  prompts for the diameter of the circle, instead of the radius.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com">Easy EPub and documentation editor</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>2-Point Circle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage38.png" alt="image38" width="width22" height="height22"></span> <strong><span class="underline">2-Point Circle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Use this tool to draw a circle that has a known radius, and passes through two given points. It can also be used to draw circles where the two give points line on opposite ends of a diameter. If the Radius input box is set to 0, the two points entered are considered the endpoints of a diameter. The centre point lies at the midpoint of these two points, and the circle is drawn to pass through the two points. If the Radius value is non-zero, a circle with the specified radius, and passing counter-clockwise through the two specified points is drawn. Here is an example of how to draw a circle, if we know two points that lie on a diameter.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage39.png" alt="image39" width="width540" height="height189"></span></p>
+</div>
+<div class="paragraph">
+<p>In this example, a non-zero radius is used to construct a circle passing through two points. (The two arms of the L shaped figure are both of length 10, and the circle&#8217;s radius is also set to 10):</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage40.png" alt="image40" width="width575" height="height266"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Repeating the last circle</strong></p>
+</div>
+<div class="paragraph">
+<p>If you hold down the Ctrl key when you click to set the first point,  creates a circle similar to the previous one created with this tool.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using diameter instead of radius</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you have turned on the Use diameter for circle drawing tools setting in the [.underline]# Options/2D Editor# dialogue,  prompts for the diameter of the circle, instead of the radius.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Create iPhone web-based documentation</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>3-Point Circle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage41.png" alt="image41" width="width22" height="height22"></span> <strong><span class="underline">3-Point Circle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Used to draw a circle passing through three given points.  will compute the centre of the circle, and its radius, and create the circle. The three points you click on should not line in a straight line; in this case,  will not construct the circle. Here is an example, that shows how to construct a circle passing through the 3 points of the arrow-shaped figure.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage42.jpg" alt="image42" width="width629" height="height183"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating the last circle</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you hold down the Ctrl key when you click on the first point, a similar circle to the last circle you drew is created.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/iphone-website-generation">iPhone web sites made easy</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Point</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage43.png" alt="image43" width="width22" height="height22"></span> <strong><span class="underline">Point</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Point tool is used to create point entities. These are usually used to indicate pierce-only points for the laser-tooling module, or mark inner-holes into which other parts can be packed by the nesting engine. To create a point entity, click on the place where it is to be placed, or type in the X and Y coordinate and press Enter.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EPub generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Centre-Point Arc</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage44.png" alt="image44" width="width22" height="height22"></span> <strong><span class="underline">Centre-Point Arc</span></strong></p>
+</div>
+<div class="paragraph">
+<p>You can use this tool to draw an arc by specifying its centre point, start point and the end point. The first click of the mouse sets the centre point. The second click fixes the start point (and therefore the radius) of the arc. The third point determines the end point. The arc is always drawn counter-clockwise from the start point to the end point. (If the end point you specify is not at the same distance from the centre as the start point is,  constructs an imaginary line from the centre to the end point, and stops the arc where it would meet this imaginary line.). Here&#8217;s an example that shows how to draw a semicircular cap for a rectangle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage45.jpg" alt="image45" width="width556" height="height213"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating the last arc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can draw an arc similar to the one last drawn with this tool, by holding down the Ctrl key when you click to set the centre point.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Full-featured EBook editor</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>2-Point Arc</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage46.png" alt="image46" width="width22" height="height22"></span> <strong><span class="underline">2-Point Arc</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to draw an arc given the start point, end point and the radius of the arc. The arc is drawn counter-clockwise from the start point to the end point. To draw the arc, enter the radius, then click twice to set the start and end points of the arc. If the distance between the two points you clicked on is more than 2 times the radius, the radius is increased to make the arc possible.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage47.jpg" alt="image47" width="width629" height="height196"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Drawing a major arc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This tool normally draws a minor arc with the given radius (less than 180°of span). If you enter a negative value for the radius, this tool draws a major arc (more than 180° of span).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating the last arc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can draw an arc similar to the one last drawn with this tool, by holding down the Ctrl key when you click to set the start point.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpauthoringsoftware.com">Benefits of a Help Authoring Tool</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>3-Point Arc</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage48.png" alt="image48" width="width22" height="height22"></span> <strong><span class="underline">3-Point Arc</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Use this tool to draw an arc that passes through three points. The arc starts at the first point, passes through the second, and stops at the third. These points must not lie in a straight line. Here&#8217;s an example, that shows how to draw a semicircular cap for a right-angled triangle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage49.png" alt="image49" width="width629" height="height153"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Repeating the last arc</strong></p>
+</div>
+<div class="paragraph">
+<p>You can draw an arc similar to the one you draw last with this tool, by holding down the Ctrl key when you click to set the first point.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/help-authoring-tool">Free help authoring tool</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Tangent-Point Arc</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage50.png" alt="image50" width="width22" height="height22"></span> <strong><span class="underline">Tangent-Point Arc</span></strong></p>
+</div>
+<div class="paragraph">
+<p>If you know the start point, end point and starting direction of an arc, you can use this tool to draw it. The first click sets the start point, the second click sets the starting angle, and the third click sets the endpoint of the arc. Here&#8217;s an example, that uses the Tangent-Point Arc tool to draw a semicircular cap for an inclined rectangle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage51.jpg" alt="image51" width="width629" height="height207"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating the last arc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can draw an arc similar to the one you draw last with this tool, by holding down the Ctrl key when you click to set the first point.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>2-Tangent Circle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage52.png" alt="image52" width="width22" height="height22"></span> <strong><span class="underline">2-Tangent Circle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool draws a circle tangential to two given lines or arcs. The radius must be entered first in the Radius input box. Then click on the two lines or arcs that the circle should be tangential to. Since there is more than one circle that can be drawn tangential to two given lines, the point where you click will determine where the circle is constructed. Here is an example, that shows two different 2-tangent circles that can be created with the same input entities, by using different click-points.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage53.jpg" alt="image53" width="width629" height="height161"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using a pass-through point</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can create a circle that is tangential to a given line or arc, and passing through another point. To do this, indicate the first tangential entity in the usual manner, and then hold down the Ctrl key while you click on the other pass-through point.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using diameter instead of radius</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you have turned on the Use diameter for circle drawing tools setting in the 2D-Editor page of the  Options dialogue,  prompts for the diameter, instead of the radius.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>3-Tangent Circle</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage54.png" alt="image54" width="width22" height="height21"></span> <strong><span class="underline">3-Tangent Circle</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to draw a circle tangential to three existing entities. There are often several possible circles that can be drawn tangential to three entities. For example, if the three entities selected are themselves circles which are non-intersecting, there are 8 possible circles that can be drawn. The points where you click decide which of these possible circles is actually drawn. The one that is drawn is the one that is closest to all the three points you select.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage55.jpg" alt="image55" width="width522" height="height182"></span></p>
+</div>
+<div class="paragraph">
+<p>This example shows how the points where you click determines which circle is constructed. The small crosses indicate the points where the circles were clicked upon, to create the blue circle in each case.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage56.jpg" alt="image56" width="width520" height="height207"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using pass-through points</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is a CtrlPass-through point option for the 2nd and 3rd inputs to the 3-tangent circle command. You can create a circle with 1 or 2 pass-through points using these options. All combinations of lines and arcs are supported for the tangent objects. Here are some examples of circles that were created using these options.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage57.png" alt="image57" width="width629" height="height208"></span></p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/create-epub-ebooks">Write EPub books for the iPad</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>3-Segment Fillet</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage58.png" alt="image58" width="width22" height="height21"></span> <strong><span class="underline">3-Segment Fillet</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to create a fillet that is tangential to three consecutive line segments in a polyline. Since there are three tangents, the curve is completely defined and no further inputs (such as radius) are required. To create the fillet, click on the middle segment of the three consecutive segments to be filleted.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage59.png" alt="image59" width="width489" height="height252"></span></p>
+</div>
+<div class="paragraph">
+<p>If either of the two flanking segments is not long enough, the fillet cannot be constructed.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Free iPhone documentation generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Inscribed Polygon</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage60.png" alt="image60" width="width22" height="height22"></span> <strong><span class="underline">Inscribed Polygon</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to draw a regular polygon, when you know the radius of its inscribing circle (that is, the distance from the centre of the polygon to a vertex). Fill in the number of sides of the polygon into the input bar. Then, set the centre point either using the mouse or by typing in the coordinates. The Radius input box specifies the radius of the inscribing circle, and the Angle input box gives the angular position of the first vertex with respect to the centre.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage61.jpg" alt="image61" width="width399" height="height267"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating the last polygon</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key and click to draw another polygon similar to the last one drawn.</p>
+</div>
+<div class="paragraph">
+<p><em>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com">Free CHM Help documentation generator</a></em></p>
+</div>
+<div class="paragraph">
+<p><strong>Circumscribed Polygon</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage62.png" alt="image62" width="width22" height="height22"></span> <strong><span class="underline">Circumscribed Polygon</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to draw regular polygons when the radius of the circumscribed circle is known (that is, the distance from the centre of the polygon to the midpoint of an edge). With this tool, the Angle input box sets the angle between the centre, and the midpoint of the first edge. For example, here is an equilateral triangle, drawn with an Angle setting of 45º. You can see that the midpoint of the first edge is at an inclination of 45º from the centre point.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage63.jpg" alt="image63" width="width219" height="height219"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Repeating the last polygon</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key and click to draw another polygon similar to the last one drawn.</p>
+</div>
+<div class="paragraph">
+<p><strong>Edge Polygon</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage64.png" alt="image64" width="width22" height="height22"></span> <strong><span class="underline">Edge Polygon</span></strong></p>
+</div>
+<div class="paragraph">
+<p>The Edge Polygon tool is used to construct a polygon on a given edge. The two clicks define two consecutive vertices of the polygon, in the counter-clockwise direction, and the rest of the polygon is constructed correspondingly. Here is an example, where a hexagon is constructed on the top right edge of the rectangle.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage65.png" alt="image65" width="width539" height="height251"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Repeating the last polygon</strong></p>
+</div>
+<div class="paragraph">
+<p>Hold down the Ctrl key and click to draw another polygon similar to the last one drawn.</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_line_tool_ex_poly_line_tangent_line_construction_line">Line Tool (EX: Poly line, tangent line, construction line)</a>
+    </li>
+    <li level="1">
+      <a href="#_parallel_line">Parallel line</a>
+    </li>
+    <li level="1">
+      <a href="#_perpendicular_line">Perpendicular line</a>
+    </li>
+    <li level="1">
+      <a href="#_circle_tool">Circle Tool</a>
+    </li>
+    <li level="1">
+      <a href="#_arc_tool_ex_centre_point2_point_3_point_tangent_methods">Arc Tool (ex. centre point,2-point ,3-point, tangent methods)</a>
+    </li>
+    <li level="1">
+      <a href="#_rectangle_tool_ex_centre_point_rectangle">Rectangle Tool (ex. centre point rectangle)</a>
+    </li>
+    <li level="1">
+      <a href="#_geometric_elements">Geometric elements</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="index.html"> Basic functions </a></span>
+  <span class="next"><a href="editingtools.html">Editing Tools</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

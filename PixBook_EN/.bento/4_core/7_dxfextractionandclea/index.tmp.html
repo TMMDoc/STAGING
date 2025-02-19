@@ -1,0 +1,27 @@
+<div class="paragraph">
+<p>A valid 2D model is a geometrical description of a single part, consisting of exactly one outer contour and contained inner contours. Any other geometry in the drawing is unwanted and needs to be removed.
+Unfortunately, drawings often come with additional geometry, containing frames, dimensions, detail drawings, multiple views, etc. Therefore, the kernel needs an algorithm to automatically detect a parts geometry from a drawing.
+The algorithm might consist of several steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Detecting and removing the drawing frame
+If the drawings largest outer contour is a rectangle and there are multiple other contours connected to this, this is considered a drawing frame, which is to be removed.</p>
+</li>
+<li>
+<p>Detecting and extracting the unfolded view
+If the drawing contains multiple view for the same part, the unfolded view is the one spanning the largest area (in case, all views share the same scale ratio), all other contours not within this contour can be removed.</p>
+</li>
+<li>
+<p>Detecting and extracting multiple parts
+If the drawing contains multiple parts in one drawing, all contained disjunct contours are considered individual parts.</p>
+</li>
+<li>
+<p>Removing auxiliary geometry
+Contours with unmapped colors or line styles are of unknown intention and need to be removed.
+This algorithm is not perfect, and a user verification is advisable. For this, it is often critical to see the extracted part in the context of the entire drawing. Therefore, this algorithm keeps – if activated – the complete drawing, but only keeps extracted part geometry as to be processed, while all other elements are specified as not processed.
+See also GeoKernelAPI_20240529.docx, page 20, Part extraction.</p>
+</li>
+</ul>
+</div>

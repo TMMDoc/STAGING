@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Zoom, Pan and Origin</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.png" width="123" height="50" /></div>
+        <div><p>Flux</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Developer documentation PIX</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../1_overviewandscope/index.html"> Scope and development steps</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version1.html">Version1: Basic functionality</a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version2.html">Version2: Integration, cleanup </a></li>
+        <li><button class="tree blank"></button><a href="../../1_overviewandscope/version3.html">Version 3: Sheet metal fct / API</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html"> UI Funcitons</a>
+      <ul>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">General</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="ui.html">UI, toolbars and general</a></li>
+            <li><button class="tree blank"></button><a href="basic.html">Picking mechanisms</a></li>
+            <li><button class="tree blank"></button><a class="active" href="additional.html">Zoom, Pan and Origin</a></li>
+            <li><button class="tree blank"></button><a href="gridandlayers.html">Grid and Layers</a></li>
+            <li><button class="tree blank"></button><a href="ui2.html">Advanced commands</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../2_create/index.html"> Basic functions </a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../2_create/drawingtools.html">Line, Arc, Rect</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/editingtools.html">Editing Tools</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/operations.html">Operations</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/unionintersecti.html">Union, Intersection, Subtraction</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/arrays.html">Arrays</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/offsetedge.html">Offset Edge</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/cornerandgeometrychanges.html">Corner  and geometry changes</a></li>
+            <li><button class="tree blank"></button><a href="../2_create/notches.html">Notches</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../4_modify/index.html"> Advanced functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../4_modify/blockhandling.html">Block handling</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/polylines.html">Edit polylines</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/irregulararray.html">Irregular Array</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/magnifyarea.html">Magnify Area</a></li>
+            <li><button class="tree blank"></button><a href="../4_modify/planeextract.html">Plane Extract</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../5_annotate/index.html"> Text and annotations</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../5_annotate/truetypetext.html">Truetype Text</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioning.html">Dimensioning</a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/dimensioningandannotation.html">Dimensioning and Annotation </a></li>
+            <li><button class="tree blank"></button><a href="../5_annotate/info.html">Info</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../3_bendandcutfunctional/index.html"> Sheet metal functionality.</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/sheetmetaltools.html">Notches and Cutouts</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/bendrelief.html">Bend Relief</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/cornerrelief.html">Corner Relief</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/cornerclosing.html">Corner Closing</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/bendlinetool.html">Bend line tool</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/flangedesign.html">Flange design</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/editbendinforma.html">Edit Bend Information</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/foldtodmodel.html">Fold to 3D Model</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/shaperec.html"> 2D Shape Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/11_slotrecognition/index.html"> Slot Recognition</a></li>
+            <li><button class="tree blank"></button><a href="../3_bendandcutfunctional/12_notchoptimization/index.html"> Notch Optimization</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../9_complex/index.html"> Addon functions</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../9_complex/arraysandshapemaker.html">Arrays and shape maker</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/digitizer.html">Digitizer</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricducts.html">Parametric Ducts</a></li>
+            <li><button class="tree blank"></button><a href="../9_complex/parametricscrip.html">Parametric Script</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../4_core/index.html">Core Functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../4_core/importexport.html">Import and Export</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/4_metadataextraction/index.html">Meta Data Extraction</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/5_comparison/index.html"> Comparison</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/exact.html">Exact</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/5_comparison/bendtolerant.html">Bend *tolerant* </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../4_core/6_geometricalanalysisa/index.html">Analysis Repairing and Healing</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/cleanup.html">cleanup</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smallelements.html">Small Elements </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/smoothing.html">Smoothing </a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/opencontours.html">Open Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/duplicatecontours.html">Duplicate Contours</a></li>
+            <li><button class="tree blank"></button><a href="../../4_core/6_geometricalanalysisa/splineapproximation.html">Spline Approximation</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../4_core/7_dxfextractionandclea/index.html"> DXF Extraction and Cleanup</a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/8_macrorespscriptexecu/index.html"> Script Execution </a></li>
+        <li><button class="tree blank"></button><a href="../../4_core/9_textinsertion/index.html"> Text Insertion</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../8_api/index.html">Structure of API's</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../8_api/pixcore/index.html">PixCore</a></li>
+        <li><button class="tree blank"></button><a href="../../8_api/pixops/index.html">PixOps</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../9_architecture/index.html">Architecture</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../9_architecture/13_integrationwiththeen/index.html"> Integration </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/14_supportforautoproces/index.html"> Support for Auto-Processing </a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/15_individualsoftwareco/index.html"> Installation</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/16_apicompatibility/index.html"> API compatibility</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/17_consistency/index.html"> Consistency</a></li>
+        <li><button class="tree blank"></button><a href="../../9_architecture/18_multitenancy/index.html"> Multi-Tenancy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html"> UI Funcitons</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">General</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="additional.html">Zoom, Pan and Origin</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Zoom, Pan and Origin</h1>
+<div class="paragraph">
+<p><strong>Shift Origin</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage127.png" alt="image127" width="width22" height="height22"></span> <strong><span class="underline">Shift Origin</span></strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage128.png" alt="image128" width="width165" height="height151"></span></p>
+</div>
+<div class="paragraph">
+<p>This tool is used to set up a different coordinate system for drawing. This coordinate system is called the user coordinate system.</p>
+</div>
+<div class="paragraph">
+<p>You can set up some point in your drawing that becomes the new origin, and also the rotation angle by which the coordinate system is rotated, relative to the horizontal. All subsequent coordinates that you enter in the input bars are in this new coordinate system. The user coordinate system remains in effect until it is reset by holding down the Ctrl key and clicking on the drawing, while in the Shift Origin mode. If a user coordinate system is in effect, a marker as shown in the figure alongside is displayed. This marker is positioned at the origin, and the arrowhead points in the direction of the positive X-axis. Instead of typing in values into the OriginX, OriginY and Angle input boxes, you can also setup the coordinate system using two mouse clicks. The first-clicked point becomes the origin, and the angle to the second-clicked point defines the rotation angle.</p>
+</div>
+<div class="paragraph">
+<p><strong>Redraw</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage129.png" alt="image129" width="width22" height="height22"></span> <strong><span class="underline">Redraw</span></strong></p>
+</div>
+<div class="paragraph">
+<p>Click this button to request for a repaint of the screen. This may be sometimes needed to remove blips, or markers, left behind on the screen by an earlier command. Also, when you delete an entity that coincides with another entity, the second entity may not be seen until you click the redraw button.</p>
+</div>
+<div class="paragraph">
+<p><strong>Zoom</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage130.png" alt="image130" width="width22" height="height22"></span> <strong><span class="underline">Zoom</span></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This button is used to zoom in and out of a drawing. Here are different ways in which the zoom mode can be used.</p>
+</li>
+<li>
+<p>Type in a zoom factor and press Enter. The centre of the drawing remains unchanged, while the drawing itself is scaled by the factor you enter. Factors less than 1 zoom out, while factors greater than 1, zoom in.</p>
+</li>
+<li>
+<p>Click, hold down the mouse button and drag. This displays a rubber band rectangle on the screen that defines the area of interest and when you release the mouse button that area expands to fill the entire window. n Hold down Ctrl and click, to zoom back to your previous view.</p>
+</li>
+<li>
+<p>Hold down Shift and click to zoom back to the extents of the entire drawing. n Hold down Alt and click to zoom out by a factor of 0.5</p>
+<div class="literalblock">
+<div class="content">
+<pre>Other navigation mechanisms</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to the zoom command on the drawing editor toolbar, there are some other methods in which you can navigate about the drawing:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pressing Ctrl+E at any time (even halfway through a command) will cause  to zoom out so that the entire drawing area is visible.</p>
+</li>
+<li>
+<p>Pressing Ctrl+W at any time (even halfway through a command) will cause  to temporarily suspend that command, and switch into a zoom mode. The prompt bar at this time will read "Click, drag and release to zoom in and resume the previous command". After you have clicked, dragged and released to define an area of interest,  will zoom in and the command will resume.</p>
+</li>
+<li>
+<p>If you have a mouse with a mouse wheel, you can also use the mouse wheel to zoom and pan. To zoom in, roll the wheel forward, and to zoom out, roll the wheel backward. To pan the drawing without changing the zoom level, click the mouse wheel, and drag the mouse while holding the mouse wheel down. These navigation modes can be used at any time, even when you are halfway through a command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>View Setup</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage131.png" alt="image131" width="width22" height="height22"></span> <strong><span class="underline">View Setup</span></strong></p>
+</div>
+<div class="paragraph">
+<p>This button brings up the View Setup dialogue. The options on this dialogue allow you to turn on and off various display elements in the drawing window.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mimage132.png" alt="image132" width="width172" height="height219"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Grid lines:</strong> Turn on or off the grid display. The grid spacing can be set using the Snap Grid button.</p>
+</div>
+<div class="paragraph">
+<p><strong>Coordinate axes:</strong> Turn on or off the coordinate axes display. If the axes are turned on, you can snap to the axes, or to the origin.</p>
+</div>
+<div class="paragraph">
+<p><strong>Tooling:</strong> Turn on or off the laser and punch tooling or the part. If tooling is turned on, you can snap to all tooling geometry.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sheet boundary:</strong> Displays the sheet boundary &amp; margin lines, which the sheet is Aqua and margins are grey.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sheet margins:</strong> Display the margins you have placed on the four edges of the sheet, by displaying a margin rectangle inside the sheet boundary in grey.</p>
+</div>
+<div class="paragraph">
+<p><strong>Frames:</strong> Display the machine&#8217;s working frames (stroke /over-travel limits).</p>
+</div>
+<div class="paragraph">
+<p><strong>Work holder positions:</strong> Display the clamp positions for each frame. If there are multiple frames, the frame numbers are displayed under each clamp. The clamps for the first frame are displayed in solid lines, and for the other frames in dotted lines.</p>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="basic.html">Picking mechanisms</a></span>
+  <span class="next"><a href="gridandlayers.html">Grid and Layers</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>
