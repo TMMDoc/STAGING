@@ -2,6 +2,9 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_calibration_of_the_centering_table">Calibration of the centering table</a></li>
+<li><a href="#_setup_in_flux">Setup in Flux</a></li>
+<li><a href="#_how_to_enable_centering_table">How to enable Centering table:</a></li>
+<li><a href="#_how_to_use_centering_table">How to Use Centering Table:</a></li>
 </ul>
 </div>
 <div class="sect1">
@@ -33,6 +36,74 @@ all frames should be set to the values of FRAME 1 (machine - robot frame)
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/finecalib2.png" alt="finecalib2"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup_in_flux">Setup in Flux</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Centering table provides a accurate part gripping position in case the pallet is inaccurate.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gravity_v2.png" alt="gravity v2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_enable_centering_table">How to enable Centering table:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open a program in Flux.</p>
+</div>
+<div class="paragraph">
+<p>Click on Add – Cell component</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/C1.png" alt="C1">
+</div>
+</div>
+<div class="paragraph">
+<p>Component glob will open and choose the Simple Centering Table. Set the values in following order to positioning the Centering table (Refer the attached image):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Angle= 90
+Tilt X Angle= 0
+Tilt X Angle= 38
+X,Z position as -1400, -792
+Lift= 800</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/c2.png" alt="c2"></span></p>
+</div>
+<div class="paragraph">
+<p>The above values are calculated based on setup we are using in our shop floor.
+This process will enable the Centering table in Flux. Refer the image</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/c3.png" alt="c3"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_centering_table">How to Use Centering Table:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open pickup glob: click on the P in bend navigator</p>
+</div>
+<div class="paragraph">
+<p>Select Centering table check box. It will use the centering table</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/c4.png" alt="c4"></span></p>
+</div>
+<div class="paragraph">
+<p>Now the part will be placed over the centering table for re-positioning before proceeding for bending.</p>
 </div>
 </div>
 </div>

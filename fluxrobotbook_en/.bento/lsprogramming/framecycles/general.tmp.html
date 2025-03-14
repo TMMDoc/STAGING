@@ -1,0 +1,27 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_frame_concept">Frame concept</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_frame_concept">Frame concept</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Most motions are done within FluxRobot in Joint coordinates. This gives FluxRobot the maximum control on motions and in situations of singularities. Only in case of gripping situations which influence the accuracy of the bend the tool frame in coordination with the tool frame coordinates are used.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Motions before the pickup are in joint coordinates</p>
+</li>
+<li>
+<p>Pickup from a stack in cartesian coordinates in userframe 2, this enables the Robot PLC to control several stacks and stack heights</p>
+</li>
+<li>
+<p>Centering the part in cartesian coordinates in userframe 3, which enables a fine calibration of the part before the positioning motion on Bend_1</p>
+</li>
+</ol>
+</div>
+</div>
+</div>

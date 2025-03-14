@@ -1,31 +1,104 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_machine_and_carthesian_coordinates_mcs_and_wcs">Machine and Carthesian coordinates (MCS and WCS)</a></li>
+<li><a href="#_joint_coordinate_system">Joint coordinate system</a></li>
+<li><a href="#_jgfrm_coordinate_system">JGFRM coordinate system</a></li>
+<li><a href="#_world_coordinate_system">World coordinate system</a></li>
+<li><a href="#_user_coordinate_system">User coordinate system</a></li>
+<li><a href="#_fanuc_specific_nomenclature">Fanuc specific nomenclature</a></li>
 </ul>
 </div>
-<div class="sect1">
-<h2 id="_machine_and_carthesian_coordinates_mcs_and_wcs">Machine and Carthesian coordinates (MCS and WCS)</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The nominal values of the axis dimensions are implemented in the fanuc transformation</p>
+<p>details see in: Robot%20Operater%20And%20Program%20manual.pdf</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_joint_coordinate_system">Joint coordinate system</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Extract from: Robot%20Operater%20And%20Program%20manual.pdf</p>
+<p>Joint coordinate system The joint coordinate system affects the robot joints. The position and behavior of
+the robot are defined by angle shifts in relation to the joint coordinate system of the
+joint base.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="img/r1.png" alt="r1">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jgfrm_coordinate_system">JGFRM coordinate system</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The zero positon of the robot is</p>
+<p>The Cartesian coordinate system is defined by the coordinates X, Y and Z from the
+origin of the Cartesian room coordinate system to the origin (tool center point) of
+the cartesian tool system and angle shift W, P and R of the Cartesian tool coordi
+nate system with respect to the X, Y and Z axes of the Cartesian room coordinate
+system. The meaning of (W, P, R) is shown below.</p>
 </div>
-<div class="imageblock">
+<div class="paragraph">
+<p>The jog coordinate system is defined by the user. The jog coordinate system is
+used to move the robot efficiently through the jog feed. The origin of the jog frame
+is irrelevant for the user as it is only used if the jog frame was selected as a coor
+dinate system for the manual feed. If the coordinate system is not defined, it is
+replaced by the world coordinate system.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/JOGCOS.png" alt="JOGCOS"></span></p>
+</div>
+<div class="literalblock">
 <div class="content">
-<img src="img/Zero_Robo.png" alt="Zero Robo">
+<pre>Xu, Yu and Zu: The coordinate system is defined in the working range.
+Xt, Yt and Z: The coordinate system is defined for the tool</pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_world_coordinate_system">World coordinate system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This standard coordinate system is fixed in the working range. The coordinate system is fixed in a position determined by the robot. The user and jog coordinate system are based on this.
+ The world coordinate system is used to specify position data and execute corre
+sponding instructions.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/world.png" alt="world"></span></p>
+</div>
+<div class="paragraph">
+<p>Tool coordinate system The tool coordinate system defines the position of the tool center point (TCP) and
+the behavior of the tool. The tool coordinate system must be defined. If the tool
+coordinate system is not defined, the coordinate system of the mechanical interface
+is applied as an alternative.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_user_coordinate_system">User coordinate system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The user coordinate system is defined by the user in every working area. It is used
+to define a position register, execute the corresponding position register and posi
+tion compensation instructions, etc. If the user coordinate system is not defined, the
+world coordinate system is used as an alternative.</p>
+</div>
+<div class="paragraph">
+<p>See subsequent chapters for more details</p>
+</div>
+<div class="paragraph">
+<p>NOTICE: If the tool or user coordinate system is changed after teaching the pro
+gram, the programmed points and widths must be reset. Otherwise, the devices
+will be damaged</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fanuc_specific_nomenclature">Fanuc specific nomenclature</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>In Fanuc the motion of the J3 axis is dependent on the motion of J2: J3=J3+J2</p>
 </div>

@@ -1,0 +1,1 @@
+xcopy ..\..\FluxRobotBook_EN "C:\Users\wadehnwo\TRUMPF SE + Co. KG\Manuals - Dokumente\fluxrobotbook_en" /E

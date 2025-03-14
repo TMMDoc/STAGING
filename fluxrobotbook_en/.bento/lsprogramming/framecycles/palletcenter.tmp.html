@@ -1,0 +1,57 @@
+<div class="paragraph">
+<p>This Motion cycle comprises</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>pickup from a pallet</p>
+</li>
+<li>
+<p>Part separation</p>
+</li>
+<li>
+<p>Double sheet detection</p>
+</li>
+<li>
+<p>Centering table</p>
+</li>
+<li>
+<p>Bending</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The important part of this cycle is that the relative position of the pallet will be used to calibrate the part on the centering table</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pickup from a stack in cartesian coordinates in userframe 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>this enables the Robot PLC to control several stacks and stack heights</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Centering the part in cartesian coordinates in userframe 3</p>
+<div class="ulist">
+<ul>
+<li>
+<p>this enables a fine calibration of the part before the positioning motion on Bend_1</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/FrameCycle.png" alt="FrameCycle">
+</div>
+</div>
+<div class="paragraph">
+<p>The correction of a position needs always to be done in the pickup before. E.g. if the part</p>
+</div>

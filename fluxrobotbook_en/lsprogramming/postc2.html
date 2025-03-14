@@ -1,0 +1,508 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Post Processor</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.png" width="123" height="50" /></div>
+        <div><p>FluxRobot Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../index.html">Welcome to FluxRobot</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../rbasics/index.html">Basics</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../rbasics/coordsystems.html">Basic coordinate systems</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanuccoords.html">Robot coordinates</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanucframes.html">Fanuc Frame concept</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanuccordmove.html">Fanuc Motion commands </a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
+        <li><button class="tree blank"></button><a href="../rbasics/bestpract.html">Best practices</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../setup_robot/index.html">Setup the robot</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../setup_robot/pointer.html">Calibrate Pointer/Gauge</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/pinchgripper.html">Calibrate Pinch Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/vacuumgripper.html">Calibrate Vacuum Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/setuprobot.html">Setup Robot to Machine</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/pallet.html">Setup Pallet</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/dispenser.html">Setup Dispenser</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/partseparator.html">Setup PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/doublesheet.html">Setup DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/regrip.html">Setup Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/centering.html">Setup CenteringTable</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/deposit.html">Setup Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/gripperchanger.html">GripperChanger</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../frametool/index.html">Frame tool</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../frametool/frame_racell.html">RA Cell</a></li>
+        <li><button class="tree blank"></button><a href="../frametool/frame_flexcell.html">FlexCell</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../grippertool/index.html">Gripper</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../grippertool/gripperdesign.html">Gripper design</a></li>
+        <li><button class="tree blank"></button><a href="../grippertool/grippertool.html">GripperTool</a></li>
+        <li><button class="tree blank"></button><a href="../grippertool/gripperimport.html">Gripper import</a></li>
+        <li><button class="tree blank"></button><a href="../grippertool/cups.html">Trumpf standard vacuum cups</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../motionsequences/index.html">Motion sequences</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../motionsequences/pickup_pinch.html">PickupDispenser</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/pickup_vac.html">PickupPallet</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/partseparator.html">PartSeparator</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/doublesheet.html">DoublesheetDetector</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/regrip.html">Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/centering.html">CenteringTable</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/bendpos.html">BendPositioning</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/bendsub.html">BendSub</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/deposit.html">Deposit</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/toolchanger.html">ToolChanger</a></li>
+        <li><button class="tree blank"></button><a href="../motionsequences/gripperchanger.html">GripperChanger</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="index.html">FluxRobot NC-Coode</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="rnc.html">Flux .RNC output</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="framecycles/index.html">Flux Sub structure</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="framecycles/general.html">General</a></li>
+            <li><button class="tree blank"></button><a href="framecycles/palletcenter.html">Sub_PalletCenter</a></li>
+            <li><button class="tree blank"></button><a href="framecycles/palletimage.html">Sub_PalletImage</a></li>
+            <li><button class="tree blank"></button><a href="framecycles/palletab13.html">Sub_PalletAB13</a></li>
+            <li><button class="tree blank"></button><a href="framecycles/dispenser.html">Sub_Dispenser</a></li>
+            <li><button class="tree blank"></button><a href="framecycles/subbendxcycle.html">Sub_BendXCycle</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a class="active" href="postc2.html">Post Processor</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="fanuchw/index.html">Fanuc functions & macros</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="fanuchw/operation.html">General operation procedure</a></li>
+            <li><button class="tree blank"></button><a href="fanuchw/fr_bgallign.html">FR_BgAllign</a></li>
+            <li><button class="tree blank"></button><a href="fanuchw/fr_stacksearch.html">FR_StackSearch</a></li>
+            <li><button class="tree blank"></button><a href="fanuchw/fr_scale.html">FFR_Scale</a></li>
+            <li><button class="tree blank"></button><a href="fanuchw/fr_gripclose.html">FR_GRipClose</a></li>
+            <li><button class="tree blank"></button><a href="fanuchw/communication.html">Communication</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../ra_interface/index.html">RA interface</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../ra_interface/safety.html">Safety first !</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../ra_interface/2_descriptionofhardware/index.html">Description of the hardware</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/digitalingerface.html">Digital interface</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/ethercat.html">Ethercat</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/rainterface.html">RA interface</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/2_descriptionofhardware/security_network.html">Network security</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../ra_interface/1_generalinformation/index.html">Types of robot couplings</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/digitaliocoupling/index.html">Digital coupling</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/loosesyncronizedcoupling/index.html">Loose syncronized coupling</a></li>
+            <li><button class="tree blank"></button><a href="../ra_interface/1_generalinformation/thightsyncronized/index.html">Thight syncronized coupling with FluxRobot</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../ra_interface/3_machineconfiguration/index.html"> Setting up your EtherCAT system</a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/4_bendingprogram/index.html">Run a FluxRobot program</a></li>
+        <li><button class="tree blank"></button><a href="../ra_interface/8_windowssystemcontrol/index.html">Windows system </a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../electricalwiring/index.html">Electrical wiring</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../electricalwiring/wiring.html">Wiring of the Fanuc cabinet</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/robwrist.html">Wiring robot wrist</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/robback.html">Wiring robot back hub</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../electricalwiring/devicepanel/index.html">Device panel</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../electricalwiring/devicepanel/digio.html">Digital IO</a></li>
+            <li><button class="tree blank"></button><a href="../electricalwiring/devicepanel/analogio.html">Analog IO's</a></li>
+            <li><button class="tree blank"></button><a href="../electricalwiring/devicepanel/manifold.html">Manifold</a></li>
+            <li><button class="tree blank"></button><a href="../electricalwiring/devicepanel/vacuum.html">Vacuum generator</a></li>
+            <li><button class="tree blank"></button><a href="../electricalwiring/devicepanel/userio.html">UserIO</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/grippers/index.html">Gripper</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/safety.html">Safety</a></li>
+        <li><button class="tree blank"></button><a href="../electricalwiring/iooutput.html">Use the IO outputs</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../schematics/index.html">Schematics</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../dev_components/index.html">Flux: Tweeak Components</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../dev_components/cellcomponents.html">Flux: Cell components</a></li>
+        <li><button class="tree blank"></button><a href="../dev_components/pinch.html">Adjust Pinch gripper offset</a></li>
+        <li><button class="tree blank"></button><a href="../dev_components/gripper.html">Tweak a gripper CAD geometry</a></li>
+        <li><button class="tree blank"></button><a href="../dev_components/dispenser.html">Change dispenser geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../dev_devnotes/index.html">DEV: Developer notes</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../dev_devnotes/basicop.html">Basics on the Robot</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/fanucframes.html">Frame concept (RACell)</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/dh.html">Denavit–Hartenberg parameters</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/defofrotation.html">Definition of rotations</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/pickup_comp.html">Pickup comparison</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/check.html">Check frames</a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/digitalio.html">Aacessing Digital IO' in robot: </a></li>
+        <li><button class="tree blank"></button><a href="../dev_devnotes/post_matlab.html">Postprocessor Matlab</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="index.html">FluxRobot NC-Coode</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="postc2.html">Post Processor</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Post Processor</h1>
+<div class="sect1">
+<h2 id="_installation_and_usage">installation and usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The files could be found in \03_Matlab_Ccode\C_Postporcessor\executalbe</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a detailed guide to the workflow and implementation of the post processor. The purpose of the post processor is to generate robot specific files (.LS). The output includes structured files exported into a designated folder for seamless integration with the machine setup.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pre-Requisites:</strong></p>
+</div>
+<div class="paragraph">
+<p>An exe and a folder containing hardcode (PLC) files are provided to the user.</p>
+</div>
+<div class="paragraph">
+<p>Before running the post processor, ensure the following steps are to be completed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Provide the Location of the Post Processor in Flux</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Settings &#8658; Machine Defaults &#8658; Bend Outputs &#8658; Specify the Post &#8658; Processor Location in <strong>NC-Code post-processor</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image1.png" alt="Image1" width="300"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Stand-alone running of the exe</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the location of the exe and open the command prompt</p>
+</li>
+<li>
+<p>Provide the exe and path of the rbc file <strong>inside double qoutes</strong> to run the post processor.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image2.png" alt="Image2"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workflow">Workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>1. Input File Acquisition</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gets the .rbc file directly from Flux and processes it. This file contains critical information about ram points, robot positions, and other necessary data.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>2. File Parsing</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When processing an RBC file, the following key details are extracted:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Number of Bends</strong> - Identifies the total count of bends present in the RBC file.</p>
+</li>
+<li>
+<p><strong>Regrip Status</strong> - Determines whether a bend operation requires a regrip.</p>
+</li>
+<li>
+<p><strong>Clamp Regrip Presence</strong> - Checks if clamp regrip is required for the bending operation.</p>
+</li>
+<li>
+<p><strong>Motion Points and their Reference Names</strong> - Extracts all motion points and their reference names for easy identification.</p>
+</li>
+<li>
+<p><strong>Motion Type</strong> - Classifies each motion as either:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Joint Motion</strong>: The robot moves all joints in a coordinated manner.</p>
+</li>
+<li>
+<p><strong>Linear Motion</strong>: The robot moves in a straight-line path between two points.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The extracted points are categorized into three distinct groups:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Main LS</strong> - These are the primary positioning points and data for the robot in the process.</p>
+</li>
+<li>
+<p><strong>Bend LS</strong> - Points and data specifically associated with the bending operations.</p>
+</li>
+<li>
+<p><strong>Ram Points</strong> - Points related to ram movements within the bending cycle.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>3. Hard-Coded Templates</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The post processor uses a set of pre-defined hard-coded (PLC) files which are embedded in the solution or can be fed from external source for generating LS files.</p>
+</li>
+<li>
+<p>PLC hardcoded files contain predefined lines with placeholders in the format [<strong>PointName</strong>]. These placeholders indicate where specific motion points should be collected and written into the file.</p>
+</li>
+<li>
+<p>These hardcode files are kept outside and editable for user convenience. Location of the external files should be specified <strong>without double quotes</strong> to use it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image7.png" alt="Image7"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If external files are not found or the path is invalid, a prompt is displayed asking whether to use the default files. If the user presses 'Y', the default files are used; if 'N' is pressed, a message stating "No files generated" is displayed and the program exits.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image5.png" alt="Image5"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image6.png" alt="Image6"></span>
+* The hardcoded files used are
+<strong> <strong>BendLS_NoRegripHC</strong>
+</strong> <strong>BendLS_RegripHC</strong>
+<strong> <strong>BendSub_HC (VG – Vacuum Gripper, PG – Pinch Gripper)</strong>
+</strong> <strong>Header</strong>
+<strong>* *MainLS_HC (VG – Vacuum Gripper, PG – Pinch Gripper)</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>4. File Generation</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The hardcode files are read line by line and written into the output file.</p>
+</li>
+<li>
+<p>If the line read contains placeholders for points, the corresponding line is replaced with the corresponding motion points.</p>
+</li>
+<li>
+<p>New points added in Flux can be directly incorporated inside the post-processor without being added in the hardcoded (PLC) files manually. Each point has a Boolean flag ensuring that the preceding point is written, allowing seamless integration of newly added points.</p>
+</li>
+<li>
+<p>The following files are generated:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Main File</strong>: Contains the primary instructions for the robot which calls the bend positioning files for each bend.</p>
+</li>
+<li>
+<p><strong>Bend Sub and Bend Positioning Files</strong>: Generated for each bend to specify detailed instructions. The bend positioning file of each bend calls their respective BendSub files.</p>
+</li>
+<li>
+<p><strong>Ram Points File</strong>: Provides a comprehensive list of ram positions for each bend to be provided to RA.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The Main file, Bend Sub and Bend Positioning files are generated as .LS files. Ram Positioning files are generated as .txt files.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>5. File Export</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>•	All the generated files are saved into a designated folder having the same name as the part and is saved in the location of the exe.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image3.png" alt="image2" width="294" height="102"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image4.png" alt="image3" width="297" height="305"></span></p>
+</div>
+<div class="paragraph">
+<p><strong><span class="underline">Note:</span></strong> Implementation of FTP for files transfer through the post processor is yet to be implemented.</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_installation_and_usage">installation and usage</a>
+    </li>
+    <li level="1">
+      <a href="#_overview">Overview</a>
+    </li>
+    <li level="1">
+      <a href="#_workflow">Workflow</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="framecycles/subbendxcycle.html">Sub_BendXCycle</a></span>
+  <span class="next"><a href="fanuchw/index.html">Fanuc functions & macros</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2023 by Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

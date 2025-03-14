@@ -1,0 +1,114 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_initialisation">initialisation</a></li>
+<li><a href="#_loading_sequence">Loading sequence</a></li>
+<li><a href="#_machine_preparation_sequence">Machine preparation sequence</a>
+<ul class="sectlevel2">
+<li><a href="#_initialisation_phase">Initialisation phase</a></li>
+<li><a href="#_bending_phase">Bending phase</a></li>
+</ul>
+</li>
+<li><a href="#_deposit_sequence">Deposit sequence</a></li>
+<li><a href="#_finishing_sequence">Finishing sequence</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The individual motion cycles of the previous chapter get now combined to macroscopic modules to get structure into the code. The target is to have a as good human readable code as possible to support minor tweaks on the machine.</p>
+</div>
+<div class="paragraph">
+<p>The main LS file is structured into:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_initialisation">initialisation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sets all parameters and IO&#8217;s into a defined state</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>1:   !,Program to pick a part ;
+2:   LBL[100:home] ;
+3:   DO[9:Vacuum_GripON\OFF]=ON ;
+4:   DO[53:START_PROGRAM]=ON ;
+5:   UFRAME_NUM=1 ;
+6:   UTOOL_NUM=2 ;
+7:   R[15:SPD_J]=50    ;
+8:   R[16:SPD_L]=300    ;
+9:   J P[1:Init] R[15:SPD_J]% CNT10    ;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loading_sequence">Loading sequence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>e.g.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>10:  CALL Sub_PalletCenter;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_machine_preparation_sequence">Machine preparation sequence</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_initialisation_phase">Initialisation phase</h3>
+<div class="paragraph">
+<p>initiated via LBL[2:INIT] ;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bending_phase">Bending phase</h3>
+<div class="paragraph">
+<p>initiated via LBL[3:RAMUP] ;</p>
+</div>
+<div class="paragraph">
+<p>Motion phase which calls va R[17] the SubBendXCycles</p>
+</div>
+<div class="paragraph">
+<p>The SubBendXCycles are itself structured into</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The part positioning sequence</p>
+</li>
+<li>
+<p>The main Bend sequence in "CALL BENDXSUB"</p>
+</li>
+<li>
+<p>The decompression phase</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Details see <a href=":.\SubBendXcycle">:.\SubBendXcycle</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deposit_sequence">Deposit sequence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>initiated via LBL[8:TODEPOSIT]</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_finishing_sequence">Finishing sequence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>initiated via LBL[9:Finish]</p>
+</div>
+</div>
+</div>

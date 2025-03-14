@@ -1,0 +1,68 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_design">Design</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_design">Design</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A good gripper is often the key to a good bend sequence in FluxBend. In order to find an efficient solution you might take minigripper.STL and modify the coordinates of the suction cups until you have a good solution. Example material is in 04_components\Gripper. The STL file (binary) represents the collision geometry, the dat file the position of the geometrical properties, information about the suction cup position, group and type. List of all available suction cups can be found in the next page</p>
+</div>
+<div class="paragraph">
+<p>The content of the .dat file is:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>NAME=Custom
+CUPNAME=SAF50
+CUPZPOS=186
+CUPS=4
+CUP1POS=100,85 #1
+CUP2POS=100,-85 #2
+CUP3POS=200,85 #3
+CUP4POS=200,-85 #4</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Import the Gripper via Edit &gt; Database &gt; Bend Grippers</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/import.png" alt="import">
+</div>
+</div>
+<div class="paragraph">
+<p>After finding the optimal position you could produce a Gripper.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/2Ddrawing.png" alt="2Ddrawing"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The Gripper height in the assembled state needs to be measured in the activated state (sucktion on).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/length1.png" alt="length1"></span></p>
+</div>
+<div class="paragraph">
+<p>The precise calculation of CUPZPOS in .dat is calculated to  (see  <a href="cups.html">cups</a> )</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>A = Clutch length
+B = Adapter length
+C = Suction cup length. See:</pre>
+</div>
+</div>
+</div>
+</div>

@@ -1,14 +1,17 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_coarse_position_of_the_pallets">Coarse position of the pallets</a></li>
+<li><a href="#_calibration_of_pallets">Calibration of Pallets</a></li>
 </ul>
 </div>
 <div class="sect1">
-<h2 id="_coarse_position_of_the_pallets">Coarse position of the pallets</h2>
+<h2 id="_calibration_of_pallets">Calibration of Pallets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All components are measured with the ponter. The centering table and the regrip station are lateron fine adjusted with the dial indicator.</p>
+<p>The accuracy of the pickup pallet is low since parts get their accuracy from the centering table. FluxRobot supports flat and tilted pickup stacks.</p>
+</div>
+<div class="paragraph">
+<p>The pickup coordinate system will be gained by a calibration plate on the pallet</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -17,31 +20,6 @@
 </div>
 <div class="paragraph">
 <p>The pallets are set to the coordinates in World (Robot coordinates ) [-1200 -1500 Z] and [-0 -1500 Z] The Z-Value is measured with the pointer</p>
-</div>
-<div class="paragraph">
-<p>For Flux we need to provide the coordinates in UserFrame 1; Since the pallet is referenced to the X positon of the robo rail this value need to be considered. Finally we need to have all parameters adjusted that the pallet corner shows with the measurement tool the right coordinates</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="img/Calib_palletheight.png" alt="Calib palletheight">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="img/Pallet_calib.png" alt="Pallet calib">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-see further details of the coordinates of the gripper towards the pallet in the gripper chapter
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/pallet_offset.png" alt="pallet offset"></span></p>

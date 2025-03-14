@@ -1,0 +1,197 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_solenoid_configuration">Solenoid Configuration:</a></li>
+<li><a href="#_electrical_wiring_pic_3_2">Electrical wiring (Pic 3.2):</a></li>
+<li><a href="#_vacuum_ejector_on_the_teach_pendant">Vacuum Ejector on the teach pendant</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image right"><img src="img/mani1.jpg" alt="t" width="250"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Model: SMC SS5Y3-10F1-05DS-C6</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_solenoid_configuration">Solenoid Configuration:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>5/3 closed-center valve.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Features:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5 stations.</p>
+</li>
+<li>
+<p>10 side-faced ports.</p>
+</li>
+<li>
+<p>Connected via 25-pin D-sub connector.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Indicators:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Red light for A port.</p>
+</li>
+<li>
+<p>Green light for B port.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Port Configuration (connected to the robot’s I/O in the following order, as shown in (Pic 3.1)):</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1A – Push Backward</p>
+</li>
+<li>
+<p>1B – Push Forward</p>
+</li>
+<li>
+<p>2A – Gripper Close</p>
+</li>
+<li>
+<p>2B – Gripper Open</p>
+</li>
+<li>
+<p>3A – Pallet Dispenser Enable</p>
+</li>
+<li>
+<p>3B – Gripper Enable</p>
+</li>
+<li>
+<p>4A – Pallet Dispenser Down</p>
+</li>
+<li>
+<p>4B – Pallet Dispenser Up</p>
+</li>
+<li>
+<p>5A – Not connected</p>
+</li>
+<li>
+<p>5B – Not connected</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_electrical_wiring_pic_3_2">Electrical wiring (Pic 3.2):</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image right"><img src="img/con2.png" alt="t" width="350"></span></p>
+</div>
+<div class="paragraph">
+<p>Station 1</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 1 – Black
+14 – Yellow Black</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Station 2</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 2 – Brown
+15 – Pink Black</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Station 3</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 3 – Red
+16 – Blue White</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Station 4</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 4 – Orange
+17 – Purple</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Station 5</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 5 – Yellow
+18 – Gray</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vacuum_ejector_on_the_teach_pendant">Vacuum Ejector on the teach pendant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vacuum Gripper on ROBOT:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image18.jpeg" alt="A screen with numbers and text Description automatically generated" width="235" height="180"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1:</strong> We have to enable
+the inlet air to the vacuum ejector mounted at the J3 of robot, do it
+navigate to <strong>IO&gt;&gt;[TYPE]&gt;&gt;Digital&gt;&gt;OUT and turn ON DO[501]-GRIP_ENB and
+turn OFF DO[502]-PDISP_ENB</strong></p>
+</div>
+<div class="paragraph">
+<p>DO 501 and 502</p>
+</div>
+<div class="paragraph">
+<p><strong>STEP 2:</strong> The vacuum ejector has a always ON configuration for suction
+i.e, the suction is turned ON when the Digital signal goes OFF .
+*DO[505] VAC_GRIP_ON is the DO for controlling vacuum suction at the
+robot EOAT. When DO[505] is OFF then suction is turned ON and vice versa</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image19.jpeg" alt="A screen with numbers and text Description automatically generated" width="286" height="218"></span></p>
+</div>
+<div class="paragraph">
+<p>DO[505]- is tuned OFF to turn suction ON at EOAT</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image20.jpeg" alt="image20" width="365" height="396"></span></p>
+</div>
+<div class="paragraph">
+<p>When</p>
+</div>
+<div class="paragraph">
+<p>When DO[501]-is disabled RED lED truns off</p>
+</div>
+<div class="paragraph">
+<p>and if you turn ON DO[502] – then Green LED turns ON indicating inlet air to vacuum ejector for partDispenser unit is ON</p>
+</div>
+</div>
+</div>

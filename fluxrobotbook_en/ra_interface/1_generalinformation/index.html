@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../res/tree.css">
   <link rel="stylesheet" href="../../res/sibling.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>General information</title>
+  <title>Types of robot couplings</title>
 </head>
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
@@ -28,16 +28,17 @@
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../../rbasics/coordsystems.html">Basic coordinate systems</a></li>
         <li><button class="tree blank"></button><a href="../../rbasics/fanuccoords.html">Robot coordinates</a></li>
-        <li><button class="tree blank"></button><a href="../../rbasics/fanucframes.html">Frame concept</a></li>
-        <li><button class="tree blank"></button><a href="../../rbasics/fanuccordmove.html">Motion commands </a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanucframes.html">Fanuc Frame concept</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/fanuccordmove.html">Fanuc Motion commands </a></li>
         <li><button class="tree blank"></button><a href="../../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
+        <li><button class="tree blank"></button><a href="../../rbasics/bestpract.html">Best practices</a></li>
       </ul>
     </li>
     <li>
       <button class="tree closed"></button>
-      <a href="../../setup_robot/index.html">Setup and run the robot</a>
+      <a href="../../setup_robot/index.html">Setup the robot</a>
       <ul class="hide">
-        <li><button class="tree blank"></button><a href="../../setup_robot/pointer.html">Measure Pointer length</a></li>
+        <li><button class="tree blank"></button><a href="../../setup_robot/pointer.html">Calibrate Pointer/Gauge</a></li>
         <li><button class="tree blank"></button><a href="../../setup_robot/pinchgripper.html">Calibrate Pinch Gripper</a></li>
         <li><button class="tree blank"></button><a href="../../setup_robot/vacuumgripper.html">Calibrate Vacuum Gripper</a></li>
         <li><button class="tree blank"></button><a href="../../setup_robot/setuprobot.html">Setup Robot to Machine</a></li>
@@ -50,92 +51,80 @@
         <li><button class="tree blank"></button><a href="../../setup_robot/deposit.html">Setup Deposit</a></li>
         <li><button class="tree blank"></button><a href="../../setup_robot/toolchanger.html">ToolChanger</a></li>
         <li><button class="tree blank"></button><a href="../../setup_robot/gripperchanger.html">GripperChanger</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_robot/fluxload.html">Program Flux and load robot</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_robot/advanced.html">Run the fanuc in auto mode</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../frametool/index.html">Frame tool</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../frametool/frame_racell.html">RA Cell</a></li>
+        <li><button class="tree blank"></button><a href="../../frametool/frame_flexcell.html">FlexCell</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../grippertool/index.html">Gripper</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../grippertool/gripperdesign.html">Gripper design</a></li>
+        <li><button class="tree blank"></button><a href="../../grippertool/grippertool.html">GripperTool</a></li>
+        <li><button class="tree blank"></button><a href="../../grippertool/gripperimport.html">Gripper import</a></li>
+        <li><button class="tree blank"></button><a href="../../grippertool/cups.html">Trumpf standard vacuum cups</a></li>
       </ul>
     </li>
     <li>
       <button class="tree closed"></button>
       <a href="../../motionsequences/index.html">Motion sequences</a>
       <ul class="hide">
-        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_pinch.html">Pickup from dispenser</a></li>
-        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_vac.html">Pickup from pallet</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_pinch.html">PickupDispenser</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/pickup_vac.html">PickupPallet</a></li>
         <li><button class="tree blank"></button><a href="../../motionsequences/partseparator.html">PartSeparator</a></li>
         <li><button class="tree blank"></button><a href="../../motionsequences/doublesheet.html">DoublesheetDetector</a></li>
-        <li><button class="tree blank"></button><a href="../../motionsequences/regrip.html">Setup Regrip</a></li>
-        <li><button class="tree blank"></button><a href="../../motionsequences/centering.html">Centering table motion</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/regrip.html">Regrip</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/centering.html">CenteringTable</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/bendpos.html">BendPositioning</a></li>
+        <li><button class="tree blank"></button><a href="../../motionsequences/bendsub.html">BendSub</a></li>
         <li><button class="tree blank"></button><a href="../../motionsequences/deposit.html">Deposit</a></li>
         <li><button class="tree blank"></button><a href="../../motionsequences/toolchanger.html">ToolChanger</a></li>
         <li><button class="tree blank"></button><a href="../../motionsequences/gripperchanger.html">GripperChanger</a></li>
-        <li><button class="tree blank"></button><a href="../../motionsequences/bend.html">Bend</a></li>
       </ul>
     </li>
     <li>
       <button class="tree closed"></button>
-      <a href="../../setup_flux/index.html">Setup Flux</a>
-      <ul class="hide">
-        <li><button class="tree blank"></button><a href="../../setup_flux/robot.html">Robot</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_flux/dispenser.html">Dispenser</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_flux/pickuppallet.html">PickupPallet</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_flux/centertable.html">Centering table</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_flux/regrip.html">regrip station </a></li>
-        <li><button class="tree blank"></button><a href="../../setup_flux/dropoff.html">Drop off pallet</a></li>
-        <li><button class="tree blank"></button><a href="../../setup_flux/toolchanger.html">Tool changer</a></li>
-      </ul>
-    </li>
-    <li>
-      <button class="tree closed"></button>
-      <a href="../../gripper/index.html">Customized grippers</a>
-      <ul class="hide">
-        <li><button class="tree blank"></button><a href="../../gripper/cups.html">Trumpf standard vacuum cups</a></li>
-      </ul>
-    </li>
-    <li>
-      <button class="tree closed"></button>
-      <a href="../../lsprogramming/index.html">NC-Coode and postprocessor</a>
+      <a href="../../lsprogramming/index.html">FluxRobot NC-Coode</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../../lsprogramming/rnc.html">Flux .RNC output</a></li>
-        <li><button class="tree blank"></button><a href="../../lsprogramming/post_matlab.html">Postprocessor Matlab</a></li>
-        <li><button class="tree blank"></button><a href="../../lsprogramming/post_c.html">Postprocessor C#</a></li>
-        <li><button class="tree blank"></button><a href="../../lsprogramming/ls.html">LS output</a></li>
-      </ul>
-    </li>
-    <li>
-      <button class="tree closed"></button>
-      <a href="../../fanuchw/index.html">Fanuc functions & macros</a>
-      <ul class="hide">
-        <li><button class="tree blank"></button><a href="../../fanuchw/operation.html">General operation procedure</a></li>
-        <li><button class="tree blank"></button><a href="../../fanuchw/fr_bgallign.html">FR_BgAllign</a></li>
-        <li><button class="tree blank"></button><a href="../../fanuchw/fr_stacksearch.html">FR_StackSearch</a></li>
-        <li><button class="tree blank"></button><a href="../../fanuchw/fr_scale.html">FFR_Scale</a></li>
-        <li><button class="tree blank"></button><a href="../../fanuchw/fr_gripclose.html">FR_GRipClose</a></li>
-        <li><button class="tree blank"></button><a href="../../fanuchw/communication.html">Communication</a></li>
-      </ul>
-    </li>
-    <li>
-      <button class="tree closed"></button>
-      <a href="../../hmi/index.html">Cell HMI</a>
-      <ul class="hide">
-        <li><button class="tree blank"></button><a href="../../hmi/load_pgrm.html">Load program on robot</a></li>
-        <li><button class="tree blank"></button><a href="../../hmi/fetch_backup.html">fetch config from Robot</a></li>
-        <li><button class="tree blank"></button><a href="../../hmi/partcounter.html">Part counter</a></li>
-        <li><button class="tree blank"></button><a href="../../hmi/frametool.html">Frame tool</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../lsprogramming/framecycles/index.html">Flux Sub structure</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../lsprogramming/framecycles/general.html">General</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/framecycles/palletcenter.html">Sub_PalletCenter</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/framecycles/palletimage.html">Sub_PalletImage</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/framecycles/palletab13.html">Sub_PalletAB13</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/framecycles/dispenser.html">Sub_Dispenser</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/framecycles/subbendxcycle.html">Sub_BendXCycle</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../lsprogramming/postc2.html">Post Processor</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../lsprogramming/fanuchw/index.html">Fanuc functions & macros</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../lsprogramming/fanuchw/operation.html">General operation procedure</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/fanuchw/fr_bgallign.html">FR_BgAllign</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/fanuchw/fr_stacksearch.html">FR_StackSearch</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/fanuchw/fr_scale.html">FFR_Scale</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/fanuchw/fr_gripclose.html">FR_GRipClose</a></li>
+            <li><button class="tree blank"></button><a href="../../lsprogramming/fanuchw/communication.html">Communication</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li>
       <button class="tree open"></button>
       <a href="../index.html">RA interface</a>
       <ul>
-        <li>
-          <button class="tree open"></button>
-          <a class="active" href="index.html">General information</a>
-          <ul>
-            <li><button class="tree blank"></button><a href="typesofcuppling.html">Types of robot couplings</a></li>
-            <li><button class="tree blank"></button><a href="digitaliocoupling/index.html">Digital coupling</a></li>
-            <li><button class="tree blank"></button><a href="loosesyncronizedcoupling/index.html">Loose syncronized coupling</a></li>
-            <li><button class="tree blank"></button><a href="thightsyncronized/index.html">Thight syncronized coupling with FluxRobot</a></li>
-          </ul>
-        </li>
+        <li><button class="tree blank"></button><a href="../safety.html">Safety first !</a></li>
         <li>
           <button class="tree closed"></button>
           <a href="../2_descriptionofhardware/index.html">Description of the hardware</a>
@@ -146,11 +135,17 @@
             <li><button class="tree blank"></button><a href="../2_descriptionofhardware/security_network.html">Network security</a></li>
           </ul>
         </li>
-        <li><button class="tree blank"></button><a href="../3_machineconfiguration/index.html">Machine configuration</a></li>
-        <li><button class="tree blank"></button><a href="../4_bendingprogram/index.html">How to create a Bending program</a></li>
-        <li><button class="tree blank"></button><a href="../5_bendingsteps/index.html">bending steps in detail</a></li>
-        <li><button class="tree blank"></button><a href="../6_inputsandoutputsofdigitalinterface/index.html">Inputs and outputs </a></li>
-        <li><button class="tree blank"></button><a href="../7_teachandautomaticmode/index.html">Teach and automatic mode</a></li>
+        <li>
+          <button class="tree open"></button>
+          <a class="active" href="index.html">Types of robot couplings</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="digitaliocoupling/index.html">Digital coupling</a></li>
+            <li><button class="tree blank"></button><a href="loosesyncronizedcoupling/index.html">Loose syncronized coupling</a></li>
+            <li><button class="tree blank"></button><a href="thightsyncronized/index.html">Thight syncronized coupling with FluxRobot</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../3_machineconfiguration/index.html"> Setting up your EtherCAT system</a></li>
+        <li><button class="tree blank"></button><a href="../4_bendingprogram/index.html">Run a FluxRobot program</a></li>
         <li><button class="tree blank"></button><a href="../8_windowssystemcontrol/index.html">Windows system </a></li>
       </ul>
     </li>
@@ -159,19 +154,25 @@
       <a href="../../electricalwiring/index.html">Electrical wiring</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../../electricalwiring/wiring.html">Wiring of the Fanuc cabinet</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/bg.html">Wiring the back gauge sensors</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/robwrist.html">Connectors on the robot wrist</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/robback.html">Connectors on the robot back hub</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/devicebox.html">Wiring of the Device box</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/gripper.html">Gripper</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/digio.html">Digital IO</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/analogio.html">Analog IO's</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/manifold.html">Manifold</a></li>
-        <li><button class="tree blank"></button><a href="../../electricalwiring/userio.html">UserIO</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/robwrist.html">Wiring robot wrist</a></li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/robback.html">Wiring robot back hub</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../electricalwiring/devicepanel/index.html">Device panel</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../electricalwiring/devicepanel/digio.html">Digital IO</a></li>
+            <li><button class="tree blank"></button><a href="../../electricalwiring/devicepanel/analogio.html">Analog IO's</a></li>
+            <li><button class="tree blank"></button><a href="../../electricalwiring/devicepanel/manifold.html">Manifold</a></li>
+            <li><button class="tree blank"></button><a href="../../electricalwiring/devicepanel/vacuum.html">Vacuum generator</a></li>
+            <li><button class="tree blank"></button><a href="../../electricalwiring/devicepanel/userio.html">UserIO</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../electricalwiring/grippers/index.html">Gripper</a></li>
         <li><button class="tree blank"></button><a href="../../electricalwiring/safety.html">Safety</a></li>
         <li><button class="tree blank"></button><a href="../../electricalwiring/iooutput.html">Use the IO outputs</a></li>
       </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../schematics/index.html">Schematics</a></li>
     <li>
       <button class="tree closed"></button>
       <a href="../../dev_components/index.html">Flux: Tweeak Components</a>
@@ -193,6 +194,7 @@
         <li><button class="tree blank"></button><a href="../../dev_devnotes/pickup_comp.html">Pickup comparison</a></li>
         <li><button class="tree blank"></button><a href="../../dev_devnotes/check.html">Check frames</a></li>
         <li><button class="tree blank"></button><a href="../../dev_devnotes/digitalio.html">Aacessing Digital IO' in robot: </a></li>
+        <li><button class="tree blank"></button><a href="../../dev_devnotes/post_matlab.html">Postprocessor Matlab</a></li>
       </ul>
     </li>
   </ul>
@@ -211,107 +213,107 @@
   </div>
   <div>/</div>
   <div>
-    <a href="index.html">General information</a>
+    <a href="index.html">Types of robot couplings</a>
   </div>
 </nav>
 
             <div id="site-crumb-below">
                 <div id="site-toc-left">
                     <article id="article">
-                        <h1>General information</h1>
+                        <h1>Types of robot couplings</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>0The robot interface consists of:</p>
-</div>
-<div class="paragraph">
-<p>■ Two 42-pin plugs for the cable connection with the robot.</p>
-</div>
-<div class="paragraph">
-<p>■ An input/output module with digital inputs and outputs for the control
-signals.</p>
-</div>
-<div class="paragraph">
-<p>■ A switch panel.</p>
-</div>
-<div class="paragraph">
-<p>■ An additional key switch with two positions at the rear of the
-electrical cabinet.</p>
-</div>
-<div class="paragraph">
-<p>In addition to the signals for synchronization, the plug also contains
-connections for the EMERGENCY STOP circuit, the enabling condition for
-press beam movements and the switchover between automatic mode and teach
-mode</p>
+<p>Depending on your needs there are several types of coupling</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_operating_modes">Operating modes</h2>
+<h2 id="_digitalio_coupling">DigitalIO coupling</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In compliance with the safety regulations of the relevant national
-standards and laws as well as the additional safety information in this
-description, it is also possible to operate the TruBend Series 5000
-(B23) and 7000 (B28) as usual via the operating panel with manual
-loading. We differentiate between the operations "TruBend without robot" and
-"TruBend with robot".</p>
-</div>
-<div class="sect2">
-<h3 id="_trubend_without_robot">TruBend without robot</h3>
-<div class="paragraph">
-<p>When operating without a robot, the TruBend is loaded manually. For this
-purpose, the press brake is controlled with the operating panel. This
-setup status corresponds to the description in the operator&#8217;s manual of
-the press brake.</p>
+<p>The simplest operation are via the 27 pin digital interface. The robot follows the state machine in the machine and operates without any syncronisation.</p>
 </div>
 <div class="paragraph">
-<p><strong>TruBend with robot</strong></p>
+<p><span class="image"><img src="img/type_digio.png" alt="tst" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>During operation with a robot, the sheet is guided by the robot.</p>
+<p><strong>Advantages:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Very simple interface</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong></p>
+<p><strong>Disadvantages</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Robot needs to release the part before a bend and picks it up again after the bend. This creates a singnificant loss of productivity and process stablility</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loose_syncronized_coupling">Loose syncronized coupling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the robot holds the part with spring loaded vacuum cups the motion of the robot could follow the machine motion with low accuracy.</p>
 </div>
 <div class="paragraph">
-<p>In the "TruBend with robot" operation mode, the operating panel must not
-be removed!</p>
+<p><span class="image"><img src="img/type_sycloose.png" alt="tst" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>If you select the operating mode "TruBend with robot", the foot switch
-is partially inactive, e.g. the "PRESS BEAM DOWN" foot switch has no
-function. Therefore, in robot mode it is not possible to trigger a
-movement of the press beam with the foot switch.</p>
+<p><strong>Advantages:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A very error tolerant setup with high prodcutivity</p>
+</li>
+<li>
+<p>Bigger parts get already support from the suction frame</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong>Operating-mode key switch</strong> As standard the external operating-mode key
-switch is used to switch between operation with and without robot. When
-doing so the operating panel remains plugged in. The material number for
-the operating-mode key switch sign is 0858369.</p>
+<p><strong>Disadvantages</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vacuum grippers only</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thight_syncronized_coupling_with_fluxrobot">Thight syncronized coupling with FluxRobot</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In case a offline programming software like FluxRobot is used the motion of the machine and the robot can be precisely syncronized.</p>
 </div>
 <div class="paragraph">
-<p>The operating-mode key switch is located next to the On/Off switch.</p>
+<p><span class="image"><img src="img/type_sycstrong.png" alt="tst" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="img/switch.png" alt="t" width="100"></span></p>
+<p><strong>Advantages:</strong></p>
 </div>
-<div class="paragraph">
-<p>Operating-mode key switch Fig. 113741</p>
-</div>
-<div class="paragraph">
-<p><strong>CAUTION</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>The robot is started up while the operator is located within the danger
-zone of the robot!</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre> Make sure that a parking position has been set up for the robot for
-stand-alone operation.</pre>
-</div>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>highest prodcutivity and best work piece support</p>
+</li>
+<li>
+<p>low setup time on the robotic cell</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -323,10 +325,13 @@ stand-alone operation.</pre>
   <h3>Contents</h3>
   <ul>
     <li level="1">
-      <a href="#_operating_modes">Operating modes</a>
+      <a href="#_digitalio_coupling">DigitalIO coupling</a>
     </li>
-    <li level="2">
-      <a href="#_trubend_without_robot">TruBend without robot</a>
+    <li level="1">
+      <a href="#_loose_syncronized_coupling">Loose syncronized coupling</a>
+    </li>
+    <li level="1">
+      <a href="#_thight_syncronized_coupling_with_fluxrobot">Thight syncronized coupling with FluxRobot</a>
     </li>
   </ul>
 </aside>
@@ -334,8 +339,8 @@ stand-alone operation.</pre>
                 </div>
             </div>
             <nav class="pagination">
-  <span class="prev"><a href="../index.html">RA interface</a></span>
-  <span class="next"><a href="typesofcuppling.html">Types of robot couplings</a></span>
+  <span class="prev"><a href="../2_descriptionofhardware/security_network.html">Network security</a></span>
+  <span class="next"><a href="digitaliocoupling/index.html">Digital coupling</a></span>
 </nav>
 
         </div>

@@ -1,106 +1,104 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_operating_modes">Operating modes</a>
-<ul class="sectlevel2">
-<li><a href="#_trubend_without_robot">TruBend without robot</a></li>
-</ul>
-</li>
+<li><a href="#_digitalio_coupling">DigitalIO coupling</a></li>
+<li><a href="#_loose_syncronized_coupling">Loose syncronized coupling</a></li>
+<li><a href="#_thight_syncronized_coupling_with_fluxrobot">Thight syncronized coupling with FluxRobot</a></li>
 </ul>
 </div>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>0The robot interface consists of:</p>
-</div>
-<div class="paragraph">
-<p>■ Two 42-pin plugs for the cable connection with the robot.</p>
-</div>
-<div class="paragraph">
-<p>■ An input/output module with digital inputs and outputs for the control
-signals.</p>
-</div>
-<div class="paragraph">
-<p>■ A switch panel.</p>
-</div>
-<div class="paragraph">
-<p>■ An additional key switch with two positions at the rear of the
-electrical cabinet.</p>
-</div>
-<div class="paragraph">
-<p>In addition to the signals for synchronization, the plug also contains
-connections for the EMERGENCY STOP circuit, the enabling condition for
-press beam movements and the switchover between automatic mode and teach
-mode</p>
+<p>Depending on your needs there are several types of coupling</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_operating_modes">Operating modes</h2>
+<h2 id="_digitalio_coupling">DigitalIO coupling</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In compliance with the safety regulations of the relevant national
-standards and laws as well as the additional safety information in this
-description, it is also possible to operate the TruBend Series 5000
-(B23) and 7000 (B28) as usual via the operating panel with manual
-loading. We differentiate between the operations "TruBend without robot" and
-"TruBend with robot".</p>
-</div>
-<div class="sect2">
-<h3 id="_trubend_without_robot">TruBend without robot</h3>
-<div class="paragraph">
-<p>When operating without a robot, the TruBend is loaded manually. For this
-purpose, the press brake is controlled with the operating panel. This
-setup status corresponds to the description in the operator&#8217;s manual of
-the press brake.</p>
+<p>The simplest operation are via the 27 pin digital interface. The robot follows the state machine in the machine and operates without any syncronisation.</p>
 </div>
 <div class="paragraph">
-<p><strong>TruBend with robot</strong></p>
+<p><span class="image"><img src="img/type_digio.png" alt="tst" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>During operation with a robot, the sheet is guided by the robot.</p>
+<p><strong>Advantages:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Very simple interface</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong></p>
+<p><strong>Disadvantages</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Robot needs to release the part before a bend and picks it up again after the bend. This creates a singnificant loss of productivity and process stablility</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loose_syncronized_coupling">Loose syncronized coupling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the robot holds the part with spring loaded vacuum cups the motion of the robot could follow the machine motion with low accuracy.</p>
 </div>
 <div class="paragraph">
-<p>In the "TruBend with robot" operation mode, the operating panel must not
-be removed!</p>
+<p><span class="image"><img src="img/type_sycloose.png" alt="tst" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>If you select the operating mode "TruBend with robot", the foot switch
-is partially inactive, e.g. the "PRESS BEAM DOWN" foot switch has no
-function. Therefore, in robot mode it is not possible to trigger a
-movement of the press beam with the foot switch.</p>
+<p><strong>Advantages:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A very error tolerant setup with high prodcutivity</p>
+</li>
+<li>
+<p>Bigger parts get already support from the suction frame</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong>Operating-mode key switch</strong> As standard the external operating-mode key
-switch is used to switch between operation with and without robot. When
-doing so the operating panel remains plugged in. The material number for
-the operating-mode key switch sign is 0858369.</p>
+<p><strong>Disadvantages</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vacuum grippers only</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thight_syncronized_coupling_with_fluxrobot">Thight syncronized coupling with FluxRobot</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In case a offline programming software like FluxRobot is used the motion of the machine and the robot can be precisely syncronized.</p>
 </div>
 <div class="paragraph">
-<p>The operating-mode key switch is located next to the On/Off switch.</p>
+<p><span class="image"><img src="img/type_sycstrong.png" alt="tst" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="img/switch.png" alt="t" width="100"></span></p>
+<p><strong>Advantages:</strong></p>
 </div>
-<div class="paragraph">
-<p>Operating-mode key switch Fig. 113741</p>
-</div>
-<div class="paragraph">
-<p><strong>CAUTION</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>The robot is started up while the operator is located within the danger
-zone of the robot!</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre> Make sure that a parking position has been set up for the robot for
-stand-alone operation.</pre>
-</div>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>highest prodcutivity and best work piece support</p>
+</li>
+<li>
+<p>low setup time on the robotic cell</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

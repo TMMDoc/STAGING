@@ -1,0 +1,239 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_installation_and_usage">installation and usage</a></li>
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_workflow">Workflow</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_installation_and_usage">installation and usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The files could be found in \03_Matlab_Ccode\C_Postporcessor\executalbe</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document provides a detailed guide to the workflow and implementation of the post processor. The purpose of the post processor is to generate robot specific files (.LS). The output includes structured files exported into a designated folder for seamless integration with the machine setup.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pre-Requisites:</strong></p>
+</div>
+<div class="paragraph">
+<p>An exe and a folder containing hardcode (PLC) files are provided to the user.</p>
+</div>
+<div class="paragraph">
+<p>Before running the post processor, ensure the following steps are to be completed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Provide the Location of the Post Processor in Flux</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Settings &#8658; Machine Defaults &#8658; Bend Outputs &#8658; Specify the Post &#8658; Processor Location in <strong>NC-Code post-processor</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image1.png" alt="Image1" width="300"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Stand-alone running of the exe</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the location of the exe and open the command prompt</p>
+</li>
+<li>
+<p>Provide the exe and path of the rbc file <strong>inside double qoutes</strong> to run the post processor.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image2.png" alt="Image2"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workflow">Workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>1. Input File Acquisition</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gets the .rbc file directly from Flux and processes it. This file contains critical information about ram points, robot positions, and other necessary data.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>2. File Parsing</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When processing an RBC file, the following key details are extracted:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Number of Bends</strong> - Identifies the total count of bends present in the RBC file.</p>
+</li>
+<li>
+<p><strong>Regrip Status</strong> - Determines whether a bend operation requires a regrip.</p>
+</li>
+<li>
+<p><strong>Clamp Regrip Presence</strong> - Checks if clamp regrip is required for the bending operation.</p>
+</li>
+<li>
+<p><strong>Motion Points and their Reference Names</strong> - Extracts all motion points and their reference names for easy identification.</p>
+</li>
+<li>
+<p><strong>Motion Type</strong> - Classifies each motion as either:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Joint Motion</strong>: The robot moves all joints in a coordinated manner.</p>
+</li>
+<li>
+<p><strong>Linear Motion</strong>: The robot moves in a straight-line path between two points.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The extracted points are categorized into three distinct groups:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Main LS</strong> - These are the primary positioning points and data for the robot in the process.</p>
+</li>
+<li>
+<p><strong>Bend LS</strong> - Points and data specifically associated with the bending operations.</p>
+</li>
+<li>
+<p><strong>Ram Points</strong> - Points related to ram movements within the bending cycle.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>3. Hard-Coded Templates</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The post processor uses a set of pre-defined hard-coded (PLC) files which are embedded in the solution or can be fed from external source for generating LS files.</p>
+</li>
+<li>
+<p>PLC hardcoded files contain predefined lines with placeholders in the format [<strong>PointName</strong>]. These placeholders indicate where specific motion points should be collected and written into the file.</p>
+</li>
+<li>
+<p>These hardcode files are kept outside and editable for user convenience. Location of the external files should be specified <strong>without double quotes</strong> to use it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image7.png" alt="Image7"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If external files are not found or the path is invalid, a prompt is displayed asking whether to use the default files. If the user presses 'Y', the default files are used; if 'N' is pressed, a message stating "No files generated" is displayed and the program exits.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image5.png" alt="Image5"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image6.png" alt="Image6"></span>
+* The hardcoded files used are
+<strong> <strong>BendLS_NoRegripHC</strong>
+</strong> <strong>BendLS_RegripHC</strong>
+<strong> <strong>BendSub_HC (VG – Vacuum Gripper, PG – Pinch Gripper)</strong>
+</strong> <strong>Header</strong>
+<strong>* *MainLS_HC (VG – Vacuum Gripper, PG – Pinch Gripper)</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>4. File Generation</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The hardcode files are read line by line and written into the output file.</p>
+</li>
+<li>
+<p>If the line read contains placeholders for points, the corresponding line is replaced with the corresponding motion points.</p>
+</li>
+<li>
+<p>New points added in Flux can be directly incorporated inside the post-processor without being added in the hardcoded (PLC) files manually. Each point has a Boolean flag ensuring that the preceding point is written, allowing seamless integration of newly added points.</p>
+</li>
+<li>
+<p>The following files are generated:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Main File</strong>: Contains the primary instructions for the robot which calls the bend positioning files for each bend.</p>
+</li>
+<li>
+<p><strong>Bend Sub and Bend Positioning Files</strong>: Generated for each bend to specify detailed instructions. The bend positioning file of each bend calls their respective BendSub files.</p>
+</li>
+<li>
+<p><strong>Ram Points File</strong>: Provides a comprehensive list of ram positions for each bend to be provided to RA.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The Main file, Bend Sub and Bend Positioning files are generated as .LS files. Ram Positioning files are generated as .txt files.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>5. File Export</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>•	All the generated files are saved into a designated folder having the same name as the part and is saved in the location of the exe.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image3.png" alt="image2" width="294" height="102"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Image4.png" alt="image3" width="297" height="305"></span></p>
+</div>
+<div class="paragraph">
+<p><strong><span class="underline">Note:</span></strong> Implementation of FTP for files transfer through the post processor is yet to be implemented.</p>
+</div>
+</div>
+</div>

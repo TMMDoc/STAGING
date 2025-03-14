@@ -1,0 +1,103 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_matlab_implementation">Matlab implementation</a>
+<ul class="sectlevel2">
+<li><a href="#_variables">Variables</a></li>
+<li><a href="#_programm">Programm</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes the principles of the current postprocessor which creates the Fanuc .LS program</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_matlab_implementation">Matlab implementation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_variables">Variables</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variable array:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all way points in Joint coordinates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all way points in Cartesian coordinates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sMCS sWCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">points for the ram motion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">seq</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variable for sequence (see below)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>currently a variable seq decides for each step if</p>
+<div class="ulist">
+<ul>
+<li>
+<p>colum 1: in which User frame is it taken</p>
+</li>
+<li>
+<p>colum 2: joint=1 lin movement=2</p>
+</li>
+<li>
+<p>colum 3: Joitcoord=1 Cart=2</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_programm">Programm</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>a standard header is copied</p>
+</li>
+<li>
+<p>For each point the post prozessor looks into the folder \PLC (this example e.g. point 9).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>if a file "pre_9.txt" is existent it copies the content of this file in front of the motion command</p>
+</li>
+<li>
+<p>the the motion command is written</p>
+</li>
+<li>
+<p>if a file "post_9.txt" is existent it copies the content of this file after the motion command</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Afterwareds all point information is written to the file</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>

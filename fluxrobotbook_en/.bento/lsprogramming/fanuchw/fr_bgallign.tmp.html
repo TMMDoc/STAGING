@@ -1,0 +1,75 @@
+<div class="paragraph">
+<p>This version is designed for the yaw gripper. For vacuum gripper &#8230;&#8203; has to be done
+The idea is that in line 26 &#8230;&#8203;.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> 1:  UTOOL_NUM=2 ;
+ 2:  UFRAME_NUM=2 ;
+ 3:  //R[16:SPD_L]=100    ;
+ 4:  IF (!DI[17:ONE_FINGER_ALIGN]),JMP LBL[10] ;
+ 5:  LBL[20] ;
+ 6:  PR[60,2:LPOS_MUT]=PR[60,2:LPOS_MUT]+.5    ;
+ 7:  SKIP CONDITION R[2:ANA_VAL]&lt;=3.6 OR R[5:ANA_VAL_Z2]&lt;=3.6    ;
+ 8:L PR[60:LPOS_MUT] R[3:SPEED]mm/sec FINE Skip,LBL[20]    ;
+ 9:  PR[61:LPOS_ABG]=LPOS    ;
+10:  JMP LBL[30] ;
+11:   ;
+12:  LBL[10] ;
+13:  //J P[1] 100% FINE    ;
+14:  //L P[2] 100mm/sec FINE    ;
+15:  //L P[35] 100mm/sec FINE    ;
+16:  PR[10]=PR[60:LPOS_MUT]    ;
+17:  R[19]=PR[10,2]    ;
+18:  R[25]=0    ;
+19:  LBL[1] ;
+20:  SELECT R[25]=1,JMP LBL[2] ;
+21:         =2,JMP LBL[3] ;
+22:         =3,JMP LBL[5] ;
+23:         ELSE,JMP LBL[4] ;
+24:   ;
+25:  LBL[4] ;
+26:  IF ((R[2:ANA_VAL]&lt;=R[26:EXP_VAL]+.25) AND (R[5:ANA_VAL_Z2]&lt;=R[26:EXP_VAL]+.25)) OR ((R[2:ANA_VAL]&gt;=R[26:EXP_VAL]-.25) AND (R[5:ANA_VAL_Z2]&gt;=R[26:EXP_VAL]-.25)) THEN ;
+27:  R[25]=3    ;
+28:  JMP LBL[1] ;
+29:  ENDIF ;
+30:   ;
+31:  IF (R[2:ANA_VAL]&lt;R[5:ANA_VAL_Z2]) THEN ;
+32:  R[25]=1    ;
+33:  JMP LBL[1] ;
+34:  ENDIF ;
+35:   ;
+36:  IF (R[5:ANA_VAL_Z2]&lt;R[2:ANA_VAL]) THEN ;
+37:  R[25]=2    ;
+38:  JMP LBL[1] ;
+39:  ENDIF ;
+40:   ;
+41:  LBL[2] ;
+42:  R[12]=R[5:ANA_VAL_Z2]-R[2:ANA_VAL]    ;
+43:  GO[1:Z1_DIFF]=R[13] ;
+44:  PR[10,6]=PR[10,6]+R[11:D_ANGLE]    ;
+45:L PR[10] 100mm/sec FINE    ;
+46:  PR[11]=LPOS    ;
+47:  PR[11,2]=R[19]    ;
+48:L PR[11] 100mm/sec FINE    ;
+49:  R[25]=0    ;
+50:  JMP LBL[1] ;
+51:   ;
+52:  LBL[3] ;
+53:  R[12]=R[2:ANA_VAL]-R[5:ANA_VAL_Z2]    ;
+54:  GO[1:Z1_DIFF]=R[13] ;
+55:  PR[10,6]=PR[10,6]-R[11:D_ANGLE]    ;
+56:L PR[10] 100mm/sec FINE    ;
+57:  PR[11]=LPOS    ;
+58:  PR[11,2]=R[19]    ;
+59:L PR[11] 100mm/sec FINE    ;
+60:  R[25]=0    ;
+61:  JMP LBL[1] ;
+62:   ;
+63:  LBL[5] ;
+64:  PR[11,2]=PR[11,2]+.5    ;
+65:  SKIP CONDITION R[2:ANA_VAL]&lt;=3.5 AND R[5:ANA_VAL_Z2]&lt;=3.5    ;
+66:L PR[11] 100mm/sec FINE Skip,LBL[5],PR[11]=LPOS    ;
+67:  LBL[30] ;</pre>
+</div>
+</div>

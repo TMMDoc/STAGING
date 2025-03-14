@@ -1,4 +1,4 @@
 TITLE=FluxRobot Manual
-OUTDIR=U:/FluxRobotBook_EN
+OUTDIR=../../FluxRobotBook_EN
 LOGO=img/logo.png,123,50
 COPYRIGHT=Copyright &copy; 2023 by Metamation. All rights reserved.

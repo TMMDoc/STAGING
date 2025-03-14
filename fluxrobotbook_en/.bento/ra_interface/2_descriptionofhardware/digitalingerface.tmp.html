@@ -6,6 +6,9 @@
 </div>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>see corresponding documentation B876en.pdf &#8594; 10-18 flanks</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 7%;">
@@ -181,31 +184,36 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>check similaities with B23 manual</p>
+<p>check similaities with B23 menu</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/HAN1.png" alt="HAN1"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/HAN2.png" alt="HAN2"></span></p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_connection_with_the_safety_wiring">connection with the safety wiring</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre> Pins 1 to 16 are digital outputs, the remaining pins 17-18, 19-20
+<div class="paragraph">
+<p>Pins 1 to 16 are digital outputs, the remaining pins 17-18, 19-20
 and 21-22 are contact pairs, which are bridged with potential
 free normally opened contacts. For both of the pins 23 and 24
 for the EMERGENCY STOP circuits of the TruBend, the match
 ing mating contacts pin 15 and pin 16 are located on the plug
 XS8. This means that two in-line normally opened contacts are
-available in the EMERGENCY STOP circuit</pre>
+available in the EMERGENCY STOP circuit</p>
 </div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre> If pins are given the same name, then these are potential-free
+<div class="paragraph">
+<p>If pins are given the same name, then these are potential-free
 normally opened contacts (S) or contact pairs (K). The contact
 pairs are bridged potential-free, the normally opened contacts
-switch a signal potential-free.
- The EMERGENCY STOP circuits of the robot XS8:17-18 and
+switch a signal potential-free.</p>
+</div>
+<div class="paragraph">
+<p>The EMERGENCY STOP circuits of the robot XS8:17-18 and
 XS8:19-20 must be bridged potential-free from the robot. For
 both pins 15 and 16 for the EMERGENCY STOP circuits of the
 machine, the matching mating contacts pin 23 and pin 24 are
@@ -213,17 +221,20 @@ located on plug XS7. The pins XS8:21 and XS8:22 are bridged
 by the machine if the robot has been activated using the key
 switch. This normally opened contact can be used to switch off
 the robot drives when the machine is operated manually. The
-pins XS8:1 to XS8:14 listed above are digital inputs.
- The pins XS8:23 and XS8:24 make a power supply available
+pins XS8:1 to XS8:14 listed above are digital inputs.</p>
+</div>
+<div class="paragraph">
+<p>The pins XS8:23 and XS8:24 make a power supply available
 form the machine. With pin XS8:23 all digital inputs of the
 machine are set to logical true with 24 V, while consumers
 which are controlled using the digital outputs of the machine
-have their zero potential on pin XS8:24.
- There is no potential separation with the inputs and outputs of
+have their zero potential on pin XS8:24.</p>
+</div>
+<div class="paragraph">
+<p>There is no potential separation with the inputs and outputs of
 the machine. Therefore potential separation must be applied on
 the robot side. Due to the low current required, this can also be
-done with an optocoupler or also with small signal relays.</pre>
-</div>
+done with an optocoupler or also with small signal relays.</p>
 </div>
 <div class="paragraph">
 <p><strong>EMERGENCY STOP circuits</strong> The press brake uses two independent EMERGENCY
@@ -305,69 +316,6 @@ the &lt;START&gt; button once more.</p>
 <p>A key switch with two switch positions is fitted on the rear of the
 electrical cabinet. This can be used to select whether work takes place
 with or without the robot.</p>
-</div>
-<div class="paragraph">
-<p><strong>Stop sensor system</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Inserting sheet using the robot</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Side doors</strong></p>
-</div>
-<div class="paragraph">
-<p>When using the robot, the operating panel is also required. When working
-without the robot and without BendGuard, when the foot switch is
-pressed, the TruBend only travels rapidly with the bending speed and
-passes the mute point when doing so.</p>
-</div>
-<div class="paragraph">
-<p>With B23 the sensors are direct-wired. The machine control has no
-influence on this contact.</p>
-</div>
-<div class="paragraph">
-<p>On the B28, the backgauge detection takes place via the motor currents
-and is then output.</p>
-</div>
-<div class="paragraph">
-<p>During air bending and during folding/hemming the robot can place the
-sheet both at the upper dead point and at the mute point.</p>
-</div>
-<div class="paragraph">
-<p>When inserting/contacting the backgauge with the workpiece using the
-robot the maximum speed must only be 20 mm/s and the maximum contact
-force must not exceed 150 N. This avoids potential damage to the
-backgauge and the workpiece.</p>
-</div>
-<div class="paragraph">
-<p>The side door contacts of the press brake are always connected within
-the EMERGENCY SHUTDOWN circuit of the machine, both with the cell closed
-and in teach-in mode.</p>
-</div>
-<div class="paragraph">
-<p><strong>Activating robot interface</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Checking safety CPU setting</strong></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>WARNING</strong></th>
-</tr>
-</thead>
-</table>
-<div class="paragraph">
-<p><strong>Activating the robot</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Robot with bending aid</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Ethernet interface</strong></p>
 </div>
 </div>
 </div>
