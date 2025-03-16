@@ -31,7 +31,6 @@
         <li><button class="tree blank"></button><a href="../rbasics/fanucframes.html">Fanuc Frame concept</a></li>
         <li><button class="tree blank"></button><a href="../rbasics/fanuccordmove.html">Fanuc Motion commands </a></li>
         <li><button class="tree blank"></button><a href="../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
-        <li><button class="tree blank"></button><a href="../rbasics/bestpract.html">Best practices</a></li>
       </ul>
     </li>
     <li>
@@ -51,6 +50,7 @@
         <li><button class="tree blank"></button><a href="../setup_robot/deposit.html">Setup Deposit</a></li>
         <li><button class="tree blank"></button><a href="../setup_robot/toolchanger.html">ToolChanger</a></li>
         <li><button class="tree blank"></button><a href="../setup_robot/gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="../setup_robot/connectionhmi.html">Setup HMI PC</a></li>
       </ul>
     </li>
     <li>
@@ -93,6 +93,8 @@
       <a href="../lsprogramming/index.html">FluxRobot NC-Coode</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../lsprogramming/rnc.html">Flux .RNC output</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/nomenclature.html">Nomenclature and Variables</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/coding.html">coding</a></li>
         <li>
           <button class="tree closed"></button>
           <a href="../lsprogramming/framecycles/index.html">Flux Sub structure</a>
@@ -118,6 +120,14 @@
             <li><button class="tree blank"></button><a href="../lsprogramming/fanuchw/communication.html">Communication</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../bestpractise/index.html">Best practices</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bestpractise/layout.html">Layout</a></li>
+        <li><button class="tree blank"></button><a href="../bestpractise/adjustments.html">Improve accuracy</a></li>
       </ul>
     </li>
     <li>
@@ -257,6 +267,31 @@ always have at least 3 suction cups for a stable situation of the part
 </td>
 </tr>
 </table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The Gripper height in the assembled state needs to be measured in the activated state (suction on!).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/length1.png" alt="length1"></span></p>
+</div>
+<div class="paragraph">
+<p>The precise calculation of CUPZPOS in .dat is calculated to  (see  <a href="cups.html">cups</a> )</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>A = Clutch length (Height of the clutch to the base of the printed counter part: 82mm)
+B = Adapter length
+C = Suction cup length.</pre>
+</div>
 </div>
 
                     </article>

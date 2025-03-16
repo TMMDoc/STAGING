@@ -1,0 +1,56 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_set_the_local_ip_adress">set the local IP adress</a></li>
+<li><a href="#_ping_the_robot">ping the robot</a></li>
+<li><a href="#_establish_ftp_connection">establish FTP connection</a></li>
+<li><a href="#_get_backup_file_frame_dh">get backup file frame.dh</a></li>
+<li><a href="#_push_a_program_to_the_robot">push a program to the robot</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_set_the_local_ip_adress">set the local IP adress</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>change to 192.168.1.101</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ping_the_robot">ping the robot</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ping 192.168.1.175</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_establish_ftp_connection">establish FTP connection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ftp -i 192.168.1.175
+confirm user with return</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_backup_file_frame_dh">get backup file frame.dh</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>cd md:
+mget frames.dh</p>
+</div>
+<div class="paragraph">
+<p>do a entire backup:
+mget "."</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_push_a_program_to_the_robot">push a program to the robot</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>mput bend.ls</p>
+</div>
+</div>
+</div>

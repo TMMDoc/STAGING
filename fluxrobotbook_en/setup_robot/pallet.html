@@ -31,7 +31,6 @@
         <li><button class="tree blank"></button><a href="../rbasics/fanucframes.html">Fanuc Frame concept</a></li>
         <li><button class="tree blank"></button><a href="../rbasics/fanuccordmove.html">Fanuc Motion commands </a></li>
         <li><button class="tree blank"></button><a href="../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
-        <li><button class="tree blank"></button><a href="../rbasics/bestpract.html">Best practices</a></li>
       </ul>
     </li>
     <li>
@@ -51,6 +50,7 @@
         <li><button class="tree blank"></button><a href="deposit.html">Setup Deposit</a></li>
         <li><button class="tree blank"></button><a href="toolchanger.html">ToolChanger</a></li>
         <li><button class="tree blank"></button><a href="gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="connectionhmi.html">Setup HMI PC</a></li>
       </ul>
     </li>
     <li>
@@ -93,6 +93,8 @@
       <a href="../lsprogramming/index.html">FluxRobot NC-Coode</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../lsprogramming/rnc.html">Flux .RNC output</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/nomenclature.html">Nomenclature and Variables</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/coding.html">coding</a></li>
         <li>
           <button class="tree closed"></button>
           <a href="../lsprogramming/framecycles/index.html">Flux Sub structure</a>
@@ -118,6 +120,14 @@
             <li><button class="tree blank"></button><a href="../lsprogramming/fanuchw/communication.html">Communication</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../bestpractise/index.html">Best practices</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bestpractise/layout.html">Layout</a></li>
+        <li><button class="tree blank"></button><a href="../bestpractise/adjustments.html">Improve accuracy</a></li>
       </ul>
     </li>
     <li>
@@ -225,21 +235,96 @@
 <h2 id="_calibration_of_pallets">Calibration of Pallets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The accuracy of the pickup pallet is low since parts get their accuracy from the centering table. FluxRobot supports flat and tilted pickup stacks.</p>
-</div>
-<div class="paragraph">
-<p>The pickup coordinate system will be gained by a calibration plate on the pallet</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="img/calib_pallet.png" alt="Calib pallet">
-</div>
-</div>
-<div class="paragraph">
-<p>The pallets are set to the coordinates in World (Robot coordinates ) [-1200 -1500 Z] and [-0 -1500 Z] The Z-Value is measured with the pointer</p>
+<p>The accuracy of the pickup pallet is low since parts get their accuracy from the centering table. FluxRobot supports flat and tilted pickup stacks. The pickup coordinate system will be gained by a calibration plate on the pallet</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/pallet_offset.png" alt="pallet offset"></span></p>
+</div>
+<div class="paragraph">
+<p>It is important that you understand the coordinate system of the pallet and centering table in reference to the machine. The origin of the pallet 50mm inside the stack corners.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+To minimize collisions best practise is tilt the stack away from the robot.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The calibration of the pallet is done via the 3 point measuring option of the fanuc robot. Teach according the image below</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pallet_calib.png" alt="Pallet calib">
+</div>
+</div>
+<div class="paragraph">
+<p>Steps</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Press (MENU] key. The screen menu will be displayed.</p>
+</li>
+<li>
+<p>Select “6 SETUP”.</p>
+</li>
+<li>
+<p>Press the FI. (TYPE]. The screen change menu will be displayed.</p>
+</li>
+<li>
+<p>Select "Frames".</p>
+</li>
+<li>
+<p>Press F3. [OTHER].</p>
+</li>
+<li>
+<p>Select "Jog Frame". Jog frame entry screen will be displayed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/3p.png" alt="3p"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Move the cursor to the line of the jog frame number you want to set.</p>
+</li>
+<li>
+<p>Press F2. "DETAIL”. The jog frame setup screen of the selected frame number will be displayed.</p>
+</li>
+<li>
+<p>Press F2. "METHOD".</p>
+</li>
+<li>
+<p>Select "Three Point".</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/3p2.png" alt="3p2"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>teach the points according the image above</p>
+</li>
+<li>
+<p>after teaching all points you see the position and the tilting angle in the screen. To syncronize your FluxRobot system you could either use transfer all frames via ftp to your computer and use the frame tool or you enter the values manually into Flux</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The depicted situation has the Frame: [ -1166 687 -393 15.3 -13.9 -93] (in Robo world coord), Rotation sequence is ZYX (after)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/pallet_coord2.png" alt="pallet coord2"></span></p>
 </div>
 </div>
 </div>

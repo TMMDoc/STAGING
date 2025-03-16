@@ -31,7 +31,6 @@
         <li><button class="tree blank"></button><a href="../rbasics/fanucframes.html">Fanuc Frame concept</a></li>
         <li><button class="tree blank"></button><a href="../rbasics/fanuccordmove.html">Fanuc Motion commands </a></li>
         <li><button class="tree blank"></button><a href="../rbasics/fanucaxlimits.html">Fanuc Axlimits</a></li>
-        <li><button class="tree blank"></button><a href="../rbasics/bestpract.html">Best practices</a></li>
       </ul>
     </li>
     <li>
@@ -51,6 +50,7 @@
         <li><button class="tree blank"></button><a href="deposit.html">Setup Deposit</a></li>
         <li><button class="tree blank"></button><a href="toolchanger.html">ToolChanger</a></li>
         <li><button class="tree blank"></button><a href="gripperchanger.html">GripperChanger</a></li>
+        <li><button class="tree blank"></button><a href="connectionhmi.html">Setup HMI PC</a></li>
       </ul>
     </li>
     <li>
@@ -93,6 +93,8 @@
       <a href="../lsprogramming/index.html">FluxRobot NC-Coode</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../lsprogramming/rnc.html">Flux .RNC output</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/nomenclature.html">Nomenclature and Variables</a></li>
+        <li><button class="tree blank"></button><a href="../lsprogramming/coding.html">coding</a></li>
         <li>
           <button class="tree closed"></button>
           <a href="../lsprogramming/framecycles/index.html">Flux Sub structure</a>
@@ -118,6 +120,14 @@
             <li><button class="tree blank"></button><a href="../lsprogramming/fanuchw/communication.html">Communication</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../bestpractise/index.html">Best practices</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bestpractise/layout.html">Layout</a></li>
+        <li><button class="tree blank"></button><a href="../bestpractise/adjustments.html">Improve accuracy</a></li>
       </ul>
     </li>
     <li>
@@ -221,11 +231,10 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Setup CenteringTable</h1>
-<div class="sect1">
-<h2 id="_calibration_of_the_centering_table">Calibration of the centering table</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A calibration plate is used with markings in 50mm distance. The markings are nubered 1,1 .. 6,6. The calibration routine in 03_Matlab_Ccode\ML_Calibrationprogs generates a fanuc program which needs to be executed</p>
+<p>The centering plate is calibrated with the 3 point clalibration just like the tilted pallet. See for details about the process.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/finecalib1.png" alt="finecalib1"></span></p>
@@ -246,23 +255,30 @@ all frames should be set to the values of FRAME 1 (machine - robot frame)
 </table>
 </div>
 <div class="paragraph">
-<p>The in the ideal case the tip of the probe is centered on the cross and the gauge shows exactly 5mm. If the component is not correctly the exact position of the cross needs to be touched up and the matlab calibration program calculates the new offset for Flux</p>
+<p>In the depicted example the centering table is calibrated with the frame: [-507 1239 679 42 -33.6 29.7] (in Robo world coord), Rotation sequence is ZYX (after). Use the frame tool to recalculate the rotation angles</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="img/finecalib2.png" alt="finecalib2"></span></p>
+<p><span class="image"><img src="img/centerframetool.png" alt="centerframetool"></span></p>
+</div>
+<div class="paragraph">
+<p>Coordinates in Robot coordinates</p>
+</div>
+<div class="paragraph">
+<p>4	-507.0	1239.0	679.0	42.0	-33.6	29.7	CENT</p>
+</div>
+<div class="paragraph">
+<p>Coordinates in Machine coordinates</p>
+</div>
+<div class="paragraph">
+<p>4	-1563.0	1239.0	182.0	43.6	-1.5	141.7	CENT</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_setup_in_flux">Setup in Flux</h2>
+<h2 id="_centering_table_in_flux">Centering Table in Flux</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Centering table provides a accurate part gripping position in case the pallet is inaccurate.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="img/gravity_v2.png" alt="gravity v2">
-</div>
+<p><span class="image"><img src="img/center2.png" alt="center2"></span></p>
 </div>
 </div>
 </div>
@@ -329,10 +345,7 @@ This process will enable the Centering table in Flux. Refer the image</p>
   <h3>Contents</h3>
   <ul>
     <li level="1">
-      <a href="#_calibration_of_the_centering_table">Calibration of the centering table</a>
-    </li>
-    <li level="1">
-      <a href="#_setup_in_flux">Setup in Flux</a>
+      <a href="#_centering_table_in_flux">Centering Table in Flux</a>
     </li>
     <li level="1">
       <a href="#_how_to_enable_centering_table">How to enable Centering table:</a>

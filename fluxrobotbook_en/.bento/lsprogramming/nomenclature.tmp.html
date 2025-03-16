@@ -1,0 +1,48 @@
+<div class="paragraph">
+<p>Program Names:</p>
+</div>
+<div class="paragraph">
+<p>Main program is always "name saved in flux".ls</p>
+</div>
+<div class="paragraph">
+<p>Bend"bend number"Positioning_sub.ls - specifies the positioning of the part for corresponding bend for bend no 1 the name will be Bend1Positioning_sub.ls.</p>
+</div>
+<div class="paragraph">
+<p>Bend"bend num"Sub.ls - specifies the sub program name denotion for bend syncronisation program, for bend no 1 the name would be Bend1Sub.ls</p>
+</div>
+<div class="paragraph">
+<p>Data Registers are used in the program to manipulate motion speeds and manage program states</p>
+</div>
+<div class="paragraph">
+<p>R[2:ANA_VAL]                - Analog feedback value from Z1 axes potentiomater</p>
+</div>
+<div class="paragraph">
+<p>R[2:ANA_VAL]                - Analog feedback value from Z2 axes potentiomater</p>
+</div>
+<div class="paragraph">
+<p>R[15:SPD_J]                 -  Speed of Joint type motion point (%)</p>
+</div>
+<div class="paragraph">
+<p>R[16:SPD_L]                 -  Speed of Linear type motion point (mm/sec)</p>
+</div>
+<div class="paragraph">
+<p>R[17:BendNumStatus]         - State data for bend positioning, specifies the bend number in a multi bend program</p>
+</div>
+<div class="paragraph">
+<p>R[10:ProgramState]          - State data for main program</p>
+</div>
+<div class="paragraph">
+<p>R[18:GripperType]           - Specifies type of gripper used, 0 means Vacuum Gripper and 1 means Pinch gripper</p>
+</div>
+<div class="paragraph">
+<p>R[33]                       - For loop variable</p>
+</div>
+<div class="paragraph">
+<p>R[34:CommandFromPressBrake] - Motion syncro command from Press Brake Controller</p>
+</div>
+<div class="paragraph">
+<p>R[35:BendPointCommand]      - syncro command used in motion line</p>
+</div>
+<div class="paragraph">
+<p>R[38:counter]               - Loop Counter for syncro motion</p>
+</div>
